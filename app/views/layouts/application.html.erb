@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>import::require</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<h1>import::require</h1>
+<div id="banner" class="rounded5">
+<% if session[:user] %>                                          
+	<p> Welcome, <%= session[:user].handle %>. <%=link_to "Logout?", logout_path %></p>
+<% else %>
+
+<% end %>
+</div>
+
+<% if flash[:notice] %>
+<div id="notice">
+	<p><%=flash[:notice]%></p>
+</div>
+<% end %>
+
+<%= session %>
+
+<div id="content" class="rounded5">
+<%= yield %>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<h2>User Registration</h2>
+
+<%= form_tag({:action => :create}, :method => "post")  %>
+<table>
+	<tr><td>Name:</td><td><%= text_field_tag :name, @old_params[:name] %></td></tr>
+	<tr><td>Handle:</td><td> <%= text_field_tag :handle, @old_params[:handle] %></td></tr>
+	<tr><td>Email:</td><td>  <%= text_field_tag :email, @old_params[:email] %></td></tr>
+	<tr><td>Confirm Email:</td><td>  <%= text_field_tag :cemail, @old_params[:cemail] %></td></tr>
+	<tr><td>Show Name?:</td><td> <%= check_box_tag :showname, @old_params[:showname] %></td></tr>
+	<tr><td>Show Email?:</td><td> <%= check_box_tag :showemail, @old_params[:showemail] %></td></tr>
+	<tr><td>Recieve Notifications?:</td><td> <%= check_box_tag :notify, @old_params[:notify] %></td></tr>
+	<tr><td>Password:</td><td> <%= password_field_tag :pass1 %></td></tr>
+	<tr><td>Confirm Password:</td><td> <%= password_field_tag :pass2 %></td></tr>
+</table>
+<p>Some sort of terms and stuff I suppose</p>
+<%= submit_tag "Register" %>

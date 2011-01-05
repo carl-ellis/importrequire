@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  handle: MyString
+  email: MyString
+  showname: false
+  showemail: false
+  notify: false
+  passhash: MyString
+
+two:
+  name: MyString
+  handle: MyString
+  email: MyString
+  showname: false
+  showemail: false
+  notify: false
+  passhash: MyString
