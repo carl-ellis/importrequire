@@ -1,0 +1,21 @@
+div#reg_form {
+	background: #726280;
+	border: 1px #726280 solid;
+	width: 50%;
+	margin: 0 auto 0 auto;
+	text-align: center;
+}
+
+div#reg_form *{
+	margin: 0 auto 0 auto;
+}
+
+div#reg_form form{
+}
+
+div#reg_form table {
+}
+
+div#reg_form form table * {
+	text-align: left;
+}

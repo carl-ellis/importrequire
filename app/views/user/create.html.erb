@@ -1,5 +1,6 @@
+<div id="reg_form">
 <h2>User Registration</h2>
-
+<br/>
 <%= form_tag({:action => :create}, :method => "post")  %>
 <table>
 	<tr><td>Name:</td><td><%= text_field_tag :name, @old_params[:name] %></td></tr>
@@ -14,3 +15,5 @@
 </table>
 <p>Some sort of terms and stuff I suppose</p>
 <%= submit_tag "Register" %>
+</form>
+</div>

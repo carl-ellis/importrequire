@@ -13,7 +13,10 @@
 <% if session[:user] %>                                          
 	<p> Welcome, <%= session[:user].handle %>. <%=link_to "Logout?", logout_path %></p>
 <% else %>
-
+	<%= form_tag(login_path :method => "post") %>
+	Handle: <%= text_field_tag :name, nil, :size => 10 %> <br/>
+	Pass: <%= text_field_tag :pass, nil, :size => 10 %>
+	</form>
 <% end %>
 </div>
 
@@ -22,8 +25,6 @@
 	<p><%=flash[:notice]%></p>
 </div>
 <% end %>
-
-<%= session %>
 
 <div id="content" class="rounded5">
 <%= yield %>

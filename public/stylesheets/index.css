@@ -1,0 +1,42 @@
+div#frontmatterimage {
+	text-align: left;
+	width: 47%;
+	margin: 0;
+	padding 0;
+	display: inline-block;
+	vertical-align: center;
+}
+
+div#frontmatterimage img {
+	width: 99%;
+}
+
+div#frontmattertext {
+	text-align: right;
+	width: 48%;
+	margin: 3% 0 0 0;
+	padding: 1%;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px #726280 solid;
+	/*background: #9dabbe;*/
+	background: #726280;
+}
+
+div#frontmattertext * {
+	text-align: left;
+}
+
+div#frontmattertext p {
+	font-size: large;
+}
+
+a#register {
+	display: block;
+	width: 80%;
+	margin: 0 auto 0 auto;
+	height: 2em;
+	text-align: center;
+	background: #a5a2c2;
+	border: 1px #ffffff solid;
+}
