@@ -2,27 +2,46 @@ require_dependency 'password'
 
 class WelcomeController < ApplicationController
 
+	before_filter :old_page
+
+	def old_page
+		@oc = params[:controller]
+		@oa = params[:action]
+	end
+
+	# If there is a user session still active, route to profile
   def index
-		if not session[:user].nil?
-			redirect_to user_name_path(session[:user].handle)
+		if session[:user] != nil
+			redirect_to user_name_path(session[:user][:handle])
 		end
   end
 
+	# Logout, clear session stuff
 	def logout
 		session[:user] = nil
+		flash[:notice] = "Logged out successfully"
 		render :controller => :welcome, :action => :index
 	end
 
+	# Login, check for all parameters, user exists and the password matches
 	def login
-		if(params[:handle] and params[:pass])
+
+		# Check fields are filled
+		if(params[:handle] != "" and params[:pass] != "")
 			handle = params[:handle];
-			pass = params[:pass];
+			pass = params[:pass][0];
 
 			#retrieve and compare
 			temp = User.where(:handle => handle)
-			temp_hash = Password.hash(pass, temp.salt)
-			if temp_hash == temp.passhash
-				session[:user] = temp
+			if temp != []
+				temp_hash = Password.hash(pass, temp[0].salt)
+				if temp_hash == temp[0].passhash
+					session[:user] = temp[0]
+					flash[:notice] = "Logged in successfully"
+				else
+					session[:user] = nil
+					flash[:notice] = "Incorrect User/Password"
+				end
 			else
 				session[:user] = nil
 				flash[:notice] = "Incorrect User/Password"
@@ -30,7 +49,12 @@ class WelcomeController < ApplicationController
 		else
 		session[:user] = nil
 		end
-		render :action => :index
+
+		if session[:user] != nil
+			redirect_to :action => :index
+		else
+			redirect_to :controller => params[:ocontroller], :action => params[:oaction]
+		end
 	end
 
 end

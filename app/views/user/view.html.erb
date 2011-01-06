@@ -1,5 +1,6 @@
-<h2>view</h2>
 <% if @user %>
 	<%= @user %>
+<% else %>
+	<h2>Whoops!</h2>
+	<p> This person doesn't exist! May I suggest you go to our unimplemented search page?</p>
 <% end %>
-<p>Find me in app/views/user/view.html.erb</p>
