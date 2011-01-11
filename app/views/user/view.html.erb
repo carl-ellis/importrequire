@@ -1,5 +1,33 @@
-<% if @user %>
-	<%= @user %>
+<% require_dependency 'gravatar' %>
+<% if @vuser %>
+  <div id="infobox">
+    <div id="userav">
+      <img src="<%= Gravatar.getAvatarURL(@vuser[:email]) %>" />
+    </div>
+    <div id="userinfo">
+      <h3>Info</h3>
+      <ul>
+        <% if @vuser[:showname] %>
+        <li>Name: <%= @vuser[:name]%></li>
+        <% end %>
+        <li>Handle: <%= @vuser[:handle]%></li>
+        <% if @vuser[:showemail] %>
+        <li>Email: <%= @vuser[:email]%></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="menubox">
+      <h3>Menu</h3>
+      <ul>
+        <% if @vuser == session[:user] %>
+        <li>Edit info?</li>
+        <li>Edit works?</li>
+        <% else %>
+        <li>Message</li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 <% else %>
 	<h2>Whoops!</h2>
 	<p> This person doesn't exist! May I suggest you go to our unimplemented search page?</p>

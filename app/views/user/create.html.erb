@@ -12,7 +12,7 @@ end
 <%= form_tag({:action => :create}, :method => "post")  %>
 <table>
 	<tr><td>Name:</td><td><%= text_field_tag :name, @old_params[:name] %></td><td><em><%= (ec && @errors[:name] != []) ? @errors[:name] : "" %></em></td></tr>
-	<tr><td>Handle:</td><td> <%= text_field_tag :handle, @old_params[:handle] %></td><td><em><%= (ec && @errors[:handle] != []) ? @errors[:handle] : "" %></em></td></tr>
+	<tr><td>Handle:</td><td><%= text_field_tag :handle, @old_params[:handle] %></td><td><em><%=(ec && @errors[:handle] != []) ? @errors[:handle] : "" %></em></td></tr>
 	<tr><td>Email:</td><td>  <%= text_field_tag :email, @old_params[:email] %></td><td><em><%= (ec && @errors[:email] != []) ? @errors[:email] : "" %></em></td></tr>
 	<tr><td>Confirm Email:</td><td>  <%= text_field_tag :cemail, @old_params[:cemail] %></td><td></td></tr>
 	<tr><td>Show Name?:</td><td> <%= check_box_tag :showname, @old_params[:showname] %></td><td></td></tr>

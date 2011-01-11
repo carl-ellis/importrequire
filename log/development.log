@@ -5788,3 +5788,1601 @@ Started GET "/user" for 127.0.0.1 at 2011-01-06 22:26:12 +0000
   Parameters: {"handle"=>"user"}
 Rendered user/view.html.erb within layouts/application (15.5ms)
 Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 16:29:45 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2011-01-11 16:30:03 +0000
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2011-01-11 16:39:46 +0000
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 16:40:10 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Carl Ellis", "handle"=>"carl", "email"=>"carlc75@gmail.com", "cemail"=>"carlc75@gmail.com", "showname"=>"on", "showemail"=>"on", "notify"=>"on", "pass1"=>"1mbtf0l", "pass2"=>"1mbtf0l", "commit"=>"Register"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 169ms (Views: 10.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-01-11 16:40:19 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"User", "oaction"=>"create", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Redirected to http://localhost:3000/
+Completed 302 Found in 62ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 16:40:20 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 5ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 16:40:20 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:06:19 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 44ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:07:19 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 13ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:07:53 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:08:55 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:09:06 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:12:37 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (15.8ms)
+Completed   in 20ms
+
+ActionView::Template::Error (No such file to load -- gravitar):
+    1: <% require_dependency 'gravitar' %>
+    2: <% if @user %>
+    3: 	<%= @user %>
+    4:   <div id="userav">
+  app/views/user/view.html.erb:1:in `_app_views_user_view_html_erb__4101092241214561097_20217380_2725598878414520999'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.7ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.4ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:12:46 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (1.6ms)
+Completed   in 6ms
+
+ActionView::Template::Error (/home/carl/svn/personal/importrequire/trunk/http/importrequire/lib/gravatar.rb:9: syntax error, unexpected ':', expecting keyword_end):
+    1: <% require_dependency 'gravatar' %>
+    2: <% if @user %>
+    3: 	<%= @user %>
+    4:   <div id="userav">
+  app/views/user/view.html.erb:1:in `_app_views_user_view_html_erb__4101092241214561097_24874400_2725598878414520999'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.4ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:13:26 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (16.9ms)
+Completed   in 22ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Gravitar):
+    2: <% if @user %>
+    3: 	<%= @user %>
+    4:   <div id="userav">
+    5:     <img src="<%= Gravitar.getAvatarURL(@user[:email]) %>" />
+    6:   </div>
+    7:   <div id="userinfo">
+    8:     <ul>
+  app/views/user/view.html.erb:5:in `_app_views_user_view_html_erb__4101092241214561097_27531560_2725598878414520999'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.4ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:13:50 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (32.9ms)
+Completed   in 38ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    2: <% if @user %>
+    3: 	<%= @user %>
+    4:   <div id="userav">
+    5:     <img src="<%= Gravatar.getAvatarURL(@user[:email]) %>" />
+    6:   </div>
+    7:   <div id="userinfo">
+    8:     <ul>
+  lib/gravatar.rb:5:in `getAvatarURL'
+  app/views/user/view.html.erb:5:in `_app_views_user_view_html_erb__4101092241214561097_19225360_2725598878414520999'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:14:03 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (8.3ms)
+Completed   in 13ms
+
+ActionView::Template::Error (undefined method `ghash' for Gravatar:Module):
+    2: <% if @user %>
+    3: 	<%= @user %>
+    4:   <div id="userav">
+    5:     <img src="<%= Gravatar.getAvatarURL(@user[:email]) %>" />
+    6:   </div>
+    7:   <div id="userinfo">
+    8:     <ul>
+  lib/gravatar.rb:6:in `getAvatarURL'
+  app/views/user/view.html.erb:5:in `_app_views_user_view_html_erb__4101092241214561097_24704720_2725598878414520999'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.3ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:14:32 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 24ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:15:30 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-01-11 17:15:35 +0000
+  Processing by WelcomeController#logout as HTML
+Rendered welcome/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:15:39 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/view.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:19:32 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Rendered user/view.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 63ms (Views: 40.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:20:47 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Rendered user/view.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 60ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-01-11 17:20:53 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"User", "oaction"=>"view", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 34ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 17:20:53 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 6ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:20:53 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Rendered user/view.html.erb within layouts/application (43.2ms)
+Completed 200 OK in 54ms (Views: 47.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:20:58 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Rendered user/view.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 30ms (Views: 24.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:21:15 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Rendered user/view.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-01-11 17:21:17 +0000
+  Processing by WelcomeController#logout as HTML
+Rendered welcome/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:21:22 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Rendered user/view.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 63ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-01-11 17:21:27 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"User", "oaction"=>"view", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Redirected to http://localhost:3000/
+Completed 302 Found in 57ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 17:21:28 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 6ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:21:28 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Rendered user/view.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 54ms (Views: 23.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:22:02 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Rendered user/view.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 54ms (Views: 48.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:23:19 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Rendered user/view.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:23:27 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Rendered user/view.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 56ms (Views: 50.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-01-11 17:24:33 +0000
+  Processing by WelcomeController#logout as HTML
+Rendered welcome/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2011-01-11 17:24:35 +0000
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 20ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:25:01 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 139ms (Views: 10.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:25:18 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 76ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:25:48 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 99ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:25:51 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:25:59 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 74ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:26:20 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:26:25 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "showemail"=>"on", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:27:47 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:28:36 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 39ms (Views: 6.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:28:41 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 48ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:29:11 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 48ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:29:15 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 49ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-01-11 17:29:33 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "handle"=>"test", "pass"=>["test"], "ocontroller"=>"User", "oaction"=>"create", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'test')[0m
+Redirected to http://localhost:3000/register
+Completed 302 Found in 23ms
+
+
+Started GET "/register" for 127.0.0.1 at 2011-01-11 17:29:33 +0000
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:29:57 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 85ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:30:19 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 74ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:30:25 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 72ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:31:04 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 73ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:31:34 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 79ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:31:52 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 76ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:32:17 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+Completed   in 59ms
+
+NameError (undefined local variable or method `lash' for #<UserController:0x000000026f7190>):
+  app/controllers/user_controller.rb:51:in `create'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.1ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.4ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:32:31 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 81ms (Views: 10.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:32:36 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 79ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:34:13 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 75ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:34:18 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 75ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:34:44 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 74ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:34:50 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 49ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:35:04 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 73ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:35:08 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 77ms (Views: 10.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:35:14 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 80ms (Views: 9.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:35:41 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 72ms (Views: 9.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:35:42 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:35:47 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 76ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:36:22 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 76ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:36:27 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:36:32 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 49ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:37:41 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 31ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:37:57 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 49ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:38:00 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 48ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:38:03 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:38:08 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 73ms (Views: 9.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-01-11 17:38:39 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "handle"=>"test", "pass"=>["test"], "ocontroller"=>"User", "oaction"=>"create", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'test')
+Redirected to http://localhost:3000/register
+Completed 302 Found in 23ms
+
+
+Started GET "/register" for 127.0.0.1 at 2011-01-11 17:38:39 +0000
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:38:53 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:39:19 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 42ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:40:20 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:40:22 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 28ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:40:27 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 48ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:40:47 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 50ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:40:52 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 31ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:41:03 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 49ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:41:16 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 48ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:41:24 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 49ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:41:41 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 31ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:41:59 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 50ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:42:13 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 49ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:43:03 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 32ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:43:21 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (1.5ms)
+Completed   in 46ms
+
+ActionView::Template::Error (undefined method `params' for #<User:0x000000031fe638>):
+    6: end
+    7: %>
+    8: 
+    9: <%= @p.params %>
+    10: 
+    11: <div id="reg_form">
+    12: <h2>User Registration</h2>
+  app/views/user/create.html.erb:9:in `_app_views_user_create_html_erb___3559806082982495382_24796760_2725598878414520999'
+  app/controllers/user_controller.rb:60:in `create'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:45:10 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 50ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:47:43 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+ERROR: compiling _app_views_user_create_html_erb___3559806082982495382_25072200_2725598878414520999 RAISED /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: unmatched close parenthesis: /td><td><em>');@output_buffer.append= ( (ec && @errors[:handle] != []) ? @errors[:handle] : "" );@output_buffer.safe_concat('</m
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: unknown regexp options - tr
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+	<tr><td>Email:</td><td>  ');@o...
+	 ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: unknown regexp options - td
+unmatched close parenthesis: /td><td>  ');@output_buffer.append= ( text_field_tag :email, @old_params[:email] );@output_buffer.safe_concat('</
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</td><td><em>');@output_buffer.appe...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+...buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: syntax error, unexpected '<'
+	<tr><td>Confirm Email:</td><td>  ');@output_buffer.append...
+	                            ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: syntax error, unexpected '<'
+	<tr><td>Show Name?:</td><td> ');@output_buffer.append=...
+	                         ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: syntax error, unexpected '<'
+	<tr><td>Show Email?:</td><td> ');@output_buffer.append=...
+	                          ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: syntax error, unexpected '<'
+...d>Recieve Notifications?:</td><td> ');@output_buffer.append=...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: syntax error, unexpected '<'
+	<tr><td>Password:</td><td> ');@output_buffer.append=...
+	                       ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: syntax error, unexpected '<'
+...<tr><td>Confirm Password:</td><td> ');@output_buffer.append=...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:26: unknown regexp options - tabl
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:27: syntax error, unexpected '<'
+<p>Some sort of terms and stuff I suppose</p>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+<p>Some sort of terms and stuff I suppose</p>
+            ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:29: unknown regexp options - fr
+unmatched close parenthesis: /p>
+');@output_buffer.append= ( submit_tag "Register" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</m
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:30: syntax error, unexpected '<'
+</div>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:30: unterminated regexp meets end of file
+Function body:           def _app_views_user_create_html_erb___3559806082982495382_25072200_2725598878414520999(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "user/create";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; 
+# Extra column needed?
+ec = false;
+if @errors != nil 
+	ec = true
+end
+
+@output_buffer.safe_concat('
+');@output_buffer.append= ( #@p.attributes.each {|k,v| puts "#{k}:#{v}"} );@output_buffer.safe_concat('
+');@output_buffer.append= ( @p );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+<div id="reg_form">
+<h2>User Registration</h2>
+<br/>
+');@output_buffer.append= ( form_tag({:action => :create}, :method => "post")  );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('<table>
+	<tr><td>Name:</td><td>');@output_buffer.append= ( text_field_tag :name, @old_params[:name] );@output_buffer.safe_concat('</td><td><em>');@output_buffer.append= ( (ec && @errors[:name] != []) ? @errors[:name] : "" );@output_buffer.safe_concat('</em></td></tr>
+	<tr><td>Handle:</td><td> ');@output_buffer.append= ( text_field_tag :handle, @old_params[:handle] );@output_buffer.safe_concat('</td><td><em>');@output_buffer.append= ( (ec && @errors[:handle] != []) ? @errors[:handle] : "" );@output_buffer.safe_concat('</em></td></tr>
+	<tr><td>Email:</td><td>  ');@output_buffer.append= ( text_field_tag :email, @old_params[:email] );@output_buffer.safe_concat('</td><td><em>');@output_buffer.append= ( (ec && @errors[:email] != []) ? @errors[:email] : "" );@output_buffer.safe_concat('</em></td></tr>
+	<tr><td>Confirm Email:</td><td>  ');@output_buffer.append= ( text_field_tag :cemail, @old_params[:cemail] );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Show Name?:</td><td> ');@output_buffer.append= ( check_box_tag :showname, @old_params[:showname] );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Show Email?:</td><td> ');@output_buffer.append= ( check_box_tag :showemail, @old_params[:showemail] );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Recieve Notifications?:</td><td> ');@output_buffer.append= ( check_box_tag :notify, @old_params[:notify] );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Password:</td><td> ');@output_buffer.append= ( password_field_tag :pass1 );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Confirm Password:</td><td> ');@output_buffer.append= ( password_field_tag :pass2 );@output_buffer.safe_concat('</td><td></td></tr>
+</table>
+<p>Some sort of terms and stuff I suppose</p>
+');@output_buffer.append= ( submit_tag "Register" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</form>
+</div>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/controllers/user_controller.rb:60:in `create'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:440:in `_run__2712813432746018689__process_action__973856928617785146__callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered user/create.html.erb within layouts/application (3.3ms)
+Completed   in 47ms
+
+ActionView::Template::Error (/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: unmatched close parenthesis: /td><td><em>');@output_buffer.append= ( (ec && @errors[:handle] != []) ? @errors[:handle] : "" );@output_buffer.safe_concat('</m
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: unknown regexp options - tr
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+	<tr><td>Email:</td><td>  ');@o...
+	 ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: unknown regexp options - td
+unmatched close parenthesis: /td><td>  ');@output_buffer.append= ( text_field_tag :email, @old_params[:email] );@output_buffer.safe_concat('</
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</td><td><em>');@output_buffer.appe...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+...buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: syntax error, unexpected '<'
+	<tr><td>Confirm Email:</td><td>  ');@output_buffer.append...
+	                            ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: syntax error, unexpected '<'
+	<tr><td>Show Name?:</td><td> ');@output_buffer.append=...
+	                         ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: syntax error, unexpected '<'
+	<tr><td>Show Email?:</td><td> ');@output_buffer.append=...
+	                          ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: syntax error, unexpected '<'
+...d>Recieve Notifications?:</td><td> ');@output_buffer.append=...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: syntax error, unexpected '<'
+	<tr><td>Password:</td><td> ');@output_buffer.append=...
+	                       ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: syntax error, unexpected '<'
+...<tr><td>Confirm Password:</td><td> ');@output_buffer.append=...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:26: unknown regexp options - tabl
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:27: syntax error, unexpected '<'
+<p>Some sort of terms and stuff I suppose</p>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+<p>Some sort of terms and stuff I suppose</p>
+            ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:29: unknown regexp options - fr
+unmatched close parenthesis: /p>
+');@output_buffer.append= ( submit_tag "Register" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</m
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:30: syntax error, unexpected '<'
+</div>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:30: unterminated regexp meets end of file):
+    15: <%= form_tag({:action => :create}, :method => "post")  %>
+    16: <table>
+    17: 	<tr><td>Name:</td><td><%= text_field_tag :name, @old_params[:name] %></td><td><em><%= (ec && @errors[:name] != []) ? @errors[:name] : "" %></em></td></tr>
+    18: 	<tr><td>Handle:</td><td> <%= text_field_tag :handle, @old_params[:handle] %></td><td><em><%= (ec && @errors[:handle] != []) ? @errors[:handle] : "" %></em></td></tr>
+    19: 	<tr><td>Email:</td><td>  <%= text_field_tag :email, @old_params[:email] %></td><td><em><%= (ec && @errors[:email] != []) ? @errors[:email] : "" %></em></td></tr>
+    20: 	<tr><td>Confirm Email:</td><td>  <%= text_field_tag :cemail, @old_params[:cemail] %></td><td></td></tr>
+    21: 	<tr><td>Show Name?:</td><td> <%= check_box_tag :showname, @old_params[:showname] %></td><td></td></tr>
+  app/controllers/user_controller.rb:60:in `create'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:48:53 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+ERROR: compiling _app_views_user_create_html_erb___3559806082982495382_25331280_2725598878414520999 RAISED /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:12: syntax error, unexpected '<', expecting ')'
+<div id="reg_form">
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:13: syntax error, unexpected '<'
+<h2>User Registration</h2>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:13: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+<h2>User Registration</h2>
+                     ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: syntax error, unexpected '<'
+	<tr><td>Name:</td><td>');@outp...
+	 ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: unknown regexp options - td
+unmatched close parenthesis: /td><td>');@output_buffer.append= ( text_field_tag :name, @old_params[:name] );@output_buffer.safe_concat('</
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</td><td><em>');@output_buffer.appe...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: syntax error, unexpected '<'
+...buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: syntax error, unexpected '<'
+	<tr><td>Handle:</td><td> ');@output_buffer.append=...
+	                     ^
+unmatched close parenthesis: /td><td><em>');@output_buffer.append= ( (ec && @errors[:handle] != []) ? @errors[:handle] : "" );@output_buffer.safe_concat('</m
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: unknown regexp options - tr
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+	<tr><td>Email:</td><td>  ');@o...
+	 ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: unknown regexp options - td
+unmatched close parenthesis: /td><td>  ');@output_buffer.append= ( text_field_tag :email, @old_params[:email] );@output_buffer.safe_concat('</
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</td><td><em>');@output_buffer.appe...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+...buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: syntax error, unexpected '<'
+	<tr><td>Confirm Email:</td><td>  ');@output_buffer.append...
+	                            ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: syntax error, unexpected '<'
+	<tr><td>Show Name?:</td><td> ');@output_buffer.append=...
+	                         ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: syntax error, unexpected '<'
+	<tr><td>Show Email?:</td><td> ');@output_buffer.append=...
+	                          ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: syntax error, unexpected '<'
+...d>Recieve Notifications?:</td><td> ');@output_buffer.append=...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: syntax error, unexpected '<'
+	<tr><td>Password:</td><td> ');@output_buffer.append=...
+	                       ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: syntax error, unexpected '<'
+...<tr><td>Confirm Password:</td><td> ');@output_buffer.append=...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:26: unknown regexp options - tabl
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:27: syntax error, unexpected '<'
+<p>Some sort of terms and stuff I suppose</p>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+<p>Some sort of terms and stuff I suppose</p>
+            ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:29: unknown regexp options - fr
+unmatched close parenthesis: /p>
+');@output_buffer.append= ( submit_tag "Register" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</m
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:30: syntax error, unexpected '<'
+</div>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:30: unterminated regexp meets end of file
+Function body:           def _app_views_user_create_html_erb___3559806082982495382_25331280_2725598878414520999(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "user/create";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; 
+# Extra column needed?
+ec = false;
+if @errors != nil 
+	ec = true
+end
+
+@output_buffer.safe_concat('
+');@output_buffer.append= ( #@p.attributes.each {|k,v| puts "#{k}:#{v}"} );@output_buffer.safe_concat('
+');@output_buffer.append= ( @p );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+<div id="reg_form">
+<h2>User Registration</h2>
+<br/>
+');@output_buffer.append= ( form_tag({:action => :create}, :method => "post")  );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('<table>
+	<tr><td>Name:</td><td>');@output_buffer.append= ( text_field_tag :name, @old_params[:name] );@output_buffer.safe_concat('</td><td><em>');@output_buffer.append= ( (ec && @errors[:name] != []) ? @errors[:name] : "" );@output_buffer.safe_concat('</em></td></tr>
+	<tr><td>Handle:</td><td> ');@output_buffer.append= ( text_field_tag :handle, @old_params[:handle] );@output_buffer.safe_concat('</td><td><em>');@output_buffer.append= ( (ec && @errors[:handle] != []) ? @errors[:handle] : "" );@output_buffer.safe_concat('</em></td></tr>
+	<tr><td>Email:</td><td>  ');@output_buffer.append= ( text_field_tag :email, @old_params[:email] );@output_buffer.safe_concat('</td><td><em>');@output_buffer.append= ( (ec && @errors[:email] != []) ? @errors[:email] : "" );@output_buffer.safe_concat('</em></td></tr>
+	<tr><td>Confirm Email:</td><td>  ');@output_buffer.append= ( text_field_tag :cemail, @old_params[:cemail] );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Show Name?:</td><td> ');@output_buffer.append= ( check_box_tag :showname, @old_params[:showname] );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Show Email?:</td><td> ');@output_buffer.append= ( check_box_tag :showemail, @old_params[:showemail] );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Recieve Notifications?:</td><td> ');@output_buffer.append= ( check_box_tag :notify, @old_params[:notify] );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Password:</td><td> ');@output_buffer.append= ( password_field_tag :pass1 );@output_buffer.safe_concat('</td><td></td></tr>
+	<tr><td>Confirm Password:</td><td> ');@output_buffer.append= ( password_field_tag :pass2 );@output_buffer.safe_concat('</td><td></td></tr>
+</table>
+<p>Some sort of terms and stuff I suppose</p>
+');@output_buffer.append= ( submit_tag "Register" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</form>
+</div>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/controllers/user_controller.rb:60:in `create'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:440:in `_run__2712813432746018689__process_action__973856928617785146__callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered user/create.html.erb within layouts/application (1.8ms)
+Completed   in 72ms
+
+ActionView::Template::Error (/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:12: syntax error, unexpected '<', expecting ')'
+<div id="reg_form">
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:13: syntax error, unexpected '<'
+<h2>User Registration</h2>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:13: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+<h2>User Registration</h2>
+                     ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: syntax error, unexpected '<'
+	<tr><td>Name:</td><td>');@outp...
+	 ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: unknown regexp options - td
+unmatched close parenthesis: /td><td>');@output_buffer.append= ( text_field_tag :name, @old_params[:name] );@output_buffer.safe_concat('</
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</td><td><em>');@output_buffer.appe...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:17: syntax error, unexpected '<'
+...buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: syntax error, unexpected '<'
+	<tr><td>Handle:</td><td> ');@output_buffer.append=...
+	                     ^
+unmatched close parenthesis: /td><td><em>');@output_buffer.append= ( (ec && @errors[:handle] != []) ? @errors[:handle] : "" );@output_buffer.safe_concat('</m
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:18: unknown regexp options - tr
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+	<tr><td>Email:</td><td>  ');@o...
+	 ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: unknown regexp options - td
+unmatched close parenthesis: /td><td>  ');@output_buffer.append= ( text_field_tag :email, @old_params[:email] );@output_buffer.safe_concat('</
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+...tput_buffer.safe_concat('</td><td><em>');@output_buffer.appe...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:19: syntax error, unexpected '<'
+...buffer.safe_concat('</em></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: syntax error, unexpected '<'
+	<tr><td>Confirm Email:</td><td>  ');@output_buffer.append...
+	                            ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:20: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: syntax error, unexpected '<'
+	<tr><td>Show Name?:</td><td> ');@output_buffer.append=...
+	                         ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:21: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: syntax error, unexpected '<'
+	<tr><td>Show Email?:</td><td> ');@output_buffer.append=...
+	                          ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:22: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: syntax error, unexpected '<'
+...d>Recieve Notifications?:</td><td> ');@output_buffer.append=...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:23: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: syntax error, unexpected '<'
+	<tr><td>Password:</td><td> ');@output_buffer.append=...
+	                       ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:24: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: syntax error, unexpected '<'
+...<tr><td>Confirm Password:</td><td> ');@output_buffer.append=...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: unknown regexp options - td
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:25: syntax error, unexpected '<'
+...er.safe_concat('</td><td></td></tr>
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:26: unknown regexp options - tabl
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:27: syntax error, unexpected '<'
+<p>Some sort of terms and stuff I suppose</p>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+<p>Some sort of terms and stuff I suppose</p>
+            ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:29: unknown regexp options - fr
+unmatched close parenthesis: /p>
+');@output_buffer.append= ( submit_tag "Register" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</m
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:30: syntax error, unexpected '<'
+</div>
+ ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/create.html.erb:30: unterminated regexp meets end of file):
+    9: <%= #@p.attributes.each {|k,v| puts "#{k}:#{v}"} %>
+    10: <%= @p %>
+    11: 
+    12: <div id="reg_form">
+    13: <h2>User Registration</h2>
+    14: <br/>
+    15: <%= form_tag({:action => :create}, :method => "post")  %>
+  app/controllers/user_controller.rb:60:in `create'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:49:11 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 75ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:49:48 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 73ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:49:59 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"", "pass2"=>"", "commit"=>"Register"}
+Rendered user/create.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 38ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for 127.0.0.1 at 2011-01-11 17:50:35 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CqYirMol+JpI/fGUv9G9w02geTxWGyPaf7TrTWDO4w0=", "name"=>"Tester Testingtons", "handle"=>"test", "email"=>"test@example.com", "cemail"=>"test@example.com", "pass1"=>"test", "pass2"=>"test", "commit"=>"Register"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test@example.com') LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "handle", "email", "showname", "showemail", "notify", "passhash", "created_at", "updated_at", "salt") VALUES ('Tester Testingtons', 'test', 'test@example.com', 'f', 'f', 'f', '8f05e0d29e1955fdbddeda406d99d58ea827ab8841c07cfb590ffb4a0bd8824ba863f122ed399d144a12ac42854e73f202a4ed085da41e0a1db14f0369aab9fd', '2011-01-11 17:50:35.061552', '2011-01-11 17:50:35.061552', 'akenYIBXnjf4KeKixkw4wwRlT0jwlM9FlgsPDTVFTK1ZjmFyCjGu8YzUbbmMK6Llk')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 173ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-11 17:50:35 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/test
+Completed 302 Found in 5ms
+
+
+Started GET "/test" for 127.0.0.1 at 2011-01-11 17:50:35 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'test')
+Rendered user/view.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 55ms (Views: 49.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/test" for 127.0.0.1 at 2011-01-11 17:52:01 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'test')[0m
+Rendered user/view.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 52ms (Views: 46.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-11 17:52:12 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Rendered user/view.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 29ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/test" for 127.0.0.1 at 2011-01-11 17:52:18 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'test')[0m
+Rendered user/view.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.2ms)

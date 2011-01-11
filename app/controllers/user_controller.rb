@@ -41,17 +41,19 @@ class UserController < ApplicationController
       u.name 					= params[:name]
       u.handle 				= params[:handle]
       u.email 				= params[:email]
-      u.showname 			= (params[:showname] == "on") ? true : false;
-      u.showemail 		= (params[:showemail] == "on") ? true : false;
-      u.notify 				= (params[:notify] == "on") ? true : false;
+      u.showname 			= (params[:showname]) ? true : false;
+      u.showemail 		= (params[:showemail]) ? true : false;
+      u.notify 				= (params[:notify]) ? true : false;
 			s = Password.salt()
       u.passhash 			= Password.hash(params[:pass1],s)
       u.salt 					= s
 
-			if(u.save != false)
-				flash[:notice] 	= "User Successfully Created"
+			suc = u.save
+			flash[:notice] 	= suc
+
+			if(suc)
 				session[:user] = u
-				redirect_to :controller => :welcome, :action => :index
+				redirect_to :controller => :welcome, :action => :index and return
 			else
 				@errors = u.errors
 				render :action => :create
@@ -64,8 +66,12 @@ class UserController < ApplicationController
   end
 
   def view
-		if(session[:user])
-			@user = session[:user]
+		if(session[:user] && !params[:handle])
+			@vuser = session[:user]
+		end
+		if params[:handle]
+			vusers = User.where(:handle => params[:handle])
+			@vuser = vusers[0] if vusers.length > 0
 		end
   end
 
