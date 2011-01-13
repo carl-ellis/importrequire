@@ -4,6 +4,7 @@ Importrequire::Application.routes.draw do
 	match "register" => "User#create", :as => "register"
 	match "logout" => "welcome#logout", :as => "logout"
 	match "login" => "welcome#login", :as => "login"
+	match ":handle/edit" => "User#edit", :as => "user_edit"
 	match ":handle" => "User#view", :as => "user_name"
 
   # The priority is based upon order of creation:

@@ -1,0 +1,10 @@
+div#infobox {
+	display: inline-block;
+	width: 250px;
+}                       
+
+div#workinfo {
+	display: inline-block;
+	vertical-align: top;
+}
+
