@@ -1,2 +1,63 @@
-<h1>User#edit</h1>
-<p>Find me in app/views/user/edit.html.erb</p>
+<% if @user %>
+<%= link_to "<-- Back to Profile", user_name_path(@user[:handle])  %>
+<div id="edit">
+  <h2> Edit Information </h2>
+
+  <div id="userav">
+    <h3>Avatar</h3>
+    <img src="<%= Gravatar.getAvatarURL(@user[:email]) %>" />
+    <p>Want to change this avatar? Import::require uses <a href="http://www.gravatar.com">Gravatar</a>. Navigate there to
+    see how to change yours. They're pretty cool.</p>
+  </div>
+
+
+  <div id="usereditform">
+    <h3>Contact and Privacy</h3>
+  <%= form_tag({:action => :edit}, :method => "post") %>
+  <table>
+    <tr>
+      <td>Name:</td><td><%= text_field_tag :name, @user[:name] %></td>
+    </tr>
+    <tr>
+      <td>Email:</td><td> <%= text_field_tag :email, @user[:email] %></td>
+    </tr>
+    <tr>
+      <td>Show Name?:</td><td><%= check_box_tag :showname, true, @user[:showname] %></td>
+    </tr>
+    <tr>
+      <td>Show Email?:</td><td><%= check_box_tag :showemail,true, @user[:showemail] %></td>
+    </tr>
+    <tr>
+      <td>Recieve Notifications?:</td> <td><%= check_box_tag :notify, true, @user[:notify] %></td>
+    </tr>
+    <tr>
+      <td colspan="2">Please enter your password to verify the changes made.</td>
+    </tr>
+    <tr>  
+	    <td>Password:</td><td> <%= password_field_tag :pass %></td>
+    </tr>
+  </table>
+  <br/>
+  <%= submit_tag "Update" %>
+
+  </form>
+  </div>
+
+  <div id="affileditform">
+    <h3>Affiliations</h3>
+    <% if @user.affiliations.length < 1 %>
+      <em>No affiliations listed</em>
+    <% else %>
+    <% end %>
+    <%= form_tag({:controller => :affiliation, :action => :create}, :method => "post") %>
+    <table><tr>
+    <td>Add new Affiliation</td><td><%= text_field_tag :affiliation %> </td>
+    </tr></table>
+    <%= submit_tag "Add" %>
+    </form>
+  </div>
+</div>
+
+<% else %>
+<em>You have come here in error</em>
+<% end %>

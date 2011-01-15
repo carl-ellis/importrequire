@@ -1,11 +1,14 @@
 Importrequire::Application.routes.draw do
 
+  get "affiliation/delete"
+
 	resources :users
 	match "register" => "User#create", :as => "register"
 	match "logout" => "welcome#logout", :as => "logout"
 	match "login" => "welcome#login", :as => "login"
 	match ":handle/edit" => "User#edit", :as => "user_edit"
 	match ":handle" => "User#view", :as => "user_name"
+	match ":handle/affiliation/create" => "affiliation#create", :as => "afil_create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

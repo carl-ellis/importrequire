@@ -2,7 +2,25 @@ require_dependency 'password'
 
 class UserController < ApplicationController
 
-	before_filter :validate_params, :on => :create
+	before_filter :validate_params, :only => :create
+	before_filter :validate_edit_params, :only => :edit
+
+  def validate_edit_params
+
+		@old_params = params
+    @validated = false
+    if params[:pass]
+        
+      #Means they are editing, first off check password
+      pass1 = Password.hash(params[:pass], session[:user][:salt]);
+      if pass1 == session[:user][:passhash]
+        @validated = true
+      else
+				flash[:notice] = "Incorrect password"
+      end
+    end
+
+  end
 
 	# Checks the form is filled correctly
 	def validate_params
@@ -63,6 +81,21 @@ class UserController < ApplicationController
   end
 
   def edit
+    if session[:user]
+      if session[:user][:handle] == params[:handle]
+        @user = session[:user]
+        if @validated
+          u = @user
+          u.name 					= params[:name]
+          u.email 				= params[:email]
+          u.showname 			= (params[:showname]) ? true : false;
+          u.showemail 		= (params[:showemail]) ? true : false;
+          u.notify 				= (params[:notify]) ? true : false;
+          u.save
+          flash[:notice] 	= "Information successfully updated"
+        end
+      end
+    end
   end
 
   def view
