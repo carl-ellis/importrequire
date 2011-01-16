@@ -14611,3 +14611,164 @@ Started GET "/carl" for 127.0.0.1 at 2011-01-16 17:50:12 +0000
   [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
 Rendered user/view.html.erb within layouts/application (87.5ms)
 Completed 200 OK in 100ms (Views: 91.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-16 19:37:11 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (46.3ms)
+Completed 200 OK in 73ms (Views: 71.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-01-16 19:37:55 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4LDid4mR/DAvb2VdzUh15PS+iZzCVdlm8owHrVPnocU=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"welcome", "oaction"=>"index", "commit"=>"Login"}
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Redirected to http://localhost:3000/
+Completed 302 Found in 568ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-16 19:37:55 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 19ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-16 19:37:56 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.7ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.6ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/view.html.erb within layouts/application (305.8ms)
+Completed 200 OK in 401ms (Views: 380.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-01-16 19:38:03 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mAffiliation Load (0.7ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+Rendered user/_affillist.html.erb (22.2ms)
+Rendered user/edit.html.erb within layouts/application (128.0ms)
+Completed 200 OK in 159ms (Views: 142.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-01-16 19:39:28 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/_affillist.html.erb (13.9ms)
+Rendered user/edit.html.erb within layouts/application (136.6ms)
+Completed 200 OK in 168ms (Views: 151.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-01-16 19:40:28 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/_affillist.html.erb (22.9ms)
+Rendered user/edit.html.erb within layouts/application (155.0ms)
+Completed 200 OK in 188ms (Views: 169.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl/edit/remove_affil/CSLU" for 127.0.0.1 at 2011-01-16 19:40:42 +0000
+  Processing by UserController#remove_affil as JS
+  Parameters: {"handle"=>"carl", "name"=>"CSLU"}
+  [1m[36mAffiliation Load (0.6ms)[0m  [1mSELECT "affiliations".* FROM "affiliations" WHERE ("affiliations"."name" = 'CSLU')[0m
+  [1m[35mAREL (1.2ms)[0m  DELETE FROM "affiliations_users" WHERE "affiliations_users"."user_id" = 1 AND "affiliations_users"."affiliation_id" IN (1)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+Rendered user/_affillist.html.erb (4.4ms)
+Rendered user/create_affil.js.rjs (10.5ms)
+Completed 200 OK in 444ms (Views: 115.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/carl/edit/remove_affil/SCC" for 127.0.0.1 at 2011-01-16 19:40:43 +0000
+  Processing by UserController#remove_affil as JS
+  Parameters: {"handle"=>"carl", "name"=>"SCC"}
+  [1m[36mAffiliation Load (0.6ms)[0m  [1mSELECT "affiliations".* FROM "affiliations" WHERE ("affiliations"."name" = 'SCC')[0m
+  [1m[35mAREL (0.7ms)[0m  DELETE FROM "affiliations_users" WHERE "affiliations_users"."user_id" = 1 AND "affiliations_users"."affiliation_id" IN (2)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+Rendered user/_affillist.html.erb (2.9ms)
+Rendered user/create_affil.js.rjs (8.8ms)
+Completed 200 OK in 270ms (Views: 34.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-01-16 19:41:02 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/_affillist.html.erb (2.6ms)
+Rendered user/edit.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 98ms (Views: 81.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-01-16 19:44:46 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/_affillist.html.erb (2.6ms)
+Rendered user/edit.html.erb within layouts/application (123.3ms)
+Completed 200 OK in 156ms (Views: 137.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-01-16 19:45:44 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/_affillist.html.erb (3.3ms)
+Rendered user/edit.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 99ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-01-16 19:46:00 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/_affillist.html.erb (2.7ms)
+Rendered user/edit.html.erb within layouts/application (62.6ms)
+Completed 200 OK in 95ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/carl/edit/create_affil" for 127.0.0.1 at 2011-01-16 19:49:09 +0000
+  Processing by UserController#create_affil as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4LDid4mR/DAvb2VdzUh15PS+iZzCVdlm8owHrVPnocU=", "affiliation"=>"SCC", "commit"=>"Add", "handle"=>"carl"}
+  [1m[36mAffiliation Load (0.6ms)[0m  [1mSELECT "affiliations".* FROM "affiliations" WHERE ("affiliations"."name" = 'SCC')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "affiliations_users" ("affiliation_id", "user_id") VALUES (2, 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+Rendered user/_affillist.html.erb (4.7ms)
+Rendered user/create_affil.js.rjs (10.7ms)
+Completed 200 OK in 557ms (Views: 94.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/carl/edit/remove_affil/SCC" for 127.0.0.1 at 2011-01-16 19:49:12 +0000
+  Processing by UserController#remove_affil as JS
+  Parameters: {"handle"=>"carl", "name"=>"SCC"}
+  [1m[36mAffiliation Load (0.6ms)[0m  [1mSELECT "affiliations".* FROM "affiliations" WHERE ("affiliations"."name" = 'SCC')[0m
+  [1m[35mAREL (0.7ms)[0m  DELETE FROM "affiliations_users" WHERE "affiliations_users"."user_id" = 1 AND "affiliations_users"."affiliation_id" IN (2)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+Rendered user/_affillist.html.erb (2.7ms)
+Rendered user/create_affil.js.rjs (8.8ms)
+Completed 200 OK in 340ms (Views: 96.0ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/carl/edit/create_affil" for 127.0.0.1 at 2011-01-16 19:49:15 +0000
+  Processing by UserController#create_affil as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4LDid4mR/DAvb2VdzUh15PS+iZzCVdlm8owHrVPnocU=", "affiliation"=>"SCC", "commit"=>"Add", "handle"=>"carl"}
+  [1m[36mAffiliation Load (0.8ms)[0m  [1mSELECT "affiliations".* FROM "affiliations" WHERE ("affiliations"."name" = 'SCC')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "affiliations_users" ("affiliation_id", "user_id") VALUES (2, 1)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+Rendered user/_affillist.html.erb (4.5ms)
+Rendered user/create_affil.js.rjs (11.2ms)
+Completed 200 OK in 353ms (Views: 96.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-16 19:49:19 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.7ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.5ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/view.html.erb within layouts/application (231.0ms)
+Completed 200 OK in 266ms (Views: 245.1ms | ActiveRecord: 1.9ms)

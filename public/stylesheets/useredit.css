@@ -47,3 +47,9 @@ div#affileditform table {
 div#affileditform table input {
   width: 100%;
 }
+
+div#affillist * {
+	text-align: center;
+  width: 100%;
+}
+
