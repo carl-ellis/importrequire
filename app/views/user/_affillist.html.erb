@@ -1,0 +1,16 @@
+<% if affiliations.length < 1 %>
+  <em>No affiliations listed</em>
+<% else %>
+  <table>
+    <% affiliations.each do |af| %>
+    <tr>
+      <td><%= af[:name] %></td>
+      <td><%= link_to "remove", 
+              user_remove_affil_path(:handle => session[:user][:handle],
+                                     :name => af[:name]),
+              :remote => true%></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+

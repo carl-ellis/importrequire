@@ -1,0 +1,6 @@
+
+ page.replace_html 'affillist', :partial => "affillist", :locals =>
+{:affiliations=>@user.affiliations} 
+
+
+

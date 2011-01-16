@@ -92,6 +92,7 @@ class UserController < ApplicationController
           u.showemail 		= (params[:showemail]) ? true : false;
           u.notify 				= (params[:notify]) ? true : false;
           u.save
+          session[:user] = u
           flash[:notice] 	= "Information successfully updated"
         end
       end
@@ -107,5 +108,47 @@ class UserController < ApplicationController
 			@vuser = vusers[0] if vusers.length > 0
 		end
   end
+
+  def create_affil
+    @user = session[:user]
+    if params[:affiliation] != ""
+      # See if already exists, if so, use it
+      af = Affiliation.where(:name => params[:affiliation])
+      if af.length == 0
+        af = Affiliation.new
+        af.name = params[:affiliation]
+        af.save
+      else
+        af = af[0]
+      end
+
+      # Add to user
+      @user.affiliations << af if !@user.affiliations.include?(af)
+      @user.save
+      session[:user] = @user
+
+    end
+    respond_to do |format|
+      format.js 
+    end  
+  end
+
+  def remove_affil
+    @user = session[:user]
+    if params[:name] != ""
+      af = Affiliation.where(:name => params[:name])
+      if af.length > 0
+        af = af[0]
+        @user.affiliations.delete(af) if @user.affiliations.include?(af)
+      @user.save
+      session[:user] = @user
+      end
+    end
+
+    respond_to do |format|
+      format.js {render :action => :create_affil}
+    end  
+  end
+
 
 end

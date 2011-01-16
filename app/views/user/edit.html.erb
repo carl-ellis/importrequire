@@ -1,3 +1,5 @@
+<% require_dependency 'gravatar' %>
+
 <% if @user %>
 <%= link_to "<-- Back to Profile", user_name_path(@user[:handle])  %>
 <div id="edit">
@@ -45,11 +47,10 @@
 
   <div id="affileditform">
     <h3>Affiliations</h3>
-    <% if @user.affiliations.length < 1 %>
-      <em>No affiliations listed</em>
-    <% else %>
-    <% end %>
-    <%= form_tag({:controller => :affiliation, :action => :create}, :method => "post") %>
+    <div id="affillist">
+      <%= render :partial => "affillist", :locals => {:affiliations => @user.affiliations} %>
+    </div>
+    <%= form_tag(  url_for( :action => :create_affil), :remote => true) %>
     <table><tr>
     <td>Add new Affiliation</td><td><%= text_field_tag :affiliation %> </td>
     </tr></table>
