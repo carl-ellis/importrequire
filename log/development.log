@@ -14772,3 +14772,210 @@ Started GET "/carl" for 127.0.0.1 at 2011-01-16 19:49:19 +0000
   [1m[36mWork Load (0.5ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
 Rendered user/view.html.erb within layouts/application (231.0ms)
 Completed 200 OK in 266ms (Views: 245.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-17 20:36:38 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 81ms (Views: 78.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-01-17 20:36:53 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1+yBFjzLB6a9/+xQx8xvKqBgnEjsQJDdZLveZxucrmg=", "handle"=>"carl", "pass"=>["1mbtfl"], "ocontroller"=>"welcome", "oaction"=>"index", "commit"=>"Login"}
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Redirected to http://localhost:3000/
+Completed 302 Found in 811ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-17 20:36:54 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-01-17 20:37:03 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1+yBFjzLB6a9/+xQx8xvKqBgnEjsQJDdZLveZxucrmg=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"welcome", "oaction"=>"index", "commit"=>"Login"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 180ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-01-17 20:37:04 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 18ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-17 20:37:04 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.6ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.6ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/view.html.erb within layouts/application (369.6ms)
+Completed 200 OK in 427ms (Views: 403.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-01-17 20:37:14 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mAffiliation Load (0.7ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+Rendered user/_affillist.html.erb (21.6ms)
+Rendered user/edit.html.erb within layouts/application (197.4ms)
+Completed 200 OK in 254ms (Views: 237.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/carl/edit/create_affil" for 127.0.0.1 at 2011-01-17 20:37:23 +0000
+  Processing by UserController#create_affil as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1+yBFjzLB6a9/+xQx8xvKqBgnEjsQJDdZLveZxucrmg=", "affiliation"=>"CSLU", "commit"=>"Add", "handle"=>"carl"}
+  [1m[35mAffiliation Load (0.7ms)[0m  SELECT "affiliations".* FROM "affiliations" WHERE ("affiliations"."name" = 'CSLU')
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "affiliations_users" ("affiliation_id", "user_id") VALUES (1, 1)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+Rendered user/_affillist.html.erb (5.7ms)
+Rendered user/create_affil.js.rjs (11.7ms)
+Completed 200 OK in 521ms (Views: 151.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-17 20:37:33 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.7ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.7ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/view.html.erb within layouts/application (167.8ms)
+Completed 200 OK in 205ms (Views: 182.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/carl" for 192.168.1.33 at 2011-01-17 20:42:01 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (1.0ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.5ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/view.html.erb within layouts/application (258.4ms)
+Completed 200 OK in 344ms (Views: 271.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-01-17 20:57:48 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.8ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.7ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/view.html.erb within layouts/application (230.1ms)
+Completed 200 OK in 265ms (Views: 244.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/carl/edit_works" for 127.0.0.1 at 2011-01-17 20:57:54 +0000
+  Processing by UserController#edit_works as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/edit_works.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 75ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Started GET "/carl/edit_works" for 127.0.0.1 at 2011-01-17 21:50:03 +0000
+  Processing by UserController#edit_works as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/edit_works.html.erb within layouts/application (107.5ms)
+Completed   in 145ms
+
+ActionView::Template::Error (Missing partial user/worklist with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/carl/personal/importrequire/trunk/http/importrequire/app/views"):
+    3:   <div id="workeditform">
+    4:     <h3>Works</h3>
+    5:     <div id="worklist">
+    6:       <%= render :partial => "worklist", :locals => {:works => @user.works} %>
+    7:     </div>
+    8:     <%= form_tag(  url_for( :action => :create_work), :remote => true) %>
+    9:     <table>
+  app/views/user/edit_works.html.erb:6:in `_app_views_user_edit_works_html_erb___755436220_87436160_838653427'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.0ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (46.9ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (80.4ms)
+
+
+Started GET "/carl/edit_works" for 127.0.0.1 at 2011-01-17 21:51:00 +0000
+  Processing by UserController#edit_works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mWork Load (0.5ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (10.8ms)
+Rendered user/edit_works.html.erb within layouts/application (109.9ms)
+Completed   in 201ms
+
+ActionView::Template::Error (No route matches {:action=>"create_work", :controller=>"User"}):
+    5:     <div id="worklist">
+    6:       <%= render :partial => "workslist", :locals => {:works => @user.works} %>
+    7:     </div>
+    8:     <%= form_tag(  url_for( :action => :create_work), :remote => true) %>
+    9:     <table>
+    10: 		<tr><th colspan="2">Add Work</th></tr>
+    11: 		<tr><td>Name:</td><td><%= text_field_tag :name %> </td></tr>
+  app/views/user/edit_works.html.erb:8:in `_app_views_user_edit_works_html_erb___755436220_87007110_838653427'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.6ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (37.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (60.7ms)
+
+
+Started GET "/carl/edit_works" for 127.0.0.1 at 2011-01-17 21:55:06 +0000
+  Processing by UserController#edit_works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mWork Load (0.5ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (10.2ms)
+Rendered user/edit_works.html.erb within layouts/application (128.2ms)
+Completed 200 OK in 168ms (Views: 144.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/edit_works" for 127.0.0.1 at 2011-01-17 22:12:20 +0000
+  Processing by UserController#edit_works as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/_workslist.html (2.3ms)
+Rendered user/edit_works.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 82ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/carl/edit_works/create_work" for 127.0.0.1 at 2011-01-17 22:12:30 +0000
+  Processing by UserController#create_work as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1+yBFjzLB6a9/+xQx8xvKqBgnEjsQJDdZLveZxucrmg=", "name"=>"", "description"=>"", "url"=>"", "commit"=>"Add", "handle"=>"carl"}
+Rendered user/create_work.js.rjs (2.1ms)
+Completed   in 37ms
+
+ActionView::Template::Error (undefined method `affiliations' for nil:NilClass):
+    1: 
+    2:  page.replace_html 'affillist', :partial => "affillist", :locals =>
+    3: {:affiliations=>@user.affiliations} 
+  app/views/user/create_work.js.rjs:3:in `block in _app_views_user_create_work_js_rjs___954309574_84757730_838653427'
+  app/views/user/create_work.js.rjs:1:in `_app_views_user_create_work_js_rjs___954309574_84757730_838653427'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (65.7ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (51.6ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (131.6ms)
+
+
+Started POST "/carl/edit_works/create_work" for 127.0.0.1 at 2011-01-17 22:12:35 +0000
+  Processing by UserController#create_work as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1+yBFjzLB6a9/+xQx8xvKqBgnEjsQJDdZLveZxucrmg=", "name"=>"", "description"=>"", "url"=>"", "commit"=>"Add", "handle"=>"carl"}
+Rendered user/create_work.js.rjs (1.9ms)
+Completed   in 37ms
+
+ActionView::Template::Error (undefined method `affiliations' for nil:NilClass):
+    1: 
+    2:  page.replace_html 'affillist', :partial => "affillist", :locals =>
+    3: {:affiliations=>@user.affiliations} 
+  app/views/user/create_work.js.rjs:3:in `block in _app_views_user_create_work_js_rjs___954309574_84596810_838653427'
+  app/views/user/create_work.js.rjs:1:in `_app_views_user_create_work_js_rjs___954309574_84596810_838653427'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (62.8ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (53.5ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (130.8ms)

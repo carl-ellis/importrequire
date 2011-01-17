@@ -1,0 +1,15 @@
+<% if works.length < 1 %>
+  <em>No works listed</em>
+<% else %>
+  <table>
+    <% works.each do |w| %>
+    <tr>
+      <td><%= w[:name] %></td>
+      <td><%= w[:description] %></td>
+      <td><%= w[:url] %></td>
+      <td>delete</td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+

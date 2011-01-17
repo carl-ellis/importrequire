@@ -150,5 +150,17 @@ class UserController < ApplicationController
     end  
   end
 
+  def edit_works
+    if session[:user]
+      if session[:user][:handle] == params[:handle]
+        @user = session[:user]
+        if @validated
+        end
+      end
+    end
+  end
+
+  def create_work
+	end
 
 end

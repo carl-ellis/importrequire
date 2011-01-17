@@ -30,7 +30,7 @@
 				<ul>
 					<% if @vuser == session[:user] %>
 					<li><%= link_to 'Edit info?', user_edit_path %></li>
-					<li>Edit works?</li>
+					<li><%= link_to 'Edit works?', user_edit_works_path %></li>
 					<% else %>
 					<li>Message</li>
 					<% end %>
