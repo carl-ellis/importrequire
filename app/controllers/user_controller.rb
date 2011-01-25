@@ -53,6 +53,31 @@ class UserController < ApplicationController
 		end
 	end
 
+	# Checks the form is filled correctly
+	def validate_work_params
+
+		@old_params = params
+		# Just gets form parameters
+		v_params = params.clone
+		v_params.delete_if {|k,v| ["action","controller","handle"].include?(k) }
+		@validated = false
+		if v_params != {}
+
+			# Verification for all filled in
+			empty = false
+      v_params.each { |k,v| empty = true if v == "" }
+			if(empty)
+				flash[:notice] = "Please fill in all fields - "
+			else
+				@validated = true;
+			end
+			if(flash[:notice])
+				render :edit => :create and return
+			end
+		end
+		return v_params == {}
+	end
+
   def create
 		if @validated
 			u = User.new
@@ -146,21 +171,45 @@ class UserController < ApplicationController
     end
 
     respond_to do |format|
-      format.js {render :action => :create_affil}
+      format.js {render :action => :create_affil} 
     end  
   end
 
-  def edit_works
+  def works
     if session[:user]
       if session[:user][:handle] == params[:handle]
         @user = session[:user]
+				validated = validate_work_params()
         if @validated
+          w = Work.new
+          w.name 					= params[:name]
+          w.description 	= params[:description]
+          w.url 					= params[:url]
+          w.save
+					@user.works << w
+					@user.save
+          session[:user] = @user
+          flash[:notice] 	= "Information successfully updated"
         end
       end
     end
   end
 
-  def create_work
-	end
+  def remove_work
+    @user = session[:user]
+    if params[:wid] != ""
+      af = Work.where(:id => params[:wid])
+      if af.length > 0
+        af = af[0]
+        @user.works.delete(af) if @user.works.include?(af)
+      @user.save
+      session[:user] = @user
+      end
+    end
+
+    respond_to do |format|
+      format.js {render :action => :create_work} 
+    end  
+  end
 
 end

@@ -7,7 +7,10 @@
       <td><%= w[:name] %></td>
       <td><%= w[:description] %></td>
       <td><%= w[:url] %></td>
-      <td>delete</td>
+      <td><%= link_to "delete",
+							user_remove_work_path(:handle => session[:user][:handle],
+																		:wid => w[:id]),
+							:remote => true %></td>
     </tr>
     <% end %>
   </table>
