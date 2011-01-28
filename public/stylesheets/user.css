@@ -6,5 +6,12 @@ div#infobox {
 div#workinfo {
 	display: inline-block;
 	vertical-align: top;
+	width: 70%;
+	text-align: right;
+	margin: 0 auto 0 auto;
+}
+
+div#workinfo * {
+	text-align: left;
 }
 

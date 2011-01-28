@@ -1,0 +1,68 @@
+div#editworks {
+	text-align: center;
+	margin: auto;
+}
+
+div#editworks div * {
+	text-align: left;
+}
+
+div#worklist {
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 30px;
+}
+
+ul#innerworklist{
+	width: 90%;
+	padding: 0;
+	text-align: center;
+	margin: 0 auto 0 auto;
+}
+
+ul#innerworklist li{
+	margin: 0;
+	margin-bottom: 10px;
+	list-style-type: none;
+	
+}
+
+div.work {
+	display: block;
+	border: #000000 1px solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	padding: 3px;
+}
+
+
+ul#innerworklist span.title{
+	display: block;
+  font-family: bold;
+  text-decoration: underline;
+	font-size: large;
+	margin-bottom: 4px;
+}
+
+ul#innerworklist span.url{
+	display: block;
+	margin-bottom: 2px;
+}
+
+ul#innerworklist span.delete{
+	display: block;
+}
+
+ul#innerworklist span.desc{
+	display: block;
+	margin-bottom: 2px;
+}
+
+div#workeditform {
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+}

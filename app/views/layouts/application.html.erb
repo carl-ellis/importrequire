@@ -11,7 +11,7 @@
 <h1>import::require</h1>
 <div id="banner" class="rounded5">
 <% if session[:user] %>                                          
-	<p> Welcome, <%= session[:user].handle %>. <%=link_to "Logout?", logout_path %></p>
+	<p> Welcome, <%= session[:user] %>. <%=link_to "Logout?", logout_path %></p>
 <% else %>
 	<%= form_tag(login_path, :method => "post") %>
 	Handle: <%= text_field_tag :handle, nil, :size => 8 %> 

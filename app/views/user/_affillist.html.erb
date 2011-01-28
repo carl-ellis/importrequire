@@ -6,7 +6,7 @@
     <tr>
       <td><%= af[:name] %></td>
       <td><%= link_to "remove", 
-              user_remove_affil_path(:handle => session[:user][:handle],
+              user_remove_affil_path(:handle => session[:user],
                                      :name => af[:name]),
               :remote => true%></td>
     </tr>

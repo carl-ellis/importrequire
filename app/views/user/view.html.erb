@@ -28,7 +28,7 @@
 			<div id="menubox">
 				<h3>Menu</h3>
 				<ul>
-					<% if @vuser == session[:user] %>
+					<% if @vuser[:handle] == session[:user] %>
 					<li><%= link_to 'Edit info?', user_edit_path %></li>
 					<li><%= link_to 'Edit works?', user_works_path %></li>
 					<% else %>
@@ -39,15 +39,7 @@
 		</div>
 		<div id="workinfo">
 			<h2>Works</h2>
-			<% if @vuser.works.length == 0%>
-				<em>Currently no works added</em>
-			<% else %>
-				<% @vuser.works.each do |work| %>
-					<div class="workcontent">
-						<%= work %>
-					</div>
-				<% end %>
-			<% end %>
+			<%= render :partial => "workslist", :locals => {:works => @vuser.works, :edit => false} %>
 		</div>
 	</div>
 <% else %>

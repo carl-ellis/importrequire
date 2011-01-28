@@ -95,7 +95,7 @@ class UserController < ApplicationController
 			flash[:notice] 	= suc
 
 			if(suc)
-				session[:user] = u
+				session[:user] = u[:handle]
 				redirect_to :controller => :welcome, :action => :index and return
 			else
 				@errors = u.errors
@@ -107,8 +107,8 @@ class UserController < ApplicationController
 
   def edit
     if session[:user]
-      if session[:user][:handle] == params[:handle]
-        @user = session[:user]
+      if session[:user] == params[:handle]
+        @user = User.where(:handle => session[:user])[0]
         if @validated
           u = @user
           u.name 					= params[:name]
@@ -117,7 +117,6 @@ class UserController < ApplicationController
           u.showemail 		= (params[:showemail]) ? true : false;
           u.notify 				= (params[:notify]) ? true : false;
           u.save
-          session[:user] = u
           flash[:notice] 	= "Information successfully updated"
         end
       end
@@ -126,16 +125,16 @@ class UserController < ApplicationController
 
   def view
 		if(session[:user] && !params[:handle])
-			@vuser = session[:user]
+			@vuser = User.where(:handle => session[:user])[0]
 		end
 		if params[:handle]
-			vusers = User.where(:handle => params[:handle])
-			@vuser = vusers[0] if vusers.length > 0
+			vusers = User.where(:handle => params[:handle])[0]
+			@vuser = vusers
 		end
   end
 
   def create_affil
-    @user = session[:user]
+    @user = User.where(:handle => session[:user])[0]
     if params[:affiliation] != ""
       # See if already exists, if so, use it
       af = Affiliation.where(:name => params[:affiliation])
@@ -150,7 +149,6 @@ class UserController < ApplicationController
       # Add to user
       @user.affiliations << af if !@user.affiliations.include?(af)
       @user.save
-      session[:user] = @user
 
     end
     respond_to do |format|
@@ -159,14 +157,13 @@ class UserController < ApplicationController
   end
 
   def remove_affil
-    @user = session[:user]
+    @user = User.where(:handle => session[:user])[0]
     if params[:name] != ""
       af = Affiliation.where(:name => params[:name])
       if af.length > 0
         af = af[0]
         @user.affiliations.delete(af) if @user.affiliations.include?(af)
       @user.save
-      session[:user] = @user
       end
     end
 
@@ -177,8 +174,8 @@ class UserController < ApplicationController
 
   def works
     if session[:user]
-      if session[:user][:handle] == params[:handle]
-        @user = session[:user]
+      if session[:user] == params[:handle]
+        @user = User.where(:handle => session[:user])[0]
 				validated = validate_work_params()
         if @validated
           w = Work.new
@@ -188,7 +185,6 @@ class UserController < ApplicationController
           w.save
 					@user.works << w
 					@user.save
-          session[:user] = @user
           flash[:notice] 	= "Information successfully updated"
         end
       end
@@ -196,14 +192,13 @@ class UserController < ApplicationController
   end
 
   def remove_work
-    @user = session[:user]
+    @user = User.where(:handle => session[:user])[0]
     if params[:wid] != ""
       af = Work.where(:id => params[:wid])
       if af.length > 0
         af = af[0]
         @user.works.delete(af) if @user.works.include?(af)
       @user.save
-      session[:user] = @user
       end
     end
 

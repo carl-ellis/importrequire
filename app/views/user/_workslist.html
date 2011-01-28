@@ -1,18 +1,22 @@
 <% if works.length < 1 %>
   <em>No works listed</em>
 <% else %>
-  <table>
+	<ul id="innerworklist">
     <% works.each do |w| %>
-    <tr>
-      <td><%= w[:name] %></td>
-      <td><%= w[:description] %></td>
-      <td><%= w[:url] %></td>
-      <td><%= link_to "delete",
-							user_remove_work_path(:handle => session[:user][:handle],
+		<li>
+			<div class="work">
+				<span class="title"><%= w[:name] %></span>
+				<span class="url"><a href="<%= w[:url] %>"><%= w[:url] %></a></span>
+				<span class="desc"><%= w[:description] %></span>
+				<% if edit %>
+					<span class="delete"><%= link_to "delete",
+							user_remove_work_path(:handle => session[:user],
 																		:wid => w[:id]),
-							:remote => true %></td>
-    </tr>
-    <% end %>
-  </table>
+							:remote => true %></span>
+				<% end %>
+			</div>
+		</li>
+		<% end %>
+	</ul>
 <% end %>
 

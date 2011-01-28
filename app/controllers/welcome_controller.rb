@@ -12,7 +12,7 @@ class WelcomeController < ApplicationController
 	# If there is a user session still active, route to profile
   def index
 		if session[:user] != nil
-			redirect_to user_name_path(session[:user][:handle])
+			redirect_to user_name_path(session[:user])
 		end
   end
 
@@ -36,7 +36,7 @@ class WelcomeController < ApplicationController
 			if temp != []
 				temp_hash = Password.hash(pass, temp[0].salt)
 				if temp_hash == temp[0].passhash
-					session[:user] = temp[0]
+					session[:user] = temp[0][:handle]
 					flash[:notice] = "Logged in successfully"
 				else
 					session[:user] = nil

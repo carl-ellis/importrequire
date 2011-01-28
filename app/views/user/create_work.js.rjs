@@ -1,6 +1,6 @@
 
  page.replace_html 'worklist', :partial => "workslist", :locals =>
-{:works=>@user.works} 
+{:works=>@user.works, :edit=>true} 
 
 
 
