@@ -9,7 +9,9 @@
 				<span class="url"><a href="<%= w[:url] %>"><%= w[:url] %></a></span>
 				<span class="desc"><%= w[:description] %></span>
 				<% if edit %>
-					<span class="delete"><%= link_to "delete",
+				<hr/>
+					<span class="delete">edit |
+					<%= link_to "delete",
 							user_remove_work_path(:handle => session[:user],
 																		:wid => w[:id]),
 							:remote => true %></span>

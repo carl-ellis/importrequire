@@ -8,17 +8,19 @@ div#editworks div * {
 }
 
 div#worklist {
-	width: 40%;
+	width: 50%;
 	display: inline-block;
 	vertical-align: top;
+	margin: 0;
 	margin-right: 30px;
+	vertical-align: top;
 }
 
 ul#innerworklist{
 	width: 90%;
 	padding: 0;
 	text-align: center;
-	margin: 0 auto 0 auto;
+	margin: 0 auto 0 0;
 }
 
 ul#innerworklist li{
@@ -30,12 +32,14 @@ ul#innerworklist li{
 
 div.work {
 	display: block;
-	border: #000000 1px solid;
+	background: #726280;
+	padding: 2px;
+	/*border: #000000 1px solid;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-khtml-border-radius: 5px;
 	border-radius: 5px;
-	padding: 3px;
+	padding: 3px;*/
 }
 
 
@@ -44,12 +48,12 @@ ul#innerworklist span.title{
   font-family: bold;
   text-decoration: underline;
 	font-size: large;
-	margin-bottom: 4px;
+	margin-bottom: 6px;
 }
 
 ul#innerworklist span.url{
 	display: block;
-	margin-bottom: 2px;
+	margin-bottom: 4px;
 }
 
 ul#innerworklist span.delete{
@@ -58,7 +62,7 @@ ul#innerworklist span.delete{
 
 ul#innerworklist span.desc{
 	display: block;
-	margin-bottom: 2px;
+	margin-bottom: 4px;
 }
 
 div#workeditform {

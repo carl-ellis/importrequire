@@ -40,3 +40,11 @@ a#register {
 	background: #a5a2c2;
 	border: 1px #ffffff solid;
 }
+
+a.top {
+  color: #808000;
+}
+
+a {
+  color: #000000;
+}
