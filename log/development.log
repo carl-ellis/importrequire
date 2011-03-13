@@ -17195,3 +17195,177 @@ Started GET "/carl" for 127.0.0.1 at 2011-02-25 15:25:19 +0000
 Rendered user/_workslist.html (23.8ms)
 Rendered user/view.html.erb within layouts/application (282.0ms)
 Completed 200 OK in 367ms (Views: 295.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-13 13:15:46 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 100ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-03-13 13:15:55 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38ljOkXIJjmII+A9bSY6CnsWn+CiE3QsWZhiN9GsO4E=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"welcome", "oaction"=>"index", "commit"=>"Login"}
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Redirected to http://localhost:3000/
+Completed 302 Found in 547ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-13 13:15:56 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 3ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-03-13 13:15:56 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.7ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.8ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (24.8ms)
+Rendered user/view.html.erb within layouts/application (430.5ms)
+Completed 200 OK in 567ms (Views: 491.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 192.168.1.37 at 2011-03-13 13:22:10 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-03-13 14:00:23 +0000
+  Processing by WelcomeController#logout as HTML
+Rendered welcome/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2011-03-13 14:00:29 +0000
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/User" for 127.0.0.1 at 2011-03-13 14:01:05 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38ljOkXIJjmII+A9bSY6CnsWn+CiE3QsWZhiN9GsO4E=", "name"=>"test2", "handle"=>"test2", "email"=>"test2@example.com", "cemail"=>"test2@example.com", "notify"=>"on", "pass1"=>"test2", "pass2"=>"test2", "commit"=>"Register"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test2') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'test2@example.com') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "users" ("name", "handle", "email", "showname", "showemail", "notify", "passhash", "created_at", "updated_at", "salt") VALUES ('test2', 'test2', 'test2@example.com', 'f', 'f', 't', 'd111f4822d5c97197a2facd39502a9a2705f38c7405873ebf2d6e5f404b86d66bc17e1534a855412bd62ef9fc5483364bb330a056d233306f105ad637440ea0b', '2011-03-13 14:01:06.068929', '2011-03-13 14:01:06.068929', 'a3eN70EnKkw5UkjjCl1JoZalo8v32lTK77oSCKEnlbf5neav3BicVXwLjuLUyR2Ao')
+
+Sent mail to test2@example.com (204ms)
+Date: Sun, 13 Mar 2011 14:01:10 +0000
+From: no-reply@importrequire.com
+To: test2@example.com
+Message-ID: <4d7cce26ad87c_2a25528cc062953@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 4971ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-13 14:01:10 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/test2
+Completed 302 Found in 3ms
+
+
+Started GET "/test2" for 127.0.0.1 at 2011-03-13 14:01:11 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test2"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'test2')[0m
+  [1m[35mAffiliation Load (0.5ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 3 )
+  [1m[36mWork Load (0.6ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 3 )[0m
+Rendered user/_workslist.html (10.6ms)
+Rendered user/view.html.erb within layouts/application (276.2ms)
+Completed 200 OK in 368ms (Views: 290.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/test" for 127.0.0.1 at 2011-03-13 14:01:31 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'test')
+  [1m[36mAffiliation Load (0.5ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )[0m
+  [1m[35mWork Load (0.5ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )
+Rendered user/_workslist.html (10.9ms)
+Rendered user/view.html.erb within layouts/application (321.3ms)
+Completed 200 OK in 465ms (Views: 342.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/test2" for 127.0.0.1 at 2011-03-13 14:01:37 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test2"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'test2')[0m
+  [1m[35mAffiliation Load (0.5ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 3 )
+  [1m[36mWork Load (0.6ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 3 )[0m
+Rendered user/_workslist.html (10.7ms)
+Rendered user/view.html.erb within layouts/application (273.2ms)
+Completed 200 OK in 367ms (Views: 288.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-03-13 14:01:47 +0000
+  Processing by WelcomeController#logout as HTML
+Rendered welcome/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2011-03-13 14:01:49 +0000
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/User" for 127.0.0.1 at 2011-03-13 14:02:09 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38ljOkXIJjmII+A9bSY6CnsWn+CiE3QsWZhiN9GsO4E=", "name"=>"test3", "handle"=>"test3", "email"=>"carlc75@gmail.com", "cemail"=>"carlc75@gmail.com", "pass1"=>"test3", "pass2"=>"test3", "commit"=>"Register"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test3') LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') LIMIT 1[0m
+Rendered user/create.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 336ms (Views: 40.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/User" for 127.0.0.1 at 2011-03-13 14:02:36 +0000
+  Processing by UserController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38ljOkXIJjmII+A9bSY6CnsWn+CiE3QsWZhiN9GsO4E=", "name"=>"test3", "handle"=>"test3", "email"=>"ellisc1@unix.lancs.ac.uk", "cemail"=>"ellisc1@unix.lancs.ac.uk", "pass1"=>"test3", "pass2"=>"test3", "commit"=>"Register"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'test3') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'ellisc1@unix.lancs.ac.uk') LIMIT 1[0m
+  [1m[35mAREL (0.8ms)[0m  INSERT INTO "users" ("name", "handle", "email", "showname", "showemail", "notify", "passhash", "created_at", "updated_at", "salt") VALUES ('test3', 'test3', 'ellisc1@unix.lancs.ac.uk', 'f', 'f', 'f', '4681f24a56a1a80af03b4f718f8153041b87360a850915d12324a8cb14d5e90c651898574959e2ef7cf21f8e99cc98c7ad4ed1a058d3c0f978301471b60202c9', '2011-03-13 14:02:36.518666', '2011-03-13 14:02:36.518666', 'aByokSZXlAMeeER2wNP2wPMhoHsJipABHSq79PRg9b6hY6bD1Ug07FvgIr4jbdTAM')
+
+Sent mail to ellisc1@unix.lancs.ac.uk (110ms)
+Date: Sun, 13 Mar 2011 14:02:37 +0000
+From: no-reply@importrequire.com
+To: ellisc1@unix.lancs.ac.uk
+Message-ID: <4d7cce7d4874_2a255d044ae296ab@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 817ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-13 14:02:37 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/test3
+Completed 302 Found in 3ms
+
+
+Started GET "/test3" for 127.0.0.1 at 2011-03-13 14:02:37 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test3"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'test3')[0m
+  [1m[35mAffiliation Load (0.5ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 4 )
+  [1m[36mWork Load (0.7ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 4 )[0m
+Rendered user/_workslist.html (11.3ms)
+Rendered user/view.html.erb within layouts/application (273.8ms)
+Completed 200 OK in 403ms (Views: 289.4ms | ActiveRecord: 2.3ms)

@@ -95,6 +95,7 @@ class UserController < ApplicationController
 			flash[:notice] 	= suc
 
 			if(suc)
+        NewUserMailer.welcome_user(u).deliver
 				session[:user] = u[:handle]
 				redirect_to :controller => :welcome, :action => :index and return
 			else
