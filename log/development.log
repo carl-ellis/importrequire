@@ -17369,3 +17369,588 @@ Started GET "/test3" for 127.0.0.1 at 2011-03-13 14:02:37 +0000
 Rendered user/_workslist.html (11.3ms)
 Rendered user/view.html.erb within layouts/application (273.8ms)
 Completed 200 OK in 403ms (Views: 289.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-02 12:37:12 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-05-02 12:37:30 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"welcome", "oaction"=>"index", "commit"=>"Login"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Redirected to http://localhost:3000/
+Completed 302 Found in 166ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-02 12:37:30 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 1ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-02 12:37:30 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.4ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (6.9ms)
+Rendered user/view.html.erb within layouts/application (131.7ms)
+Completed 200 OK in 159ms (Views: 135.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-05-02 12:37:43 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+Rendered user/_affillist.html.erb (7.2ms)
+Rendered user/edit.html.erb within layouts/application (82.4ms)
+Completed 200 OK in 130ms (Views: 105.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-02 12:37:51 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.5ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (8.5ms)
+Rendered user/view.html.erb within layouts/application (72.7ms)
+Completed 200 OK in 127ms (Views: 76.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-05-02 12:37:53 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+Rendered user/_affillist.html.erb (32.2ms)
+Rendered user/edit.html.erb within layouts/application (73.1ms)
+Completed 200 OK in 102ms (Views: 77.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-02 12:38:05 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (6.7ms)
+Rendered user/view.html.erb within layouts/application (85.2ms)
+Completed 200 OK in 102ms (Views: 87.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-02 12:38:07 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (7.5ms)
+Rendered user/works.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 119ms (Views: 57.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-02 12:39:57 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (7.9ms)
+Rendered user/works.html.erb within layouts/application (72.1ms)
+Completed 200 OK in 99ms (Views: 76.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-02 12:50:16 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (8.5ms)
+Rendered user/works.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 105ms (Views: 49.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-02 12:50:36 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (8.1ms)
+Rendered user/works.html.erb within layouts/application (71.3ms)
+Completed 200 OK in 98ms (Views: 76.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 12:50:41 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Completed   in 76ms
+
+NameError (undefined local variable or method `af' for #<UserController:0x000000030a5d68>):
+  app/controllers/user_controller.rb:217:in `edit_work'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.7ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 12:51:06 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Completed   in 56ms
+
+ActionView::MissingTemplate (Missing template user/edit_work with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views"):
+  
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:00:32 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Completed   in 43ms
+
+ActionView::MissingTemplate (Missing template user/edit_work with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views"):
+  
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.2ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:00:40 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Completed   in 104ms
+
+ActionView::MissingTemplate (Missing template user/edit_work with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views"):
+  
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:01:11 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_16128880_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:8)
+Rendered user/edit_work.html.erb within layouts/application (40.3ms)
+Completed   in 84ms
+
+ActionView::Template::Error (No route matches {:action=>"edit_works", :controller=>"User"}):
+    5: 	<h3>Edit work</h3>
+    6: 
+    7: 	<div id="workeditform">
+    8: 		<%= form_for :af, @af, :url => {:action => :edit_works}, :method => "post" do |f| %>
+    9: 			<table>
+    10: 				<tr><th colspan="2">Edit Work</th></tr>
+    11: 				<tr><td>Name:</td><td><%= text_field_tag :name %> </td></tr>
+  app/views/user/edit_work.html.erb:8:in `_app_views_user_edit_work_html_erb___1308678588328819474_16128880_1373783478527569528'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.6ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:01:22 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_19324740_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:8)
+Rendered user/edit_work.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 81ms (Views: 45.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:03:14 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Rendered user/edit_work.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 87ms (Views: 23.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-02 13:03:16 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (8.8ms)
+Rendered user/works.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 103ms (Views: 52.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:03:17 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Rendered user/edit_work.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 94ms (Views: 23.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:08:56 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Rendered user/edit_work.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 59ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:10:19 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+ERROR: compiling _app_views_user_edit_work_html_erb___1308678588328819474_24604940_1373783478527569528 RAISED /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:11: syntax error, unexpected tIVAR, expecting ')'
+...end= ( text_field_tag :name @af.name );@output_buffer.safe_c...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:12: syntax error, unexpected tIVAR, expecting ')'
+...pend= ( text_field_tag :url @af.url );@output_buffer.safe_co...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:13: syntax error, unexpected tIVAR, expecting ')'
+... text_area_tag :description @af.description);@output_buffer....
+...                               ^
+Function body:           def _app_views_user_edit_work_html_erb___1308678588328819474_24604940_1373783478527569528(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "user/edit_work";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; if @af 
+@output_buffer.safe_concat('	');@output_buffer.append= ( link_to "<-- Back to Works", user_works_path(@user[:handle])  );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+	<div id="editworks">
+	<h3>Edit work</h3>
+
+	<div id="workeditform">
+		');@output_buffer.append=  form_for @af, :url => {:action => :edit_work} do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('			<table>
+				<tr><th colspan="2">Edit Work</th></tr>
+				<tr><td>Name:</td><td>');@output_buffer.append= ( text_field_tag :name @af.name );@output_buffer.safe_concat(' </td></tr>
+				<tr><td>URL:</td><td>');@output_buffer.append= ( text_field_tag :url @af.url );@output_buffer.safe_concat(' </td></tr>
+				<tr><td>Decription:</td><td>');@output_buffer.append= ( text_area_tag :description @af.description);@output_buffer.safe_concat(' </td></tr>
+			</table>
+			');@output_buffer.append= ( submit_tag "Add" );@output_buffer.safe_concat('
+');       end 
+@output_buffer.safe_concat('	</div>
+</div>
+'); else 
+@output_buffer.safe_concat('	<em>You have come here in error</em>
+'); end 
+@output_buffer.safe_concat('
+
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__1958837312085324450__process_action__1466223776666129933__callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered user/edit_work.html.erb within layouts/application (1.2ms)
+Completed   in 42ms
+
+ActionView::Template::Error (/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:11: syntax error, unexpected tIVAR, expecting ')'
+...end= ( text_field_tag :name @af.name );@output_buffer.safe_c...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:12: syntax error, unexpected tIVAR, expecting ')'
+...pend= ( text_field_tag :url @af.url );@output_buffer.safe_co...
+...                               ^
+/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:13: syntax error, unexpected tIVAR, expecting ')'
+... text_area_tag :description @af.description);@output_buffer....
+...                               ^):
+    8: 		<%= form_for @af, :url => {:action => :edit_work} do |f| %>
+    9: 			<table>
+    10: 				<tr><th colspan="2">Edit Work</th></tr>
+    11: 				<tr><td>Name:</td><td><%= text_field_tag :name @af.name %> </td></tr>
+    12: 				<tr><td>URL:</td><td><%= text_field_tag :url @af.url %> </td></tr>
+    13: 				<tr><td>Decription:</td><td><%= text_area_tag :description @af.description%> </td></tr>
+    14: 			</table>
+  
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (42.2ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (48.9ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:10:33 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Rendered user/edit_work.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 58ms (Views: 23.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:10:48 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_21139240_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:8)
+Rendered user/edit_work.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 52ms (Views: 31.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:11:57 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_29298140_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:9)
+Rendered user/edit_work.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 52ms (Views: 14.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:12:07 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_28272960_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:9)
+Rendered user/edit_work.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 89ms (Views: 24.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:12:09 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_26392640_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:9)
+Rendered user/edit_work.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 91ms (Views: 25.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:12:42 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_25278120_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:9)
+Rendered user/edit_work.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 63ms (Views: 24.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:12:49 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "name"=>"Jimhi", "url"=>"http://www.jimhi.com", "description"=>"Personal website", "commit"=>"Add", "handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_24684020_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:9)
+Rendered user/edit_work.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 88ms (Views: 49.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:13:20 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "name"=>"Jimhi", "url"=>"http://www.jimhi.com", "description"=>"Personal website", "commit"=>"Add", "handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+Rendered user/edit_work.html.erb within layouts/application (50.7ms)
+Completed   in 94ms
+
+ActionView::Template::Error (undefined method `pp' for #<#<Class:0x000000024e4e20>:0x000000024d95e8>):
+    1: <% if @af %>
+    2: 	<%= link_to "<-- Back to Works", user_works_path(@user[:handle])  %>
+    3:   <%= pp params %>
+    4: 
+    5: 	<div id="editworks">
+    6: 	<h3>Edit work</h3>
+  app/views/user/edit_work.html.erb:3:in `_app_views_user_edit_work_html_erb___1308678588328819474_19288460_1373783478527569528'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started POST "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:13:33 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "name"=>"Jimhi", "url"=>"http://www.jimhi.com", "description"=>"Personal website", "commit"=>"Add", "handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.5ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_29291120_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:9)
+Rendered user/edit_work.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 90ms (Views: 23.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:13:34 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "name"=>"Jimhi", "url"=>"http://www.jimhi.com", "description"=>"Personal website", "commit"=>"Add", "handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_28320820_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:9)
+Rendered user/edit_work.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 88ms (Views: 23.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:13:56 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "name"=>"Jimhi", "url"=>"http://www.jimhi.com", "description"=>"Personal website", "commit"=>"Add", "handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_26448900_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:9)
+Rendered user/edit_work.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 100ms (Views: 26.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-02 13:16:28 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (8.8ms)
+Rendered user/works.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 73ms (Views: 49.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:16:29 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_24676720_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:8)
+Rendered user/edit_work.html.erb within layouts/application (56.9ms)
+Completed 200 OK in 116ms (Views: 63.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:16:32 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "name"=>"Jimhi", "url"=>"http://www.jimhi.com", "description"=>"Personal website", "commit"=>"Add", "handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_26578020_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:8)
+Rendered user/edit_work.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 126ms (Views: 12.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/carl/works/edit_work/3" for 127.0.0.1 at 2011-05-02 13:16:39 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "name"=>"Jimhi", "url"=>"http://www.jimhi.com", "description"=>"Personal Academic website", "commit"=>"Add", "handle"=>"carl", "wid"=>"3"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 3)[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "works" SET "description" = 'Personal Academic website', "updated_at" = '2011-05-02 13:16:40.018914' WHERE ("works"."id" = 3)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___1308678588328819474_25735160_1373783478527569528 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:8)
+Rendered user/edit_work.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 245ms (Views: 13.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-02 13:16:41 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (8.2ms)
+Rendered user/works.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 101ms (Views: 46.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-02 13:16:48 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (7.1ms)
+Rendered user/view.html.erb within layouts/application (101.6ms)
+Completed 200 OK in 131ms (Views: 105.8ms | ActiveRecord: 0.9ms)

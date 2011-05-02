@@ -6,6 +6,7 @@ Importrequire::Application.routes.draw do
 	match "login" => "welcome#login", :as => "login"
 	match ":handle/works/create_work" => "User#create_work", :as => "user_create_work"
 	match ":handle/works/remove_work/:wid" => "User#remove_work", :as => "user_remove_work"
+	match ":handle/works/edit_work/:wid" => "User#edit_work", :as => "user_edit_work"
 	match ":handle/works" => "User#works", :as => "user_works"
 	match ":handle/edit/create_affil" => "User#create_affil", :as => "user_create_affil"
 	match ":handle/edit/remove_affil/:name" => "User#remove_affil", :as => "user_remove_affil"

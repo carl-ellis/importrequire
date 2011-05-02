@@ -10,7 +10,12 @@
 				<span class="desc"><%= w[:description] %></span>
 				<% if edit %>
 				<hr/>
-					<span class="delete">edit |
+					<span class="delete">
+					<%= link_to "edit",
+							user_edit_work_path(:handle => session[:user],
+																		:wid => w[:id]),
+							%>
+          |
 					<%= link_to "delete",
 							user_remove_work_path(:handle => session[:user],
 																		:wid => w[:id]),

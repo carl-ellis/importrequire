@@ -208,4 +208,29 @@ class UserController < ApplicationController
     end  
   end
 
+  def edit_work
+    @user = User.where(:handle => session[:user])[0]
+    @af = nil
+    if params[:wid] != ""
+      @af = Work.where(:id => params[:wid])
+      if @af.length > 0
+        @af = @af[0]
+      end
+      # Edit if params exist
+      if params[:name] and params[:url] and params[:description]
+				validated = validate_work_params()
+        if @validated
+          w = @af
+          w.name 					= params[:name]
+          w.description 	= params[:description]
+          w.url 					= params[:url]
+          w.save
+					@user.save
+          @af = w
+          flash[:notice] 	= "Information successfully updated"
+        end
+      end
+    end
+  end
+
 end

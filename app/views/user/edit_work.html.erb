@@ -1,0 +1,23 @@
+<% if @af %>
+	<%= link_to "<-- Back to Works", user_works_path(@user[:handle])  %>
+
+	<div id="editworks">
+	<h3>Edit work</h3>
+
+	<div id="workeditform">
+		<%= form_for :af, @af, :url => {:action => :edit_work} do |f| %>
+			<table>
+				<tr><th colspan="2">Edit Work</th></tr>
+				<tr><td>Name:</td><td><%= text_field_tag :name, @af.name %> </td></tr>
+				<tr><td>URL:</td><td><%= text_field_tag :url, @af.url %> </td></tr>
+				<tr><td>Decription:</td><td><%= text_area_tag :description, @af.description%> </td></tr>
+			</table>
+			<%= submit_tag "Add" %>
+      <% end %>
+	</div>
+</div>
+<% else %>
+	<em>You have come here in error</em>
+<% end %>
+
+
