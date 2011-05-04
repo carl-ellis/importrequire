@@ -233,4 +233,46 @@ class UserController < ApplicationController
     end
   end
 
+  def edit_tags
+    @user = User.where(:handle => session[:user])[0]
+  end
+
+  def create_tag
+    @user = User.where(:handle => session[:user])[0]
+    if params[:tag] != ""
+      # See if already exists, if so, use it
+      t = Tag.where(:name => params[:tag])
+      if t.length == 0
+        t = Tag.new
+        t.name = params[:tag]
+        t.save
+      else
+        t = t[0]
+      end
+
+      # Add to user
+      @user.tags << t if !@user.tags.include?(t)
+      @user.save
+
+    end
+    respond_to do |format|
+      format.js 
+    end  
+  end
+
+  def remove_tag
+    @user = User.where(:handle => session[:user])[0]
+    if params[:name] != ""
+      t = Tag.where(:name => params[:name])
+      if t.length > 0
+        t = af[0]
+        @user.tags.delete(t) if @user.tags.include?(t)
+      @user.save
+      end
+    end
+
+    respond_to do |format|
+      format.js {render :action => :create_tag} 
+    end  
+  end
 end

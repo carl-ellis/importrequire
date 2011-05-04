@@ -1,0 +1,26 @@
+<% if @user %>
+<%= link_to "<-- Back to Profile", user_name_path(@user[:handle])  %>
+<div id="edit_tags">
+  <h2> Edit Tags </h2>
+
+    <p>Enter tags here that describe your programming experience.</p>
+    <p>These will not be publically shown but will further
+    aid in indexing your profile for more accurate searching.</p>
+
+  <div id="tageditform">
+    <h3>Tags</h3>
+    <div id="taglist">
+      <%= render :partial => "taglist", :locals => {:tags => @user.tags} %>
+    </div>
+    <%= form_tag(  url_for( :action => :create_tag), :remote => true) %>
+    <table><tr>
+    <td>Add new tag</td><td><%= text_field_tag :tag %> </td>
+    </tr></table>
+    <%= submit_tag "Add" %>
+    </form>
+  </div>
+</div>
+
+<% else %>
+<em>You have come here in error</em>
+<% end %>

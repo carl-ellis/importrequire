@@ -17954,3 +17954,527 @@ Started GET "/carl" for 127.0.0.1 at 2011-05-02 13:16:48 +0000
 Rendered user/_workslist.html (7.1ms)
 Rendered user/view.html.erb within layouts/application (101.6ms)
 Completed 200 OK in 131ms (Views: 105.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-05-02 13:17:55 +0000
+  Processing by WelcomeController#logout as HTML
+Rendered welcome/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-02 13:18:04 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (7.5ms)
+Rendered user/view.html.erb within layouts/application (99.6ms)
+Completed 200 OK in 128ms (Views: 103.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-05-02 13:18:34 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IuSEvmII+EtksiiZE1hnTc0YrCcQY5TlgCavqpzmBCc=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"User", "oaction"=>"view", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-02 13:18:34 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 1ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-02 13:18:34 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (6.8ms)
+Rendered user/view.html.erb within layouts/application (64.3ms)
+Completed 200 OK in 124ms (Views: 68.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/test" for 127.0.0.1 at 2011-05-02 13:18:38 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'test')[0m
+  [1m[35mAffiliation Load (1.6ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )[0m
+Rendered user/_workslist.html (2.7ms)
+Rendered user/view.html.erb within layouts/application (81.8ms)
+Completed 200 OK in 108ms (Views: 84.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/test2" for 127.0.0.1 at 2011-05-02 13:18:47 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'test2')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 3 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 3 )
+Rendered user/_workslist.html (3.9ms)
+Rendered user/view.html.erb within layouts/application (89.4ms)
+Completed 200 OK in 119ms (Views: 97.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-05-02 13:18:50 +0000
+  Processing by WelcomeController#logout as HTML
+Rendered welcome/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-02 13:39:51 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (7.5ms)
+Rendered user/view.html.erb within layouts/application (104.8ms)
+Completed 200 OK in 132ms (Views: 108.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-03 21:38:37 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-05-03 21:38:43 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a9wxoLx65iDE4B/3WZ+I18QK8c2h7SPEqo5JU+PaJRA=", "handle"=>"carl", "pass"=>[""], "ocontroller"=>"welcome", "oaction"=>"index", "commit"=>"Login"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Redirected to http://localhost:3000/
+Completed 302 Found in 165ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-03 21:38:43 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-05-03 21:38:50 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a9wxoLx65iDE4B/3WZ+I18QK8c2h7SPEqo5JU+PaJRA=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"welcome", "oaction"=>"index", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-03 21:38:50 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 1ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-03 21:38:50 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (7.9ms)
+Rendered user/view.html.erb within layouts/application (159.4ms)
+Completed 200 OK in 188ms (Views: 164.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 19:05:43 +0000
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-05-04 19:09:19 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mbgcmM1Su4fn//5Bfz44fmUZACyb5fVFMZ0K0J1LSA=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"welcome", "oaction"=>"index", "commit"=>"Login"}
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+Redirected to http://localhost:3000/
+Completed 302 Found in 131ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 19:09:20 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 1ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-04 19:09:20 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (20.9ms)
+Rendered user/view.html.erb within layouts/application (115.6ms)
+Completed 200 OK in 149ms (Views: 119.0ms | ActiveRecord: 0.9ms)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110104144252)
+Migrating to CreateAffiliations (20110104144409)
+Migrating to CreateWorks (20110104144440)
+Migrating to CreateTypes (20110104144502)
+Migrating to CreateUserWorkJoinTable (20110104202601)
+Migrating to CreateAffiliationUserJoinTable (20110104202811)
+Migrating to AddSaltToUser (20110104214058)
+Migrating to CreateTags (20110504192316)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110504192316')
+Migrating to CreateTagUserJoinTable (20110504192446)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "tags_users" ("tag_id" integer, "user_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110504192446')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("affiliations")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("affiliations_users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tags")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tags_users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("types")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users_works")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("works")[0m
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-05-04 19:27:33 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+Rendered user/_affillist.html.erb (8.8ms)
+Rendered user/edit.html.erb within layouts/application (83.4ms)
+Completed 200 OK in 129ms (Views: 102.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-04 19:27:35 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (8.2ms)
+Rendered user/view.html.erb within layouts/application (70.8ms)
+Completed 200 OK in 130ms (Views: 74.4ms | ActiveRecord: 0.9ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (2.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-04 20:55:38 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (4.2ms)
+Rendered user/view.html.erb within layouts/application (82.7ms)
+Completed 200 OK in 142ms (Views: 86.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 20:55:41 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/edit_tags.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 20:55:51 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+Rendered user/edit_tags.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 20:57:35 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (3.1ms)
+Rendered user/edit_tags.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 90ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 20:57:47 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (2.8ms)
+Rendered user/edit_tags.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 99ms (Views: 48.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/carl/edit/create_tag" for 127.0.0.1 at 2011-05-04 20:57:51 +0000
+  Processing by UserController#create_tag as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mbgcmM1Su4fn//5Bfz44fmUZACyb5fVFMZ0K0J1LSA=", "tag"=>"ruby", "commit"=>"Add", "handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'ruby')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ('ruby', '2011-05-04 20:57:51.895062', '2011-05-04 20:57:51.895062')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tags_users" ("tag_id", "user_id") VALUES (1, 1)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (3.2ms)
+Rendered user/create_tag.js.rjs (5.1ms)
+Completed 200 OK in 437ms (Views: 38.9ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/carl/edit/create_tag" for 127.0.0.1 at 2011-05-04 20:57:58 +0000
+  Processing by UserController#create_tag as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mbgcmM1Su4fn//5Bfz44fmUZACyb5fVFMZ0K0J1LSA=", "tag"=>"rails", "commit"=>"Add", "handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'rails')[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ('rails', '2011-05-04 20:57:58.289639', '2011-05-04 20:57:58.289639')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags_users" ("tag_id", "user_id") VALUES (2, 1)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (3.6ms)
+Rendered user/create_tag.js.rjs (5.5ms)
+Completed 200 OK in 313ms (Views: 12.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/carl/edit/create_tag" for 127.0.0.1 at 2011-05-04 20:58:08 +0000
+  Processing by UserController#create_tag as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mbgcmM1Su4fn//5Bfz44fmUZACyb5fVFMZ0K0J1LSA=", "tag"=>"java", "commit"=>"Add", "handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'java')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ('java', '2011-05-04 20:58:08.896004', '2011-05-04 20:58:08.896004')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags_users" ("tag_id", "user_id") VALUES (3, 1)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (4.1ms)
+Rendered user/create_tag.js.rjs (6.1ms)
+Completed 200 OK in 364ms (Views: 13.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-04 20:58:10 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/view.html.erb within layouts/application (51.0ms)
+Completed   in 67ms
+
+ActionView::Template::Error (undefined local variable or method `tags' for #<#<Class:0x000000023f9d30>:0x000000023dfea8>):
+    27: 					<li>Tags:</li>
+    28: 					<ul>
+    29: 						<% @vuser.tags.each do |affil| %>
+    30: 							<li><%= tags.name %></li>
+    31: 						<% end %>
+    32: 					</ul>
+    33: 					<% end %>
+  app/views/user/view.html.erb:30:in `block in _app_views_user_view_html_erb___3561671513004540940_18776140_4018233438292190159'
+  app/views/user/view.html.erb:29:in `_app_views_user_view_html_erb___3561671513004540940_18776140_4018233438292190159'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-04 20:58:48 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (6.3ms)
+Rendered user/view.html.erb within layouts/application (91.9ms)
+Completed 200 OK in 120ms (Views: 96.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 20:58:52 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (7.1ms)
+Rendered user/edit_tags.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 100ms (Views: 49.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-04 20:58:57 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (7.0ms)
+Rendered user/works.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 115ms (Views: 69.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-05-04 20:58:59 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+Rendered user/_affillist.html.erb (35.5ms)
+Rendered user/edit.html.erb within layouts/application (73.3ms)
+Completed 200 OK in 98ms (Views: 77.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 20:59:03 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.6ms)
+Rendered user/edit_tags.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 92ms (Views: 67.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-05-04 20:59:08 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+Rendered user/_affillist.html.erb (5.5ms)
+Rendered user/edit.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 97ms (Views: 44.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-04 20:59:12 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (7.2ms)
+Rendered user/works.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 96ms (Views: 43.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 20:59:16 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (31.1ms)
+Rendered user/edit_tags.html.erb within layouts/application (62.8ms)
+Completed 200 OK in 90ms (Views: 67.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 21:00:19 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.8ms)
+Rendered user/edit_tags.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 97ms (Views: 71.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 21:02:19 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.4ms)
+Rendered user/edit_tags.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 104ms (Views: 47.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 21:02:51 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (3.6ms)
+Rendered user/edit_tags.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 38ms (Views: 24.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-04 21:03:05 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (7.1ms)
+Rendered user/edit_tags.html.erb within layouts/application (70.5ms)
+Completed 200 OK in 98ms (Views: 74.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-04 21:03:15 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (6.2ms)
+Rendered user/view.html.erb within layouts/application (102.3ms)
+Completed 200 OK in 132ms (Views: 108.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-05-04 21:04:21 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+Rendered user/_affillist.html.erb (33.0ms)
+Rendered user/edit.html.erb within layouts/application (80.3ms)
+Completed 200 OK in 112ms (Views: 84.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-04 21:04:24 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (6.5ms)
+Rendered user/view.html.erb within layouts/application (96.2ms)
+Completed 200 OK in 125ms (Views: 100.0ms | ActiveRecord: 0.9ms)

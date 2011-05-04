@@ -1,0 +1,16 @@
+<% if tags.length < 1 %>
+  <em>No tags listed</em>
+<% else %>
+  <table>
+    <% tags.each do |t| %>
+    <tr>
+      <td><%= t[:name] %></td>
+      <td><%= link_to "remove", 
+              user_remove_tag_path(:handle => session[:user],
+                                     :name => t[:name]),
+              :remote => true%></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+

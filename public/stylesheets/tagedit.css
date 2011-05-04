@@ -1,0 +1,33 @@
+div#edit_tags {
+  text-align: center;
+  margin: auto;
+}
+
+div#edit_tags div * {
+  text-align: left;
+}
+
+
+div#tageditform {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+div#tageditform form {
+  margin-top: 3em;
+}
+
+div#tageditform table {
+  width: 100%;
+}
+
+div#tageditform table input {
+  width: 100%;
+}
+
+div#taglist * {
+	text-align: center;
+  width: 100%;
+}
+

@@ -1,0 +1,6 @@
+
+ page.replace_html 'taglist', :partial => "taglist", :locals =>
+{:tags=>@user.tags} 
+
+
+
