@@ -19191,3 +19191,128 @@ Started GET "/carl" for 127.0.0.1 at 2011-05-05 18:30:09 +0000
 Rendered user/_workslist.html (6.4ms)
 Rendered user/view.html.erb within layouts/application (103.8ms)
 Completed 200 OK in 132ms (Views: 107.6ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110104144252)
+Migrating to CreateAffiliations (20110104144409)
+Migrating to CreateWorks (20110104144440)
+Migrating to CreateTypes (20110104144502)
+Migrating to CreateUserWorkJoinTable (20110104202601)
+Migrating to CreateAffiliationUserJoinTable (20110104202811)
+Migrating to AddSaltToUser (20110104214058)
+Migrating to CreateTags (20110504192316)
+Migrating to CreateTagUserJoinTable (20110504192446)
+Migrating to CreateTagWorkJoinTable (20110505224142)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "tags_works" ("work_id" integer, "user_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110505224142')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("affiliations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("affiliations_users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("tags")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tags_users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("tags_works")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("types")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users_works")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("works")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT "works".* FROM "works" WHERE ("works"."id" = 1)
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 1)[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 1 )
+SQLite3::SQLException: no such column: tags_works.tag_id: SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 1 )
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTagWorkJoinTable (20110505224142)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mDROP TABLE "tags_works"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110505224142'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("affiliations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("affiliations_users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("tags")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("tags_users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("types")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users_works")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("works")[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110104144252)
+Migrating to CreateAffiliations (20110104144409)
+Migrating to CreateWorks (20110104144440)
+Migrating to CreateTypes (20110104144502)
+Migrating to CreateUserWorkJoinTable (20110104202601)
+Migrating to CreateAffiliationUserJoinTable (20110104202811)
+Migrating to AddSaltToUser (20110104214058)
+Migrating to CreateTags (20110504192316)
+Migrating to CreateTagUserJoinTable (20110504192446)
+Migrating to CreateTagWorkJoinTable (20110505224142)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "tags_works" ("work_id" integer, "tag_id" integer) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110505224142')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("affiliations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("affiliations_users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("tags")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("tags_users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("tags_works")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("types")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users_works")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("works")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mWork Load (0.4ms)[0m  SELECT "works".* FROM "works" WHERE ("works"."id" = 1)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 1 )[0m

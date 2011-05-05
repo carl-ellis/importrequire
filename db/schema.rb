@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110504192446) do
+ActiveRecord::Schema.define(:version => 20110505224142) do
 
   create_table "affiliations", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(:version => 20110504192446) do
   create_table "tags_users", :id => false, :force => true do |t|
     t.integer "tag_id"
     t.integer "user_id"
+  end
+
+  create_table "tags_works", :id => false, :force => true do |t|
+    t.integer "work_id"
+    t.integer "tag_id"
   end
 
   create_table "types", :force => true do |t|
