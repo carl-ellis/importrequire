@@ -19316,3 +19316,191 @@ Migrating to CreateTagWorkJoinTable (20110505224142)
 [0m
   [1m[35mWork Load (0.4ms)[0m  SELECT "works".* FROM "works" WHERE ("works"."id" = 1)
   [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 1 )[0m
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 22:59:23 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.4ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (9.3ms)
+Rendered user/view.html.erb within layouts/application (169.1ms)
+Completed 200 OK in 388ms (Views: 205.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2011-05-05 22:59:32 +0000
+  Processing by WelcomeController#login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "handle"=>"carl", "pass"=>["1mbtf0l"], "ocontroller"=>"User", "oaction"=>"view", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 50ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-05 22:59:32 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 1ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 22:59:32 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (4.0ms)
+Rendered user/view.html.erb within layouts/application (61.3ms)
+Completed 200 OK in 79ms (Views: 63.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-05 22:59:35 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (1.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (37.3ms)
+Rendered user/works.html.erb within layouts/application (78.3ms)
+Completed 200 OK in 120ms (Views: 92.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/carl/works" for 127.0.0.1 at 2011-05-05 23:00:12 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "name"=>"Weak Plasmoid Generator", "url"=>"http://jimhi.com/content/articles/diamond_square/", "description"=>"A Ruby library for creating weak plasmoids using the Diamond-Square algorithm", "commit"=>"Add", "handle"=>"carl"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "works" ("name", "description", "url", "created_at", "updated_at") VALUES ('Weak Plasmoid Generator', 'A Ruby library for creating weak plasmoids using the Diamond-Square algorithm', 'http://jimhi.com/content/articles/diamond_square/', '2011-05-05 23:00:12.914347', '2011-05-05 23:00:12.914347')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users_works" ("user_id", "work_id") VALUES (1, 7)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (3.3ms)
+Rendered user/works.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 321ms (Views: 10.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/carl/works" for 127.0.0.1 at 2011-05-05 23:00:56 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "name"=>"rbatmon", "url"=>"https://github.com/carl-ellis/BatteryMonitor", "description"=>"Ruby battery monitor for the system tray", "commit"=>"Add", "handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "works" ("name", "description", "url", "created_at", "updated_at") VALUES ('rbatmon', 'Ruby battery monitor for the system tray', 'https://github.com/carl-ellis/BatteryMonitor', '2011-05-05 23:00:57.009092', '2011-05-05 23:00:57.009092')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users_works" ("user_id", "work_id") VALUES (1, 8)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (5.8ms)
+Rendered user/works.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 374ms (Views: 16.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/carl/works/remove_work/3" for 127.0.0.1 at 2011-05-05 23:01:04 +0000
+  Processing by UserController#remove_work as JS
+  Parameters: {"handle"=>"carl", "wid"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT "works".* FROM "works" WHERE ("works"."id" = 3)
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT "works"."id" FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 ) AND ("works"."id" = 3) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "users_works" WHERE "users_works"."user_id" = 1 AND "users_works"."work_id" IN (3)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (5.9ms)
+Rendered user/create_work.js.rjs (11.2ms)
+Completed 200 OK in 298ms (Views: 48.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/carl/works/edit_work/4" for 127.0.0.1 at 2011-05-05 23:01:05 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 4)[0m
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___2535887923825604252_21350120_3409082048184048360 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:8)
+Rendered user/edit_work.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 79ms (Views: 35.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/carl/works/edit_work/4" for 127.0.0.1 at 2011-05-05 23:01:15 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "name"=>"import::require", "url"=>"http://importrequire.com", "description"=>"Hacker social networking", "commit"=>"Add", "handle"=>"carl", "wid"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."id" = 4)[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "works" SET "description" = 'Hacker social networking', "updated_at" = '2011-05-05 23:01:15.355802' WHERE ("works"."id" = 4)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+DEPRECATION WARNING: Using form_for(:name, @resource) is deprecated. Please use form_for(@resource, :as => :name) instead. (called from _app_views_user_edit_work_html_erb___2535887923825604252_24165360_3409082048184048360 at /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_work.html.erb:8)
+Rendered user/edit_work.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 243ms (Views: 10.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-05 23:01:18 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (8.8ms)
+Rendered user/works.html.erb within layouts/application (92.4ms)
+Completed 200 OK in 124ms (Views: 96.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 23:01:22 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (6.6ms)
+Rendered user/view.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 142ms (Views: 92.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 23:04:20 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.4ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (8.1ms)
+Rendered user/view.html.erb within layouts/application (109.3ms)
+Completed 200 OK in 148ms (Views: 113.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-05 23:05:36 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (8.6ms)
+Rendered user/works.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 103ms (Views: 78.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/works/edit_work/8" for 127.0.0.1 at 2011-05-05 23:05:39 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"handle"=>"carl", "wid"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT "works".* FROM "works" WHERE ("works"."id" = 8)
+Rendered user/edit_work.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 107ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/carl/works/edit_work/8" for 127.0.0.1 at 2011-05-05 23:05:46 +0000
+  Processing by UserController#edit_work as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "name"=>"rbatmon", "url"=>"https://github.com/carl-ellis/BatteryMonitor", "description"=>"Ruby battery monitor for the system tray", "commit"=>"Add", "handle"=>"carl", "wid"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT "works".* FROM "works" WHERE ("works"."id" = 8)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+Rendered user/edit_work.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 97ms (Views: 9.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-05 23:05:53 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (8.2ms)
+Rendered user/works.html.erb within layouts/application (72.4ms)
+Completed 200 OK in 101ms (Views: 76.5ms | ActiveRecord: 0.6ms)

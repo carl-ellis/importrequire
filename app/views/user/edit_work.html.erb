@@ -5,7 +5,7 @@
 	<h3>Edit work</h3>
 
 	<div id="workeditform">
-		<%= form_for :af, @af, :url => {:action => :edit_work} do |f| %>
+		<%= form_for  @af, :as => :af, :url => {:action => :edit_work} do |f| %>
 			<table>
 				<tr><th colspan="2">Edit Work</th></tr>
 				<tr><td>Name:</td><td><%= text_field_tag :name, @af.name %> </td></tr>
