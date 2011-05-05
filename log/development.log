@@ -18478,3 +18478,716 @@ Started GET "/carl" for 127.0.0.1 at 2011-05-04 21:04:24 +0000
 Rendered user/_workslist.html (6.5ms)
 Rendered user/view.html.erb within layouts/application (96.2ms)
 Completed 200 OK in 125ms (Views: 100.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 17:49:01 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (7.2ms)
+Rendered user/view.html.erb within layouts/application (152.7ms)
+Completed 200 OK in 323ms (Views: 181.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 17:50:10 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (10.3ms)
+Rendered user/edit_tags.html.erb within layouts/application (82.1ms)
+Completed 200 OK in 130ms (Views: 99.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 17:50:50 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (6.9ms)
+Rendered user/view.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 126ms (Views: 71.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl/edit" for 127.0.0.1 at 2011-05-05 17:51:20 +0000
+  Processing by UserController#edit as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.5ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+Rendered user/_affillist.html.erb (6.8ms)
+Rendered user/edit.html.erb within layouts/application (82.2ms)
+Completed 200 OK in 133ms (Views: 103.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 17:51:37 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (7.3ms)
+Rendered user/view.html.erb within layouts/application (68.3ms)
+Completed 200 OK in 129ms (Views: 72.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-05 17:51:39 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (34.9ms)
+Rendered user/works.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 119ms (Views: 92.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 17:51:42 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (6.4ms)
+Rendered user/view.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 123ms (Views: 97.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/test" for 127.0.0.1 at 2011-05-05 17:54:16 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"test"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'test')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )
+Rendered user/_workslist.html (3.8ms)
+Rendered user/view.html.erb within layouts/application (91.3ms)
+Completed 200 OK in 121ms (Views: 95.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 18:09:27 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (6.5ms)
+Rendered user/view.html.erb within layouts/application (87.9ms)
+Completed 200 OK in 122ms (Views: 91.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:09:44 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (7.5ms)
+Rendered user/edit_tags.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 83ms (Views: 54.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:15:04 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (6.4ms)
+Rendered user/edit_tags.html.erb within layouts/application (85.1ms)
+Completed 200 OK in 112ms (Views: 89.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/carl/edit/create_tag" for 127.0.0.1 at 2011-05-05 18:15:09 +0000
+  Processing by UserController#create_tag as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mbgcmM1Su4fn//5Bfz44fmUZACyb5fVFMZ0K0J1LSA=", "tag"=>"bob,jim", "commit"=>"Add", "handle"=>"carl"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob')[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ('bob,jim', '2011-05-05 18:15:09.587018', '2011-05-05 18:15:09.587018')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'jim')[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ('bob,jim', '2011-05-05 18:15:09.772426', '2011-05-05 18:15:09.772426')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags_users" ("tag_id", "user_id") VALUES (4, 1)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 5) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags_users" ("tag_id", "user_id") VALUES (5, 1)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (4.8ms)
+Rendered user/create_tag.js.rjs (6.8ms)
+Completed 200 OK in 729ms (Views: 46.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/carl/edit/remove_tag/bob,jim" for 127.0.0.1 at 2011-05-05 18:15:40 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob,jim"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob,jim')[0m
+Completed   in 71ms
+
+NameError (undefined local variable or method `af' for #<UserController:0x00000002dc0aa8>):
+  app/controllers/user_controller.rb:276:in `remove_tag'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:15:46 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (6.3ms)
+Rendered user/edit_tags.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 107ms (Views: 43.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/carl/edit/remove_tag/bob,jim" for 127.0.0.1 at 2011-05-05 18:15:51 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob,jim"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob,jim')[0m
+Completed   in 48ms
+
+NameError (undefined local variable or method `af' for #<UserController:0x00000003ecdda0>):
+  app/controllers/user_controller.rb:276:in `remove_tag'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.7ms)
+
+
+Started POST "/carl/edit/create_tag" for 127.0.0.1 at 2011-05-05 18:15:54 +0000
+  Processing by UserController#create_tag as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mbgcmM1Su4fn//5Bfz44fmUZACyb5fVFMZ0K0J1LSA=", "tag"=>"bob,jim", "commit"=>"Add", "handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ('bob', '2011-05-05 18:15:54.125099', '2011-05-05 18:15:54.125099')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'jim')[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ('jim', '2011-05-05 18:15:54.275013', '2011-05-05 18:15:54.275013')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 6) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags_users" ("tag_id", "user_id") VALUES (6, 1)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 7) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags_users" ("tag_id", "user_id") VALUES (7, 1)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (8.2ms)
+Rendered user/create_tag.js.rjs (10.4ms)
+Completed 200 OK in 545ms (Views: 17.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/carl/edit/remove_tag/bob" for 127.0.0.1 at 2011-05-05 18:15:55 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob')[0m
+Completed   in 41ms
+
+NameError (undefined local variable or method `af' for #<UserController:0x00000003e71ca8>):
+  app/controllers/user_controller.rb:276:in `remove_tag'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/carl/edit/remove_tag/jim" for 127.0.0.1 at 2011-05-05 18:16:00 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"jim"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'jim')[0m
+Completed   in 52ms
+
+NameError (undefined local variable or method `af' for #<UserController:0x00000004031f48>):
+  app/controllers/user_controller.rb:276:in `remove_tag'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 18:16:03 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (38.9ms)
+Rendered user/view.html.erb within layouts/application (94.5ms)
+Completed 200 OK in 151ms (Views: 98.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:16:05 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (7.2ms)
+Rendered user/edit_tags.html.erb within layouts/application (68.5ms)
+Completed 200 OK in 95ms (Views: 72.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/edit/remove_tag/jim" for 127.0.0.1 at 2011-05-05 18:16:46 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"jim"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'jim')
+Completed   in 75ms
+
+NameError (undefined local variable or method `af' for #<UserController:0x0000000307cdc8>):
+  app/controllers/user_controller.rb:276:in `remove_tag'
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started GET "/carl/edit/remove_tag/bob,jim" for 127.0.0.1 at 2011-05-05 18:17:07 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob,jim"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob,jim')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 4) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "tags_users" WHERE "tags_users"."user_id" = 1 AND "tags_users"."tag_id" IN (4)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (6.5ms)
+Rendered user/create_tag.js.rjs (8.5ms)
+Completed 200 OK in 224ms (Views: 16.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/carl/edit/remove_tag/bob,jim" for 127.0.0.1 at 2011-05-05 18:17:08 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob,jim"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob,jim')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 4) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (5.0ms)
+Rendered user/create_tag.js.rjs (7.0ms)
+Completed 200 OK in 107ms (Views: 14.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 18:17:11 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (6.3ms)
+Rendered user/view.html.erb within layouts/application (67.7ms)
+Completed 200 OK in 129ms (Views: 72.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:17:13 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (7.3ms)
+Rendered user/edit_tags.html.erb within layouts/application (68.6ms)
+Completed 200 OK in 93ms (Views: 72.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/edit/remove_tag/bob,jim" for 127.0.0.1 at 2011-05-05 18:17:15 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob,jim"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob,jim')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 4) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mTag Load (0.5ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.8ms)
+Rendered user/create_tag.js.rjs (9.6ms)
+Completed 200 OK in 114ms (Views: 18.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/carl/edit/remove_tag/jim" for 127.0.0.1 at 2011-05-05 18:17:17 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"jim"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'jim')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 7) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "tags_users" WHERE "tags_users"."user_id" = 1 AND "tags_users"."tag_id" IN (7)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (6.4ms)
+Rendered user/create_tag.js.rjs (8.7ms)
+Completed 200 OK in 229ms (Views: 18.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/carl/edit/remove_tag/bob" for 127.0.0.1 at 2011-05-05 18:17:18 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 6) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "tags_users" WHERE "tags_users"."user_id" = 1 AND "tags_users"."tag_id" IN (6)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (4.4ms)
+Rendered user/create_tag.js.rjs (6.3ms)
+Completed 200 OK in 282ms (Views: 13.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/carl/edit/remove_tag/bob,jim" for 127.0.0.1 at 2011-05-05 18:17:26 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob,jim"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob,jim')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 4) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (4.5ms)
+Rendered user/create_tag.js.rjs (6.5ms)
+Completed 200 OK in 110ms (Views: 14.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/carl/edit/remove_tag/bob,jim" for 127.0.0.1 at 2011-05-05 18:17:44 +0000
+  Processing by UserController#remove_tag as JS
+  Parameters: {"handle"=>"carl", "name"=>"bob,jim"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'bob,jim')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 4) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (5.0ms)
+Rendered user/create_tag.js.rjs (7.2ms)
+Completed 200 OK in 112ms (Views: 15.4ms | ActiveRecord: 1.3ms)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "tags_users" WHERE "tags_users"."user_id" = 1 AND "tags_users"."tag_id" IN (1, 2, 3, 5)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:21:34 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (1.9ms)
+Rendered user/edit_tags.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 55ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/carl/edit/create_tag" for 127.0.0.1 at 2011-05-05 18:21:44 +0000
+  Processing by UserController#create_tag as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mbgcmM1Su4fn//5Bfz44fmUZACyb5fVFMZ0K0J1LSA=", "tag"=>"java,ruby,rails", "commit"=>"Add", "handle"=>"carl"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'java')
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'ruby')[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'rails')
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags_users" ("tag_id", "user_id") VALUES (3, 1)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags_users" ("tag_id", "user_id") VALUES (1, 1)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags_users" ("tag_id", "user_id") VALUES (2, 1)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (4.5ms)
+Rendered user/create_tag.js.rjs (6.6ms)
+Completed 200 OK in 532ms (Views: 42.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:24:08 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+ERROR: compiling _app_views_user_edit_tags_html_erb__3426266599830828405_32871800_2797196531873068057 RAISED /home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_tags.html.erb:22: syntax error, unexpected tASSOC, expecting ')'
+            :remote => true);@output_buffer.safe_concat('
+                      ^
+Function body:           def _app_views_user_edit_tags_html_erb__3426266599830828405_32871800_2797196531873068057(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "user/edit_tags";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; if @user 
+@output_buffer.append= ( link_to "<-- Back to Profile", user_name_path(@user[:handle])  );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('<div id="edit_tags">
+  <h2> Edit Tags </h2>
+
+    <p>Enter tags here that describe your programming experience.</p>
+    <p>These will not be publically shown but will further
+    aid in indexing your profile for more accurate searching.</p>
+
+  <div id="tageditform">
+    <h3>Tags</h3>
+    <div id="taglist">
+      ');@output_buffer.append= ( render :partial => "taglist", :locals => {:tags => @user.tags} );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    </div>
+    ');@output_buffer.append= ( form_tag(  url_for( :action => :create_tag), :remote => true) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <table><tr>
+    <td>Add new tag</td><td>');@output_buffer.append= ( text_field_tag :tag );@output_buffer.safe_concat(' </td>
+    </tr></table>
+    ');@output_buffer.append= ( submit_tag "Add" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( link_to "remove all tags", 
+            user_remove_all_tags_path(:handle => session[:user])
+            :remote => true);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    </form>
+  </div>
+</div>
+
+'); else 
+@output_buffer.safe_concat('<em>You have come here in error</em>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `module_eval'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:255:in `compile'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/usr/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__1905687104745988444__process_action__2243829727779039956__callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `block in instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `block in action'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered user/edit_tags.html.erb within layouts/application (1.1ms)
+Completed   in 67ms
+
+ActionView::Template::Error (/home/carl/svn/personal/importrequire/trunk/http/importrequire/app/views/user/edit_tags.html.erb:22: syntax error, unexpected tASSOC, expecting ')'
+            :remote => true);@output_buffer.safe_concat('
+                      ^):
+    19:     <%= submit_tag "Add" %>
+    20:     <%= link_to "remove all tags", 
+    21:             user_remove_all_tags_path(:handle => session[:user])
+    22:             :remote => true%>
+    23:     </form>
+    24:   </div>
+    25: </div>
+  
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.3ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:24:20 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.3ms)
+Rendered user/edit_tags.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 98ms (Views: 68.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/edit/remove_all_tags" for 127.0.0.1 at 2011-05-05 18:24:23 +0000
+  Processing by UserController#remove_all_tags as JS
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM "tags_users" WHERE "tags_users"."user_id" = 1 AND "tags_users"."tag_id" IN (3, 1, 2)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+Rendered user/_taglist.html.erb (0.8ms)
+Rendered user/create_tag.js.rjs (2.5ms)
+Completed 200 OK in 227ms (Views: 9.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/carl/edit/create_tag" for 127.0.0.1 at 2011-05-05 18:24:27 +0000
+  Processing by UserController#create_tag as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6mbgcmM1Su4fn//5Bfz44fmUZACyb5fVFMZ0K0J1LSA=", "tag"=>"java,ruby,rails", "commit"=>"Add", "handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'java')[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'ruby')
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE ("tags"."name" = 'rails')[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags_users" ("tag_id", "user_id") VALUES (3, 1)[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags_users" ("tag_id", "user_id") VALUES (1, 1)[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags"."id" FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 ) AND ("tags"."id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags_users" ("tag_id", "user_id") VALUES (2, 1)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."handle" = 'carl') AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'carlc75@gmail.com') AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (4.6ms)
+Rendered user/create_tag.js.rjs (6.8ms)
+Completed 200 OK in 469ms (Views: 14.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:25:37 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.3ms)
+Rendered user/edit_tags.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 66ms (Views: 42.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:25:50 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.4ms)
+Rendered user/edit_tags.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 102ms (Views: 79.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:26:02 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.7ms)
+Rendered user/edit_tags.html.erb within layouts/application (71.5ms)
+Completed 200 OK in 104ms (Views: 75.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:26:12 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )
+Rendered user/_taglist.html.erb (6.6ms)
+Rendered user/edit_tags.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 103ms (Views: 43.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 18:26:17 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered user/_workslist.html (6.9ms)
+Rendered user/view.html.erb within layouts/application (86.2ms)
+Completed 200 OK in 116ms (Views: 90.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:27:44 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (6.2ms)
+Rendered user/edit_tags.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 105ms (Views: 43.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:28:02 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (5.5ms)
+Rendered user/edit_tags.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 61ms (Views: 38.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carl/tags" for 127.0.0.1 at 2011-05-05 18:30:01 +0000
+  Processing by UserController#edit_tags as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_users" ON "tags".id = "tags_users".tag_id WHERE ("tags_users".user_id = 1 )[0m
+Rendered user/_taglist.html.erb (36.0ms)
+Rendered user/edit_tags.html.erb within layouts/application (69.8ms)
+Completed 200 OK in 103ms (Views: 80.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-05 18:30:09 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+Rendered user/_workslist.html (6.4ms)
+Rendered user/view.html.erb within layouts/application (103.8ms)
+Completed 200 OK in 132ms (Views: 107.6ms | ActiveRecord: 0.8ms)

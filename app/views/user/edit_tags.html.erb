@@ -4,8 +4,9 @@
   <h2> Edit Tags </h2>
 
     <p>Enter tags here that describe your programming experience.</p>
-    <p>These will not be publically shown but will further
-    aid in indexing your profile for more accurate searching.</p>
+    <em>These will not be publically shown but will further
+    aid in indexing your profile for more accurate searching.</em>
+    <p/>
 
   <div id="tageditform">
     <h3>Tags</h3>
@@ -14,9 +15,13 @@
     </div>
     <%= form_tag(  url_for( :action => :create_tag), :remote => true) %>
     <table><tr>
-    <td>Add new tag</td><td><%= text_field_tag :tag %> </td>
+    <td>Add new tag [commas for multiple tags]</td><td><%= text_field_tag :tag %> </td>
     </tr></table>
     <%= submit_tag "Add" %>
+    <%= link_to "remove all tags", 
+            user_remove_all_tags_path(:handle => session[:user]),
+            :remote => true,
+            :confirm => "Are you sure?"%>
     </form>
   </div>
 </div>

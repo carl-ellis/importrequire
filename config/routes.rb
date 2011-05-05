@@ -12,6 +12,7 @@ Importrequire::Application.routes.draw do
 	match ":handle/edit/remove_affil/:name" => "User#remove_affil", :as => "user_remove_affil"
 	match ":handle/edit/create_tag" => "User#create_tag", :as => "user_create_tag"
 	match ":handle/edit/remove_tag/:name" => "User#remove_tag", :as => "user_remove_tag"
+	match ":handle/edit/remove_all_tags" => "User#remove_all_tags", :as => "user_remove_all_tags"
 	match ":handle/tags" => "User#edit_tags", :as => "user_tags"
 	match ":handle/edit" => "User#edit", :as => "user_edit"
 	match ":handle" => "User#view", :as => "user_name"
