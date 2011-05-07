@@ -21,6 +21,9 @@ end
 	<tr><td>Password:</td><td> <%= password_field_tag :pass1 %></td><td></td></tr>
 	<tr><td>Confirm Password:</td><td> <%= password_field_tag :pass2 %></td><td></td></tr>
 </table>
+<div id="recaptcha">
+<%= recaptcha_tags :display => {:theme => "white"}%>
+</div>
 <p>Some sort of terms and stuff I suppose</p>
 <%= submit_tag "Register" %>
 </form>

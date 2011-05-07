@@ -26,8 +26,8 @@ class SearchController < ApplicationController
 
 		end
 
-		@recent_users = User.all(:order => :updated_at, :limit => 5)
-		@recent_works = Work.all(:order => :updated_at, :limit => 5)
+		@recent_users = User.all(:order => "updated_at DESC", :limit => 5)
+		@recent_works = Work.all(:order => "updated_at DESC", :limit => 5)
   end
 
 end

@@ -11,10 +11,12 @@ class UserController < ApplicationController
 		@old_params = params
     @validated = false
     if params[:pass]
+
+      user = User.where(:handle => session[:user])[0]
         
       #Means they are editing, first off check password
-      pass1 = Password.hash(params[:pass], session[:user][:salt]);
-      if pass1 == session[:user][:passhash]
+      pass1 = Password.hash(params[:pass], user[:salt]);
+      if pass1 == user[:passhash]
         @validated = true
       else
 				flash[:notice] = "Incorrect password"
@@ -92,7 +94,7 @@ class UserController < ApplicationController
       u.passhash 			= Password.hash(params[:pass1],s)
       u.salt 					= s
 
-			suc = u.save
+			suc = verify_recaptcha && u.save
 			flash[:notice] 	= suc
 
 			if(suc)
