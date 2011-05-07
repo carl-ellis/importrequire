@@ -1,4 +1,5 @@
 require_dependency 'password'
+require_dependency 'search'
 
 class UserController < ApplicationController
 
@@ -96,6 +97,7 @@ class UserController < ApplicationController
 
 			if(suc)
         NewUserMailer.welcome_user(u).deliver
+				Search.buildUserSearchString(u)
 				session[:user] = u[:handle]
 				redirect_to :controller => :welcome, :action => :index and return
 			else
@@ -150,6 +152,7 @@ class UserController < ApplicationController
       # Add to user
       @user.affiliations << af if !@user.affiliations.include?(af)
       @user.save
+			Search.buildUserSearchString(@user)
 
     end
     respond_to do |format|
@@ -165,6 +168,7 @@ class UserController < ApplicationController
         af = af[0]
         @user.affiliations.delete(af) if @user.affiliations.include?(af)
       @user.save
+			Search.buildUserSearchString(@user)
       end
     end
 
@@ -186,6 +190,7 @@ class UserController < ApplicationController
           w.save
 					@user.works << w
 					@user.save
+					Search.buildUserSearchString(@user)
           flash[:notice] 	= "Information successfully updated"
         end
       end
@@ -200,6 +205,7 @@ class UserController < ApplicationController
         af = af[0]
         @user.works.delete(af) if @user.works.include?(af)
       @user.save
+			Search.buildUserSearchString(@user)
       end
     end
 
@@ -226,6 +232,7 @@ class UserController < ApplicationController
           w.url 					= params[:url]
           w.save
 					@user.save
+					Search.buildUserSearchString(@user)
           @af = w
           flash[:notice] 	= "Information successfully updated"
         end
@@ -261,6 +268,7 @@ class UserController < ApplicationController
         @user.tags << t if !@user.tags.include?(t)
       end
       @user.save
+			Search.buildUserSearchString(@user)
 
     end
     respond_to do |format|
@@ -276,6 +284,7 @@ class UserController < ApplicationController
         t = t[0]
         @user.tags.delete(t) if @user.tags.include?(t)
       @user.save
+			Search.buildUserSearchString(@user)
       end
     end
 
@@ -288,6 +297,7 @@ class UserController < ApplicationController
     @user = User.where(:handle => session[:user])[0]
     @user.tags = [] 
     @user.save
+		Search.buildUserSearchString(@user)
     respond_to do |format|
       format.js {render :action => :create_tag} 
     end  
