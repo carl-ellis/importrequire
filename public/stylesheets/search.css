@@ -1,0 +1,62 @@
+div.search_users_list {
+	vertical-align: top;
+	margin: 0;
+	margin-right: 30px;
+	vertical-align: top;
+}
+
+u.#inneruserlist{
+	width: 50%;
+	padding: 0;
+	text-align: center;
+	margin: 0 auto 0 0;
+}
+
+ul.inneruserlist li{
+	margin: 0;
+	margin-bottom: 10px;
+	list-style-type: none;
+	
+}
+
+div.user_search {
+	display: block;
+	width:50%;
+	background: #726280;
+	padding: 2px;
+	padding-top: 5px;
+}
+
+div.search_av {
+	margin: 2px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+div.search_details {
+	display: inline-block;
+	vertical-align: top;
+}
+
+ul.inneruserlist span.search_handle{
+	display: block;
+  font-family: bold;
+  text-decoration: underline;
+	font-size: large;
+	margin-bottom: 6px;
+}
+
+ul#inneruserlist span.search_affils{
+	display: block;
+	margin-bottom: 4px;
+}
+
+ul#inneruserlist span.search_works{
+	display: block;
+}
+
+ul#inneruserlist span.grav{
+	display: block;
+}
+
+

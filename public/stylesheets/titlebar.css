@@ -14,15 +14,36 @@ div#banner {
 	height: 64px;
 }
 
+div#banner div#logwelcome {
+  float: right;
+  position: relative;
+  top: 5%;
+  right: 1%;
+  text-align: right;
+}
+
 div#banner p{
+  display: inline;
 	text-align: right;
 	padding-right: 5px;
 }
 
 div#banner form{
+  display: inline;
 	text-align: right;
 	padding-right: 5px;
 	margin-top: 5px;
+}
+
+div#banner div#search_box{
+  position: absolute;
+  top: 15px;
+  left: 40%;
+  margin: 0;
+}
+
+div#banner div#search_box form{
+  display: inline;
 }
 
 

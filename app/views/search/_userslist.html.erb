@@ -1,0 +1,36 @@
+<% if users.length < 1 %>
+  <em>No users listed</em>
+<% else %>
+	<ul class="inneruserlist">
+    <% users.each do |u| %>
+		<li>
+			<div class="user_search">
+        <div class="search_av">
+          <span class="grav"><img src="<%= Gravatar.getThumbAvatarURL(u[:email]) %>" /></span>
+        </div>
+        <div class="search_details">
+          <span class="search_handle"><%= link_to u[:handle], user_name_path(u[:handle]) %></span>
+          <% 
+          affilstr = ""                        
+          if u.affiliations.size > 0
+            u.affiliations.each { |a| affilstr << "#{a.name}, "}
+            affilstr = affilstr.slice(0, affilstr.size-2)
+          %>
+          <span class="search_affils">Affiliations:<%= affilstr  %></span>
+          <%
+          else
+            affilstr = "none"                        
+          %>
+          <span class="search_affils"><p>Affiliations:<em><%= affilstr  %></em></p></span>
+          <%
+          end
+          %>
+          <span class="search_works"><p>No. of works: <%= u.works.size %></p></span>
+        </div>
+
+			</div>
+		</li>
+		<% end %>
+	</ul>
+<% end %>
+

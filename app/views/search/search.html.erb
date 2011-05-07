@@ -1,0 +1,17 @@
+<h2>Search results</h2>
+
+<% if ! @query.nil? %>
+  <span class="result_text"><%= @results.size %> results for the query: "<%= @query %>"</span>
+  <div class="search_users_list">
+    <%= render :partial => "userslist", :locals => {:users => @results} %>
+  </div>
+<% else %>
+	<em>Use the search box above to search for Users and works.</em>
+<% end %>
+
+<h3>Users with recent activity</h3>
+
+<div class="search_users_list">
+	<%= render :partial => "userslist", :locals => {:users => @recent_users} %>
+</div>
+

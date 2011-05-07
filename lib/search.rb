@@ -7,6 +7,8 @@ module Search
   USER_TAG_WEIGHT = 0.10
   ARTICLE_TAG_WEIGHT = 0.25
 
+  PARTIAL_MATCH_WEIGHT = 0.25
+
   WEIGHT_DELIM = '#'
   TAG_DELIM = ';'
 
@@ -71,10 +73,14 @@ module Search
   # @returns              Numerical match score
   def Search.match(terms, search_str)
     hash = build_hash_from_str(search_str)
+    terms.each { |t| t.upcase! }
     score = 0.0
 
     terms.each do |term|
       score += hash[term] if hash.keys.include?(term)
+      hash.keys.each do |k|
+        score += (hash[k]*Search::PARTIAL_MATCH_WEIGHT) if k.include?(term)
+      end
     end
 
     return score
@@ -98,7 +104,7 @@ module Search
 
     #rank
     strs = rank_hash.keys
-    strs.sort! {|x,y| rank_hash[x] <=> rank_hash[y]}
+    strs.sort! {|x,y| rank_hash[y] <=> rank_hash[x]}
 
     return strs
   end
@@ -123,7 +129,7 @@ module Search
     decode_hash = Hash[pre_hash]
     hash = {}
     decode_hash.each do |k,v|
-      hash[URI.unescape(k)] = URI.unescape(v)
+      hash[URI.unescape(k).upcase] = URI.unescape(v)
     end
 
     hash.each { |k,v| hash[k] = hash[k].to_f }

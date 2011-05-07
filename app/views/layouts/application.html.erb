@@ -1,3 +1,4 @@
+<% require_dependency 'gravatar' %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,17 +11,25 @@
 
 <h1>import::require</h1>
 <div id="banner" class="rounded5">
-<% if session[:user] %>                                          
-	<p> Welcome, <%= session[:user] %>. <%=link_to "Logout?", logout_path, :class => "top" %></p>
-<% else %>
-	<%= form_tag(login_path, :method => "post") %>
-	Handle: <%= text_field_tag :handle, nil, :size => 8 %> 
-	Pass: <%= password_field :pass, nil, :size => 8 %> 
-	<%= hidden_field_tag :ocontroller, params[:controller] %> 
-	<%= hidden_field_tag :oaction, params[:action] %> 
-	<%= submit_tag 'Login' %>
-	</form>
-<% end %>
+  <div id="search_box">
+    <%= form_tag(search_path, :method => "post") %>
+    Search: <%= text_field_tag :search_query, nil, :size => 20 %> 
+    <%= submit_tag '?' %>
+    </form>
+  </div>
+  <div id="logwelcome">
+  <% if session[:user] %>                                          
+    <p> Welcome, <%=link_to session[:user], user_name_path(session[:user]), :class => "top" %>. <%=link_to "Logout?", logout_path, :class => "top" %></p>
+  <% else %>
+    <%= form_tag(login_path, :method => "post") %>
+    Handle: <%= text_field_tag :handle, nil, :size => 8 %> 
+    Pass: <%= password_field :pass, nil, :size => 8 %> 
+    <%= hidden_field_tag :ocontroller, params[:controller] %> 
+    <%= hidden_field_tag :oaction, params[:action] %> 
+    <%= submit_tag 'Login' %>
+    </form>
+  <% end %>
+  </div>
 </div>
 
 <% if flash[:notice] %>
