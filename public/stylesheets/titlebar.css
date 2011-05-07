@@ -22,6 +22,11 @@ div#banner div#logwelcome {
   text-align: right;
 }
 
+div#banner div#logwelcome p#top_reg {
+  display: block;
+  margin-top: 5px;
+}
+
 div#banner p{
   display: inline;
 	text-align: right;
