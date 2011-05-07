@@ -26243,3 +26243,740 @@ Rendered search/_userslist.html.erb (53.1ms)
 Rendered user/_workslist.html (79.9ms)
 Rendered search/search.html.erb within layouts/application (143.9ms)
 Completed 200 OK in 219ms (Views: 146.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 17:58:45 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (47.5ms)
+Rendered user/view.html.erb within layouts/application (151.2ms)
+Completed 200 OK in 221ms (Views: 155.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-05-07 17:58:50 +0000
+  Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "search_query"=>"", "commit"=>"?"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 5
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT "works".* FROM "works" ORDER BY updated_at DESC LIMIT 5[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 6 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 6 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 5 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 5 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 4 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 4 )[0m
+Rendered search/_userslist.html.erb (83.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+Rendered user/_workslist.html (49.0ms)
+Rendered search/search.html.erb within layouts/application (142.7ms)
+Completed 200 OK in 186ms (Views: 145.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 17:59:11 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.5ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (48.8ms)
+Rendered user/view.html.erb within layouts/application (153.9ms)
+Completed 200 OK in 185ms (Views: 157.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:10:27 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.4ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (86.7ms)
+Rendered user/view.html.erb within layouts/application (247.6ms)
+Completed 200 OK in 438ms (Views: 286.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:34:10 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (79.8ms)
+Rendered user/view.html.erb within layouts/application (149.7ms)
+Completed 200 OK in 206ms (Views: 152.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:37:03 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (30.3ms)
+Rendered user/view.html.erb within layouts/application (84.8ms)
+Completed 200 OK in 102ms (Views: 86.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:37:42 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.4ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (80.1ms)
+Rendered user/view.html.erb within layouts/application (176.8ms)
+Completed 200 OK in 207ms (Views: 179.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:38:12 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.4ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (79.4ms)
+Rendered user/view.html.erb within layouts/application (151.4ms)
+Completed 200 OK in 212ms (Views: 154.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:38:33 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (44.8ms)
+Rendered user/view.html.erb within layouts/application (134.1ms)
+Completed 200 OK in 166ms (Views: 137.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-07 22:39:00 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (44.1ms)
+Rendered user/works.html.erb within layouts/application (112.6ms)
+Completed 200 OK in 160ms (Views: 136.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-07 22:39:20 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (46.9ms)
+Rendered user/works.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 151ms (Views: 122.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-07 22:39:31 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mWork Load (1.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (73.8ms)
+Rendered user/works.html.erb within layouts/application (120.1ms)
+Completed 200 OK in 155ms (Views: 123.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/carl/works" for 127.0.0.1 at 2011-05-07 22:39:39 +0000
+  Processing by UserController#works as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mWork Load (0.4ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (79.3ms)
+Rendered user/works.html.erb within layouts/application (123.3ms)
+Completed 200 OK in 154ms (Views: 127.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-05-07 22:39:45 +0000
+  Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "search_query"=>"", "commit"=>"?"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 5
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" ORDER BY updated_at DESC LIMIT 5[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 6 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 6 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 5 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 5 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 4 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 4 )[0m
+Rendered search/_userslist.html.erb (51.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+Rendered user/_workslist.html (28.2ms)
+Rendered search/search.html.erb within layouts/application (96.5ms)
+Completed 200 OK in 158ms (Views: 135.4ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-05-07 22:39:57 +0000
+  Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "search_query"=>"ruby", "commit"=>"?"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT "works".* FROM "works"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."search_str" = 'carl#1.0;java#0.1;ruby#0.8;rails#0.2;SCC#0.5;CSLU#0.5;import::require#0.1;ir#0.25;social#0.25;networking#0.25;Weak#0.1;Plasmoid#0.1;Generator#0.1;fractal#0.25;diamond#0.25;square#0.25;rbatmon#0.1;gtk#0.25;utility#0.25;aur#0.25;power#0.25')
+  [1m[36mWork Load (0.8ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."search_str" = 'import::require#1.0;ruby#0.25;rails#0.25;ir#0.25;social#0.25;networking#0.25;carl#1.0')[0m
+  [1m[35mWork Load (0.1ms)[0m  SELECT "works".* FROM "works" WHERE ("works"."search_str" = 'Weak#1.0;Plasmoid#1.0;Generator#1.0;ruby#0.25;fractal#0.25;diamond#0.25;square#0.25;carl#1.0')
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."search_str" = 'rbatmon#1.0;ruby#0.25;gtk#0.25;utility#0.25;aur#0.25;power#0.25;carl#1.0')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 5
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" ORDER BY updated_at DESC LIMIT 5[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered search/_userslist.html.erb (20.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (26.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 6 )
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 6 )[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 5 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 5 )[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 4 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 4 )[0m
+Rendered search/_userslist.html.erb (9.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+Rendered user/_workslist.html (5.2ms)
+Rendered search/search.html.erb within layouts/application (91.4ms)
+Completed 200 OK in 185ms (Views: 93.6ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-05-07 22:41:15 +0000
+  Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "search_query"=>"ruby", "commit"=>"?"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."search_str" = 'carl#1.0;java#0.1;ruby#0.8;rails#0.2;SCC#0.5;CSLU#0.5;import::require#0.1;ir#0.25;social#0.25;networking#0.25;Weak#0.1;Plasmoid#0.1;Generator#0.1;fractal#0.25;diamond#0.25;square#0.25;rbatmon#0.1;gtk#0.25;utility#0.25;aur#0.25;power#0.25')
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."search_str" = 'import::require#1.0;ruby#0.25;rails#0.25;ir#0.25;social#0.25;networking#0.25;carl#1.0')[0m
+  [1m[35mWork Load (0.1ms)[0m  SELECT "works".* FROM "works" WHERE ("works"."search_str" = 'Weak#1.0;Plasmoid#1.0;Generator#1.0;ruby#0.25;fractal#0.25;diamond#0.25;square#0.25;carl#1.0')
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT "works".* FROM "works" WHERE ("works"."search_str" = 'rbatmon#1.0;ruby#0.25;gtk#0.25;utility#0.25;aur#0.25;power#0.25;carl#1.0')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 5
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT "works".* FROM "works" ORDER BY updated_at DESC LIMIT 5[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+Rendered search/_userslist.html.erb (17.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (38.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 6 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 6 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 5 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 5 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 4 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 4 )[0m
+Rendered search/_userslist.html.erb (5.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+Rendered user/_workslist.html (3.6ms)
+Rendered search/search.html.erb within layouts/application (72.2ms)
+Completed 200 OK in 134ms (Views: 73.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-05-07 22:41:16 +0000
+  Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "search_query"=>"", "commit"=>"?"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 5
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT "works".* FROM "works" ORDER BY updated_at DESC LIMIT 5[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.5ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 6 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 6 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 5 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 5 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 4 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 4 )[0m
+Rendered search/_userslist.html.erb (66.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+Rendered user/_workslist.html (33.1ms)
+Rendered search/search.html.erb within layouts/application (109.8ms)
+Completed 200 OK in 146ms (Views: 110.4ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-05-07 22:41:28 +0000
+  Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yMlwT7EFCedoWZdiUJFwm9Xwm7eQ7k/qqwIpPeaHnmU=", "search_query"=>"", "commit"=>"?"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 5
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT "works".* FROM "works" ORDER BY updated_at DESC LIMIT 5[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 6 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 6 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 5 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 5 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )[0m
+  [1m[35mAffiliation Load (0.1ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 4 )
+  [1m[36mWork Load (0.1ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 4 )[0m
+Rendered search/_userslist.html.erb (82.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+Rendered user/_workslist.html (52.0ms)
+Rendered search/search.html.erb within layouts/application (145.7ms)
+Completed 200 OK in 190ms (Views: 147.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:42:33 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (81.8ms)
+Rendered user/view.html.erb within layouts/application (184.3ms)
+Completed 200 OK in 220ms (Views: 187.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:43:00 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (78.5ms)
+Rendered user/view.html.erb within layouts/application (149.1ms)
+Completed 200 OK in 213ms (Views: 152.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:43:25 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (55.7ms)
+Rendered user/view.html.erb within layouts/application (149.7ms)
+Completed 200 OK in 194ms (Views: 153.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:43:42 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (79.9ms)
+Rendered user/view.html.erb within layouts/application (179.1ms)
+Completed 200 OK in 210ms (Views: 181.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:44:05 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (81.9ms)
+Rendered user/view.html.erb within layouts/application (174.0ms)
+Completed 200 OK in 204ms (Views: 177.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:44:42 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (54.2ms)
+Rendered user/view.html.erb within layouts/application (147.3ms)
+Completed 200 OK in 178ms (Views: 150.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:44:57 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (52.0ms)
+Rendered user/view.html.erb within layouts/application (173.4ms)
+Completed 200 OK in 203ms (Views: 176.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/blank.png" for 127.0.0.1 at 2011-05-07 22:44:58 +0000
+  Processing by UserController#view as 
+  Parameters: {"handle"=>"blank"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'blank')[0m
+Rendered user/view.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 49ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:46:17 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.6ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (44.9ms)
+Rendered user/view.html.erb within layouts/application (97.4ms)
+Completed 200 OK in 114ms (Views: 98.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/blank.png" for 127.0.0.1 at 2011-05-07 22:46:17 +0000
+  Processing by UserController#view as 
+  Parameters: {"handle"=>"blank"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'blank')[0m
+Rendered user/view.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 46ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/blank.png" for 127.0.0.1 at 2011-05-07 22:46:28 +0000
+  Processing by UserController#view as 
+  Parameters: {"handle"=>"blank"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'blank')
+Rendered user/view.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 62ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blank.png" for 127.0.0.1 at 2011-05-07 22:46:28 +0000
+  Processing by UserController#view as 
+  Parameters: {"handle"=>"blank"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'blank')[0m
+Rendered user/view.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 52ms (Views: 26.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logo.png" for 127.0.0.1 at 2011-05-07 22:46:37 +0000
+  Processing by UserController#view as 
+  Parameters: {"handle"=>"logo"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'logo')
+Rendered user/view.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 50ms (Views: 26.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/blank.png" for 127.0.0.1 at 2011-05-07 22:46:38 +0000
+  Processing by UserController#view as 
+  Parameters: {"handle"=>"blank"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'blank')[0m
+Rendered user/view.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 50ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:47:05 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (80.4ms)
+Rendered user/view.html.erb within layouts/application (145.9ms)
+Completed 200 OK in 209ms (Views: 148.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/images/blank.png" for 127.0.0.1 at 2011-05-07 22:47:05 +0000
+
+ActionController::RoutingError (No route matches "/images/blank.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:47:17 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.2ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.2ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (31.6ms)
+Rendered user/view.html.erb within layouts/application (98.9ms)
+Completed 200 OK in 120ms (Views: 100.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:47:36 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.6ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (86.5ms)
+Rendered user/view.html.erb within layouts/application (177.6ms)
+Completed 200 OK in 208ms (Views: 180.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:49:51 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.3ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (81.2ms)
+Rendered user/view.html.erb within layouts/application (144.7ms)
+Completed 200 OK in 202ms (Views: 147.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:51:00 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.3ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (56.2ms)
+Rendered user/view.html.erb within layouts/application (147.3ms)
+Completed 200 OK in 179ms (Views: 150.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:51:15 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (79.1ms)
+Rendered user/view.html.erb within layouts/application (170.4ms)
+Completed 200 OK in 200ms (Views: 173.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:51:32 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.3ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.9ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.7ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (74.6ms)
+Rendered user/view.html.erb within layouts/application (133.3ms)
+Completed 200 OK in 199ms (Views: 135.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:51:48 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')[0m
+  [1m[35mAffiliation Load (0.3ms)[0m  SELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )
+  [1m[36mWork Load (0.4ms)[0m  [1mSELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )[0m
+Rendered user/_workslist.html (56.3ms)
+Rendered user/view.html.erb within layouts/application (152.9ms)
+Completed 200 OK in 183ms (Views: 155.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-07 22:52:09 +0000
+  Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/carl
+Completed 302 Found in 1ms
+
+
+Started GET "/carl" for 127.0.0.1 at 2011-05-07 22:52:09 +0000
+  Processing by UserController#view as HTML
+  Parameters: {"handle"=>"carl"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."handle" = 'carl')
+  [1m[36mAffiliation Load (0.2ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.2ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (44.8ms)
+Rendered user/view.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 114ms (Views: 98.8ms | ActiveRecord: 1.5ms)

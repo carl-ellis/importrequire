@@ -48,3 +48,17 @@ a.top {
 a {
   color: #000000;
 }
+
+div#footer {
+  width: 100%;
+}
+
+div#footer p {
+  display: inline;
+}
+
+a.logo_link img{
+  position: absolute;
+  height: 64px;
+  width: 80px;
+}
