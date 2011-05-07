@@ -5,9 +5,25 @@
     <% works.each do |w| %>
 		<li>
 			<div class="work">
-				<span class="title"><%= w[:name] %></span>
+        <% if edit %>
+          <span class="title"><%= w[:name] %></span>
+        <% else %>
+          <% if w.users.size > 0 %>
+            <span class="title"><%= link_to w[:name], user_name_path(w.users[0].handle) %></span>
+            <% else %>
+            <span class="title"><%= w[:name] %></span>
+          <% end %>
+        <% end %>
 				<span class="url"><a href="<%= w[:url] %>"><%= w[:url] %></a></span>
 				<span class="desc"><%= w[:description] %></span>
+          <% 
+          tagstr = ""                        
+          if w.tags.size > 0
+            w.tags.each { |t| tagstr << "#{t.name}, "}
+            tagstr = tagstr.slice(0, tagstr.size-2)
+          %>
+          <span class="tags">Tags:<%= tagstr  %></span>
+          <% end %>
 				<% if edit %>
 				<hr/>
 					<span class="delete">

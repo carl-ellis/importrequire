@@ -1,27 +1,55 @@
+div#search_user {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  margin-left: 4%;
+}
+
+div#search_work {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  margin-left: 4%;
+}
+
+div#recent_user {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  margin-left: 4%;
+}
+
+div#recent_work {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  margin-left: 4%;
+}
+
 div.search_users_list {
 	vertical-align: top;
 	margin: 0;
 	margin-right: 30px;
-	vertical-align: top;
 }
 
-u.#inneruserlist{
-	width: 50%;
-	padding: 0;
-	text-align: center;
-	margin: 0 auto 0 0;
+div.search_works_list {
+	vertical-align: top;
+	margin: 0;
+}
+
+ul.inneruserlist{
+	margin: 0;
+  padding:0;
 }
 
 ul.inneruserlist li{
 	margin: 0;
 	margin-bottom: 10px;
 	list-style-type: none;
-	
-}
+}	
 
 div.user_search {
 	display: block;
-	width:50%;
 	background: #726280;
 	padding: 2px;
 	padding-top: 5px;
@@ -59,4 +87,7 @@ ul#inneruserlist span.grav{
 	display: block;
 }
 
+ul#innerworklist *{
+  text-align: left;
+}
 

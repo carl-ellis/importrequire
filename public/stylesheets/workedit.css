@@ -65,6 +65,12 @@ ul#innerworklist span.desc{
 	margin-bottom: 4px;
 }
 
+ul#innerworklist span.tags{
+	display: block;
+	margin-bottom: 4px;
+  font-size: small;
+}
+
 div#workeditform {
 	width: 40%;
 	display: inline-block;

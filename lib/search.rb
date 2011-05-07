@@ -6,6 +6,7 @@ module Search
   AFFILIATION_WEIGHT = 0.50
   USER_TAG_WEIGHT = 0.10
   ARTICLE_TAG_WEIGHT = 0.25
+  ARTICLE_NAME_WEIGHT = 0.10
 
   PARTIAL_MATCH_WEIGHT = 0.25
 
@@ -31,6 +32,13 @@ module Search
       str_hash[affil.name] = Search::AFFILIATION_WEIGHT
     end
     user.works.each do |work|
+      work.name.split(" ").each do |n|
+        if str_hash.keys.include?(n)
+          str_hash[n] *= 2
+        else
+          str_hash[n] = Search::ARTICLE_NAME_WEIGHT
+        end
+      end
       work.tags.each do |tag|
         if str_hash.keys.include?(tag.name)
           str_hash[tag.name] *= 2
@@ -61,6 +69,38 @@ module Search
   #
   # @returns              Search String
   def Search.buildWorkSearchString(work)
+    str_hash = {}
+    
+    # crawl data
+    work.name.split(" ").each do |n|
+      if str_hash.keys.include?(n)
+        str_hash[n] *= 2
+      else
+        str_hash[n] = Search::HANDLE_WEIGHT
+      end
+    end
+    work.tags.each do |tag|
+      if str_hash.keys.include?(tag.name)
+        str_hash[tag.name] *= 2
+      else
+        str_hash[tag.name] = Search::ARTICLE_TAG_WEIGHT
+      end
+    end
+    work.users.each do |user|
+        str_hash[user.handle] = Search::HANDLE_WEIGHT
+    end
+
+    # build string
+    search_str = ""
+    str_hash.each do |k,v|
+      search_str << "#{URI.escape(k)}#{Search::WEIGHT_DELIM}#{URI.escape(v.to_s)}#{Search::TAG_DELIM}"
+    end
+    search_str = search_str.slice(0, search_str.length-1)
+
+    # finish up
+    work.search_str = search_str
+    work.save
+    return search_str
     
   end
 

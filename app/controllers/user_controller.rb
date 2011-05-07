@@ -188,6 +188,30 @@ class UserController < ApplicationController
           w.description 	= params[:description]
           w.url 					= params[:url]
           w.save
+          if params[:tags] != ""
+            tags = []
+            params[:tags].split(",").each do |tt|
+              if tt != ""
+                # See if already exists, if so, use it
+                t = Tag.where(:name => tt)
+                if t.length == 0
+                  t = Tag.new
+                  t.name = tt
+                  t.save
+                else
+                  t = t[0]
+                end
+                tags << t
+              end
+            end
+
+            # Add to work
+            tags.each do |t|
+              w.tags << t if !w.tags.include?(t)
+            end
+            w.save
+            Search.buildWorkSearchString(w)
+          end
 					@user.works << w
 					@user.save
 					Search.buildUserSearchString(@user)
@@ -204,7 +228,10 @@ class UserController < ApplicationController
       if af.length > 0
         af = af[0]
         @user.works.delete(af) if @user.works.include?(af)
-      @user.save
+        @user.save
+        if af.users.size == 0
+          af.delete
+        end
 			Search.buildUserSearchString(@user)
       end
     end
@@ -230,6 +257,31 @@ class UserController < ApplicationController
           w.name 					= params[:name]
           w.description 	= params[:description]
           w.url 					= params[:url]
+          if params[:tags] != ""
+            tags = []
+            params[:tags].split(",").each do |tt|
+              if tt != ""
+                # See if already exists, if so, use it
+                t = Tag.where(:name => tt)
+                if t.length == 0
+                  t = Tag.new
+                  t.name = tt
+                  t.save
+                else
+                  t = t[0]
+                end
+                tags << t
+              end
+            end
+
+            # Add to work
+            w.tags = []
+            tags.each do |t|
+              w.tags << t if !w.tags.include?(t)
+            end
+            w.save
+            Search.buildWorkSearchString(w)
+          end
           w.save
 					@user.save
 					Search.buildUserSearchString(@user)
