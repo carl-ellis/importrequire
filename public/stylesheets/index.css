@@ -61,4 +61,5 @@ a.logo_link img{
   position: absolute;
   height: 64px;
   width: 80px;
+	border: 0;
 }
