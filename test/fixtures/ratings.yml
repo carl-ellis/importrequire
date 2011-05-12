@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  work_id: 1
+  user_id: 1
+  weight: 1.5
+  score: 1
+
+two:
+  work_id: 1
+  user_id: 1
+  weight: 1.5
+  score: 1

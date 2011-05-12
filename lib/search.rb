@@ -149,17 +149,7 @@ module Search
     return strs
   end
 
-  # Gives a numerical (0 < n < 1) value of how matched a user is
-  # against a given works and its authors tags.
-  #
-  # @params  user_test          user to test
-  # @params  work_truth         work to test against
-  #
-  # @returns                    score
-  def Search.user_work_matchedness(user_test, work_truth)
-  end
-
-  #private
+  private
 
   def Search.build_hash_from_str(str)
     tags = str.split(Search::TAG_DELIM)
