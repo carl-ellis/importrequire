@@ -49,6 +49,26 @@ module Rate
 	#
 	# @params		work			Work to be rated
 	def Rate.calculate_rating(work)
+		
+		total_w = 0.0
+		total_wn = 0.0
+
+		work.ratings.each do |r|
+			total_wn += r.weight*r.score
+			total_w += r.weight
+		end
+
+		score = (total_wn/total_w)
+
+		if score.nan?
+			score = 0
+		end
+
+		work.rating = score.ceil
+		work.save
+
+		return work.rating
+
 	end
 
 end
