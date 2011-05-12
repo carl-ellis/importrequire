@@ -51,6 +51,11 @@ a {
 
 div#footer {
   width: 100%;
+	height: 25px;
+}
+
+div#footer * {
+	vertical-align: bottom;
 }
 
 div#footer p {
