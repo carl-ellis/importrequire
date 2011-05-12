@@ -62,6 +62,10 @@ div#footer p {
   display: inline;
 }
 
+div#footer a *{
+  border: 0;
+}
+
 a.logo_link{
 	border: 0;
 	background: 0;
