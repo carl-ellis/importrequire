@@ -14,6 +14,11 @@ div#worklist {
 	margin: 0;
 	margin-right: 30px;
 	vertical-align: top;
+	color: #000;
+}
+
+div#worklist a{
+	color: #000;
 }
 
 ul#innerworklist{

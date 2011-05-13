@@ -1,6 +1,11 @@
 div#edit {
   text-align: center;
   margin: auto;
+	color: #ccc;
+}
+
+a.white {
+	color: #ccc;
 }
 
 div#edit div * {
@@ -13,6 +18,10 @@ div#userav {
   display: inline-block;
   vertical-align: top;
   margin-right: 30px;
+}
+
+div#userav p a{
+	color: #ccc;
 }
 
 div#usereditform {
@@ -51,5 +60,6 @@ div#affileditform table input {
 div#affillist * {
 	text-align: center;
   width: 100%;
+	color: #ccc;
 }
 

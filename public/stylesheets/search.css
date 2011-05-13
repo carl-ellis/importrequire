@@ -32,6 +32,7 @@ div.search_users_list {
 	margin-right: 30px;
 }
 
+
 div.search_works_list {
 	vertical-align: top;
 	margin: 0;
@@ -41,6 +42,7 @@ ul.inneruserlist{
 	margin: 0;
   padding:0;
 }
+
 
 ul.inneruserlist li{
 	margin: 0;
@@ -64,6 +66,11 @@ div.search_av {
 div.search_details {
 	display: inline-block;
 	vertical-align: top;
+	color: #000;
+}
+
+div.search_details a{
+	color: #000;
 }
 
 ul.inneruserlist span.search_handle{
@@ -72,6 +79,11 @@ ul.inneruserlist span.search_handle{
   text-decoration: underline;
 	font-size: large;
 	margin-bottom: 6px;
+	color: #000;
+}
+
+ul.inneruserlist span.search_handle a{
+	color: #000;
 }
 
 ul#inneruserlist span.search_affils{
@@ -89,5 +101,6 @@ ul#inneruserlist span.grav{
 
 ul#innerworklist *{
   text-align: left;
+	color: #000;
 }
 

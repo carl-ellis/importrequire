@@ -12,6 +12,7 @@ div#banner {
 	border: 1px solid #3a2053;
 	margin: 5px 5px 0 5px;
 	height: 64px;
+	color: #ccc;
 }
 
 div#banner div#logwelcome {
@@ -57,6 +58,7 @@ div#content {
 	border: 1px solid #3a2053;
 	margin: 15px 5px 0 5px;
 	padding: 10px;
+	color: #ccc;
 }
 
 div#notice {
@@ -79,13 +81,6 @@ div#notice p {
 }
 
 div.rounded5 {
-
-	/* old style
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-khtml-border-radius: 5px;
-	border-radius: 20px;
-	*/
 
 	-moz-border-radius-bottomleft: 5px;
 	-moz-border-radius-topright: 5px;

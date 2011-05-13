@@ -3,6 +3,10 @@ div#infobox {
 	width: 250px;
 }                       
 
+div#menubox a{
+	color: #ccc;
+}
+
 div#workinfo {
 	display: inline-block;
 	vertical-align: top;
@@ -13,5 +17,13 @@ div#workinfo {
 
 div#workinfo * {
 	text-align: left;
+}
+
+div#userworklist_repop {
+	color: #000;
+}
+
+div#userworklist_repop a {
+	color: #000;
 }
 

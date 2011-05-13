@@ -29,5 +29,6 @@ div#tageditform table input {
 div#taglist * {
 	text-align: center;
   width: 100%;
+	color: #ccc;
 }
 
