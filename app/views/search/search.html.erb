@@ -16,7 +16,7 @@
   <% if ! @query.nil? %>
     <span class="result_text"><%= @results_w.size %> work results for the query: "<%= @query %>"</span>
     <div class="search_works_list">
-      <%= render :partial => "user/workslist", :locals => {:works => @results_w, :edit => false} %>
+      <%= render :partial => "user/workslist", :locals => {:works => @results_w, :edit => false, :ratable=>false} %>
     </div>
   <% else %>
     <em>Use the search box above to search for Users and works.</em>
@@ -37,6 +37,6 @@
   <h3>Works with recent activity</h3>
 
   <div class="search_works_list">
-    <%= render :partial => "user/workslist", :locals => {:works => @recent_works, :edit => false} %>
+    <%= render :partial => "user/workslist", :locals => {:works => @recent_works, :edit => false, :ratable=>false} %>
   </div>
 </div>

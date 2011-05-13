@@ -40,18 +40,40 @@
 			</div>
 			<div class="rating_holder">
 				<%
+					if !session[:user].nil?
+						current_rating = User.where(:handle => session[:user])[0].ratings.where(:work_id => w.id)
+						if current_rating.length > 0
+							current_rating = current_rating[0].score
+						else
+							current_rating = nil
+						end
+					else
+						current_rating = nil
+					end
 					score = w.rating
 					class_array = []
 					(1..5).each do |a|	 
-						if score >= a
-							class_array << "rating_on"
+						if !current_rating.nil? && current_rating == a
+							if score >= a
+								class_array << "rating_on_h"
+							else
+								class_array << "rating_off_h"
+							end
 						else
-							class_array << "rating_off"
+							if score >= a
+								class_array << "rating_on"
+							else
+								class_array << "rating_off"
+							end
 						end
 					end
 				%>
 				<%(0..4).to_a.reverse.each do |a| %>
-					<%= link_to "", user_rate_work_path(:wid => w[:id], :rating => a+1), :class => class_array[a] %>
+					<% if ratable && session[:user] && w.users.where(:handle => session[:user]).length == 0 %>
+						<%= link_to "", user_rate_work_path(:wid => w[:id], :rating => a+1), :class => class_array[a], :remote => true %>
+					<% else %>
+						<a class="<%=class_array[a]%>"></a>
+					<% end %>
 				<% end %>
 			<div>
 		</li>

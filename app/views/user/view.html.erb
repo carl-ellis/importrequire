@@ -40,7 +40,9 @@
 		</div>
 		<div id="workinfo">
 			<h2>Works</h2>
-			<%= render :partial => "workslist", :locals => {:works => @vuser.works, :edit => false} %>
+			<div id="userworklist_repop">
+			<%= render :partial => "workslist", :locals => {:works => @vuser.works, :edit => false, :ratable => true} %>
+			</div>
 		</div>
 	</div>
 <% else %>

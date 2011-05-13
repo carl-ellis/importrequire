@@ -1,0 +1,4 @@
+ page.replace_html 'userworklist_repop', :partial => "workslist", :locals => {:works=>@vuser.works, :edit=>false, :ratable=>true} 
+
+
+

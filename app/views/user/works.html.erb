@@ -6,7 +6,7 @@
 
 	<div id="worklist">
 		<!-- <h3>Works</h3> -->
-		<%= render :partial => "workslist", :locals => {:works => @user.works, :edit => true} %>
+		<%= render :partial => "workslist", :locals => {:works => @user.works, :edit => true, :ratable => false} %>
 	</div>
 	<div id="workeditform">
 		<%= form_tag({:action => :works}, :method => "post") %>

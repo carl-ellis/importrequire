@@ -360,8 +360,9 @@ class UserController < ApplicationController
 
 	def rate_work
 
-    @user = User.where(:handle => session[:user])[0]
 		work = Work.where(:id => params[:wid])[0]
+    @user = User.where(:handle => session[:user])[0]
+    @vuser = work.users[0] 
 		rating = params[:rating]
 		r = Rating.where(:work_id => params[:wid], :user_id => @user.id)
 
@@ -390,7 +391,7 @@ class UserController < ApplicationController
 		Rate::calculate_rating(work)
 
     respond_to do |format|
-      format.js 
+      format.js {render :action => :rate_work} 
     end  
 	end
 end
