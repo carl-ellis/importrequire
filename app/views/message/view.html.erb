@@ -1,0 +1,10 @@
+<% if @message %>
+  <%= link_to "<-- Back to inbox", inbox_path, :class => "white" %>
+  <div id="message_details">
+    <span id="message_view_from"><p>From: <%=@from%></p></span>
+    <span id="message_view_subject"><p>Subject: <%=@message.subject%></p></span>
+    <span id="message_view_body">Message: <p><%=@message.body%></p></span>
+  </div>
+<% else %>
+  <em>You have come here in error</em>
+<% end %>

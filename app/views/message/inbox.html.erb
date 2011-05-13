@@ -1,0 +1,11 @@
+<% if !@user.nil? %>
+  <h2>Inbox</h2>
+  <div id="inbox_controls">
+    <%= link_to "Compose", compose_path(), :class => "white" %>
+  </div>
+  <div id="inbox_list">
+    <%= render :partial => "messagelist", :locals => {:messages => @messages} %>
+  </div>
+<% else %>
+  <em>You have come here in error</em>
+<% end %>

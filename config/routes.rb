@@ -1,11 +1,14 @@
 Importrequire::Application.routes.draw do
-                          
+
 	resources :User 
 	match "register" => "User#create", :as => "register"
 	match "logout" => "welcome#logout", :as => "logout"
 	match "login" => "welcome#login", :as => "login"
 	match "search" => "search#search", :as => "search"
 	match "help" => "help#help", :as => "help"
+  match "inbox" => "message#inbox", :as =>"inbox"
+  match "inbox/compose" => "message#compose", :as =>"compose"
+  match "inbox/:mid" => "message#view", :as =>"view_mail"
 	match ":handle/works/:wid/rate/:rating" => "User#rate_work", :as => "user_rate_work"
 	match ":handle/works/create_work" => "User#create_work", :as => "user_create_work"
 	match ":handle/works/remove_work/:wid" => "User#remove_work", :as => "user_remove_work"

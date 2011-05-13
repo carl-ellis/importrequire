@@ -1,0 +1,21 @@
+<% if messages.length < 1 %>
+  <em>No messages</em>
+<% else %>
+  <table id="innermessagelist">
+      <tr>
+          <th class="message_from">From</th>
+          <th class="message_subject">Subject</th>
+        </div>
+      </tr>  
+    <% messages.each do |m| 
+        from = User.where(:id => m.from_id)[0]
+        to = User.where(:id => m.to_id)[0]
+    %>
+      <tr>
+          <td class="message_from <%="read" if !m.read%>"><%=from.handle%></td>
+          <td class="message_subject <%="read" if !m.read%>"><%=link_to m.subject, view_mail_path(m.id), :class =>
+          "white"%></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

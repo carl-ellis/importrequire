@@ -1,0 +1,32 @@
+table#innermessagelist {
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+table#innermessagelist th {
+  border: 1px solid #ccc;
+  color: #000;
+	background: #726280;
+  text-align: left;
+  padding-left: 1em;
+}
+
+
+table#innermessagelist td {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding-left: 1em;
+}
+
+table#innermessagelist td.read {
+  font-weight: bold;
+}
+
+span#message_view_body p {
+  padding: 2%;
+  border: 1px solid #ccc;
+}

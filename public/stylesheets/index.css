@@ -21,6 +21,7 @@ div#frontmattertext {
 	border: 1px #726280 solid;
 	/*background: #9dabbe;*/
 	background: #726280;
+  color: #000;
 }
 
 div#frontmattertext * {
