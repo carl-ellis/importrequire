@@ -24520,3 +24520,69 @@ and your can login using your handle and your password.</p>
 
 
 ----==_mimepart_4dcd773679037_17b8de3af010235--
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+Rendered new_user_mailer/welcome_user.html.erb (0.3ms)
+Rendered new_user_mailer/welcome_user.text.erb (0.2ms)
+
+Sent mail to carlc75@gmail.com (1294ms)
+Date: Fri, 13 May 2011 19:26:29 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd77d5a7a51_17b8de3af01093@gluon.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4dcd77d5a55d7_17b8de3af01062a";
+ charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4dcd77d5a55d7_17b8de3af01062a
+Date: Fri, 13 May 2011 19:26:29 +0100
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-ID: <4dcd77d5a6cbc_17b8de3af010796@gluon.mail>
+
+Welcome to import::require, carl
+===========================================================
+
+You have successfully signed up to importrequire.com,
+and your can login using your handle and your password.
+ 
+May your stay at importrequire be a productive one.
+  
+Regards,
+The import::require team
+
+
+----==_mimepart_4dcd77d5a55d7_17b8de3af01062a
+Date: Fri, 13 May 2011 19:26:29 +0100
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-ID: <4dcd77d5a74cf_17b8de3af010875@gluon.mail>
+
+<html>
+<head>
+<style type="text/css" media='all'>
+	body { font-family: monospace; }
+</style>
+</head>
+<body>
+<h1>Welcome to import::require, carl</h1>
+
+<p>You have successfully signed up to importrequire.com,
+and your can login using your handle and your password.</p>
+ 
+<p>May your stay at importrequire be a productive one.</p>
+  
+<p>Regards,</p>
+<p>The import::require team</p>
+</body></html>
+
+
+----==_mimepart_4dcd77d5a55d7_17b8de3af01062a--
