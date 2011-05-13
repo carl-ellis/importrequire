@@ -22610,3 +22610,306 @@ Started GET "/carl" for 127.0.0.1 at 2011-05-13 16:21:21 +0100
 Rendered user/_workslist.html (179.2ms)
 Rendered user/view.html.erb within layouts/application (493.6ms)
 Completed 200 OK in 601ms (Views: 503.5ms | ActiveRecord: 10.1ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+
+Sent mail to carlc75@gmail.com (269ms)
+Date: Fri, 13 May 2011 16:33:18 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd4f3e633d2_28c744cded07299d@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Sent mail to carlc75@gmail.com (31ms)
+Date: Fri, 13 May 2011 16:34:36 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd4f8c9c401_28c744cded0730dd@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Sent mail to carlc75@gmail.com (1345ms)
+Date: Fri, 13 May 2011 16:34:57 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd4fa1d650f_28c744cded0731ae@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Sent mail to carlc75@gmail.com (26ms)
+Date: Fri, 13 May 2011 16:34:57 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd4fa1d650f_28c744cded0731ae@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Sent mail to carlc75@gmail.com (32ms)
+Date: Fri, 13 May 2011 16:36:43 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd500b76d5b_28c744cded07328b@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Sent mail to carlc75@gmail.com (31ms)
+Date: Fri, 13 May 2011 16:41:14 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd511a43958_28c744cded073350@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+
+Sent mail to carlc75@gmail.com (7965ms)
+Date: Fri, 13 May 2011 16:43:18 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd51962c11_29f640db6d8372cf@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+
+Sent mail to carlc75@gmail.com (3560ms)
+Date: Fri, 13 May 2011 16:45:17 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd520d33d4a_29f640db6d837350@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+Rendered new_user_mailer/welcome_user.text.erb (97.3ms)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+Rendered new_user_mailer/welcome_user.text.erb (94.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+Rendered new_user_mailer/welcome_user.text.erb (20.9ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+Rendered new_user_mailer/welcome_user.text.erb (20.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+
+Sent mail to carlc75@gmail.com (3376ms)
+Date: Fri, 13 May 2011 16:52:35 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd53c3bcf2d_2aba4c8f6dc8155a@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+
+Sent mail to carlc75@gmail.com (3052ms)
+Date: Fri, 13 May 2011 16:55:10 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd545e33fac_2aba4c8f6dc816c3@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+Rendered new_user_mailer/welcome_user.html.erb (20.7ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+DEPRECATION WARNING: The file `/home/carl/personal/importrequire/trunk/http/importrequire/app/views/new_user_mailer/welcome_user.text.html.erb` uses the deprecated format `text.html`. Please rename it to /home/carl/personal/importrequire/trunk/http/importrequire/app/views/new_user_mailer/welcome_user.html.erb. (called from welcome_user at /home/carl/personal/importrequire/trunk/http/importrequire/app/mailers/new_user_mailer.rb:7)
+Rendered new_user_mailer/welcome_user.text.html.erb (20.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+DEPRECATION WARNING: The file `/home/carl/personal/importrequire/trunk/http/importrequire/app/views/new_user_mailer/welcome_user.text.html.erb` uses the deprecated format `text.html`. Please rename it to /home/carl/personal/importrequire/trunk/http/importrequire/app/views/new_user_mailer/welcome_user.html.erb. (called from welcome_user at /home/carl/personal/importrequire/trunk/http/importrequire/app/mailers/new_user_mailer.rb:7)
+Rendered new_user_mailer/welcome_user.text.html.erb (20.7ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+
+Sent mail to carlc75@gmail.com (2725ms)
+Date: Fri, 13 May 2011 16:58:29 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd552549449_2aba4c8f6dc81757@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+
+Sent mail to carlc75@gmail.com (7393ms)
+Date: Fri, 13 May 2011 16:59:04 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd5548d6142_2aba4c8f6dc8187c@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[35mUser Load (2.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+
+Sent mail to carlc75@gmail.com (2762ms)
+Date: Fri, 13 May 2011 17:02:17 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd56095856_2aba4c8f6dc8193e@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+
+Sent mail to carlc75@gmail.com (2777ms)
+Date: Fri, 13 May 2011 17:05:50 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd56de4c8c8_2aba4c8f6dc820c5@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[35mUser Load (2.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+
+Sent mail to carlc75@gmail.com (2543ms)
+Date: Fri, 13 May 2011 17:06:25 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd5701d47e8_2aba4c8f6dc8211e@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+Rendered new_user_mailer/welcome_user.html.erb (75.2ms)
+  [1m[35mUser Load (2.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+Rendered new_user_mailer/welcome_user.html.erb (378.2ms)
+  [1m[36mUser Load (4.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+Rendered new_user_mailer/welcome_user.html.erb (130.8ms)
+Rendered new_user_mailer/welcome_user.text.erb (75.1ms)
+  [1m[35mUser Load (6.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1)
+Rendered new_user_mailer/welcome_user.html.erb (5.5ms)
+Rendered new_user_mailer/welcome_user.text.erb (4.9ms)
+
+Sent mail to carlc75@gmail.com (2949ms)
+Date: Fri, 13 May 2011 17:09:15 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd57abc3e70_2aba4c8f6dc8259d@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4dcd57ab64b2e_2aba4c8f6dc82234";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4dcd57ab64b2e_2aba4c8f6dc82234
+Date: Fri, 13 May 2011 17:09:15 +0100
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4dcd57abae550_2aba4c8f6dc8234b@positron.mail>
+
+Welcome to import::require, carl
+===========================================================
+
+You have successfully signed up to importrequire.com,
+and your can login using your handle and your password.
+ 
+May your stay at importrequire be a productive one.
+
+
+----==_mimepart_4dcd57ab64b2e_2aba4c8f6dc82234
+Date: Fri, 13 May 2011 17:09:15 +0100
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4dcd57abba980_2aba4c8f6dc824b5@positron.mail>
+
+<html>
+<body>
+Welcome to import::require, carl
+===========================================================
+
+You have successfully signed up to importrequire.com,
+and your can login using your handle and your password.
+ 
+May your stay at importrequire be a productive one.
+</body>
+</html>
+
+
+----==_mimepart_4dcd57ab64b2e_2aba4c8f6dc82234--
+  [1m[36mUser Load (4.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1)[0m
+Rendered new_user_mailer/welcome_user.text.erb (5.7ms)
+
+Sent mail to carlc75@gmail.com (2336ms)
+Date: Fri, 13 May 2011 17:11:52 +0100
+From: no-reply@importrequire.com
+To: carlc75@gmail.com
+Message-ID: <4dcd584847c1_2aba4c8f6dc826ac@positron.mail>
+Subject: Welcome to import::require
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to import::require, carl
+===========================================================
+
+You have successfully signed up to importrequire.com,
+and your can login using your handle and your password.
+ 
+May your stay at importrequire be a productive one.

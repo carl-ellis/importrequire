@@ -4,6 +4,7 @@ class NewUserMailer < ActionMailer::Base
 	def welcome_user(user)
 		@user = user
 		mail( :to => user['email'],
-					:subject => "Welcome to import::require")
+					:content_type => "text/plain",
+					:subject => "Welcome to import::require") 
 	end
 end
