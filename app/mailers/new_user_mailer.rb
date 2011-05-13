@@ -1,10 +1,10 @@
 class NewUserMailer < ActionMailer::Base
-  default :from => "no-reply@importrequire.com"
+  default :from => "no-reply@importrequire.com",
+					:charset => "ISO-8859-1"
 
 	def welcome_user(user)
 		@user = user
 		mail( :to => user['email'],
-					:content_type => "text/plain",
-					:subject => "Welcome to import::require") 
+					:subject => "Welcome to import::require")
 	end
 end
