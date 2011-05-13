@@ -16,7 +16,7 @@
   <a href="/" class=logo_link><img src="images/blank.png"/></a>
   <div id="search_box">
     <%= form_tag(search_path, :method => "post") %>
-    Search: <%= text_field_tag :search_query, nil, :size => 20 %> 
+    Search: <%= text_field_tag :search_query, nil, :size => 15 %> 
     <%= submit_tag '?' %>
     </form>
   </div>
@@ -25,8 +25,8 @@
     <p> Welcome, <%=link_to session[:user], user_name_path(session[:user]), :class => "top" %>. <%=link_to "Logout?", logout_path, :class => "top" %></p>
   <% else %>
     <%= form_tag(login_path, :method => "post") %>
-    Handle: <%= text_field_tag :handle, nil, :size => 8 %> 
-    Pass: <%= password_field :pass, nil, :size => 8 %> 
+    Handle: <%= text_field_tag :handle, nil, :size => 5 %> 
+    Pass: <%= password_field :pass, nil, :size => 5 %> 
     <%= hidden_field_tag :ocontroller, params[:controller] %> 
     <%= hidden_field_tag :oaction, params[:action] %> 
     <%= submit_tag 'Login' %>

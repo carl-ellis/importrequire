@@ -38,6 +38,22 @@
 							:remote => true %></span>
 				<% end %>
 			</div>
+			<div class="rating_holder">
+				<%
+					score = w.rating
+					class_array = []
+					(1..5).each do |a|	 
+						if score >= a
+							class_array << "rating_on"
+						else
+							class_array << "rating_off"
+						end
+					end
+				%>
+				<%(0..4).to_a.reverse.each do |a| %>
+					<%= link_to "", user_rate_work_path(:wid => w[:id], :rating => a+1), :class => class_array[a] %>
+				<% end %>
+			<div>
 		</li>
 		<% end %>
 	</ul>

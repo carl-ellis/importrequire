@@ -1,5 +1,6 @@
 require_dependency 'password'
 require_dependency 'search'
+require_dependency 'rate'
 
 class UserController < ApplicationController
 
@@ -356,4 +357,40 @@ class UserController < ApplicationController
       format.js {render :action => :create_tag} 
     end  
   end
+
+	def rate_work
+
+    @user = User.where(:handle => session[:user])[0]
+		work = Work.where(:id => params[:wid])[0]
+		rating = params[:rating]
+		r = Rating.where(:work_id => params[:wid], :user_id => @user.id)
+
+		# See if has a current rating
+		if r.length == 0
+			r = Rating.new
+		else
+			r = r[0]
+		end
+			
+		# Get weight
+		weight = Rate::calculate_weight(@user, work)
+
+		#r.work_id = work.id
+		#r.user_id = @user.id
+		r.weight = weight
+		r.score = rating
+
+		work.ratings << r
+		@user.ratings << r
+
+		work.save
+		@user.save
+		r.save
+
+		Rate::calculate_rating(work)
+
+    respond_to do |format|
+      format.js 
+    end  
+	end
 end

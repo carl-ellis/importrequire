@@ -27,13 +27,17 @@ ul#innerworklist li{
 	margin: 0;
 	margin-bottom: 10px;
 	list-style-type: none;
+	background: #726280;
+	text-align: right;
 	
 }
 
 div.work {
-	display: block;
+	text-align:left;
+	display: inline-block;
 	background: #726280;
 	padding: 2px;
+  width: 96%;
 	/*border: #000000 1px solid;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -75,4 +79,27 @@ div#workeditform {
 	width: 40%;
 	display: inline-block;
 	vertical-align: top;
+}
+
+div.rating_holder{
+	width: 1%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
+}
+
+div.rating_holder a{
+	display: block;
+	height: 15px;
+	width: 100%;
+	margin-top:2px;
+	border:0;
+}
+
+div.rating_holder a.rating_on{
+	background: #00c800;
+}
+
+div.rating_holder a.rating_off{
+	background: #a5a2c2;
 }
