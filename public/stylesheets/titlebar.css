@@ -28,11 +28,17 @@ div#banner div#logwelcome p#top_reg {
   margin-top: 5px;
 }
 
+div#banner div#logwelcome p#sec {
+  display: block;
+  margin-top: 5px;
+}
+
 div#banner p{
   display: inline;
 	text-align: right;
 	padding-right: 5px;
 }
+
 
 div#banner form{
   display: inline;

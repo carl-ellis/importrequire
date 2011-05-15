@@ -20,3 +20,11 @@ div#reg_form form table * {
 	text-align: left;
 }
 
+div#reg_form p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+div#recaptcha {
+  margin-top: 1em;
+}

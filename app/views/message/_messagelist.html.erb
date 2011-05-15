@@ -5,6 +5,7 @@
       <tr>
           <th class="message_from">From</th>
           <th class="message_subject">Subject</th>
+          <th class="message_controls">Actions</th>
         </div>
       </tr>  
     <% messages.each do |m| 
@@ -15,6 +16,12 @@
           <td class="message_from <%="read" if !m.read%>"><%=from.handle%></td>
           <td class="message_subject <%="read" if !m.read%>"><%=link_to m.subject, view_mail_path(m.id), :class =>
           "white"%></td>
+          <td class="message_controls"><%= link_to "Reply", reply_mail_path(m.id), :class => "white"%> 
+          | 
+  <%= link_to "Delete", delete_mail_path(m.id), :class => "white", :confirm => "Are you sure?" %>
+          |
+  <%= link_to "Unread", unread_mail_path(m.id), :class => "white" %>
+          </td>
       </tr>
     <% end %>
   </table>

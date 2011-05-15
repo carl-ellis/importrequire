@@ -7,6 +7,10 @@ class UserController < ApplicationController
 	before_filter :validate_params, :only => :create
 	before_filter :validate_edit_params, :only => :edit
 
+  def restricted_name(handle)
+    return ["inbox", "search", "register", "login", "logout"].include?(handle)
+  end
+
   def validate_edit_params
 
 		@old_params = params
@@ -34,23 +38,29 @@ class UserController < ApplicationController
 		v_params = params.clone
 		v_params.delete_if {|k,v| ["action","controller"].include?(k) }
 		@validated = false
+    warn = ""
 		if v_params != {}
 
 			# Verification for all filled in
 			empty = false
       v_params.each { |k,v| empty = true if v == "" }
 			if(empty)
-				flash[:notice] = "Please fill in all fields - "
+				warn += "Please fill in all fields - "
 			end
 
 			# Check emails and passwords match
 			if(v_params[:pass1] != v_params[:pass2])
-				flash[:notice] += "Passwords do not match - "
+				warn += "Passwords do not match - "
 			end
 			if(v_params[:email] != params[:cemail])
-				flash[:notice] += "Emails do not match - "
+				warn += "Emails do not match - "
 			end
-			if(flash[:notice])
+      if restricted_name(params[:handle])
+        # Made sure it is not the name of a page
+				warn += "Handle in use by system - "
+      end
+			if(warn.size > 0)
+        flash[:notice] = warn
 				render :action => :create and return
 			end
 			@validated = true;

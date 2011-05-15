@@ -1,2 +1,14 @@
-<h1>Message#compose</h1>
-<p>Find me in app/views/message/compose.html.erb</p>
+<% if !@user.nil? %>
+  <%= link_to "<-- Back to inbox", inbox_path, :class => "white" %>
+  <h2>Compose</h2>
+  <div id="compose_form">
+  <%= form_tag({:action => :create_mail}, :method => "poat") %>
+    <span id="compose_to">To: <%= text_field_tag :to, @to %></span>
+    <span id="compose_subject">Subject: <%= text_field_tag :subject, @subject %></span>
+    <span id="compose_body">Message: <span id="compose_body_padding"><%= text_area_tag :body, @body %></span></span>
+    <%= submit_tag "Send" %>
+  </form>
+  </div>
+<% else %>
+  <em>You have come here in error</em>
+<% end %>

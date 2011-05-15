@@ -22,7 +22,8 @@
   </div>
   <div id="logwelcome">
   <% if session[:user] %>                                          
-    <p> Welcome, <%=link_to session[:user], user_name_path(session[:user]), :class => "top" %>. <%=link_to "Logout?", logout_path, :class => "top" %></p>
+    <p> Welcome, <%=link_to session[:user], user_name_path(session[:user]), :class => "top" %>.</p>
+    <p id="sec"> <%=link_to "Inbox#{unread_mail(session[:user])}", inbox_path(), :class => "top" %> | <%=link_to "Logout?", logout_path, :class => "top" %></p>
   <% else %>
     <%= form_tag(login_path, :method => "post") %>
     Handle: <%= text_field_tag :handle, nil, :size => 5 %> 
@@ -31,7 +32,7 @@
     <%= hidden_field_tag :oaction, params[:action] %> 
     <%= submit_tag 'Login' %>
     </form>
-    <p id="top_reg">New User? <%= link_to "Register", register_path %></p>
+    <p class="top_reg">New User? <%= link_to "Register", register_path %></p>
   <% end %>
   </div>
 </div>
