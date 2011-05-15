@@ -41,6 +41,10 @@ module Rate
     end
 
       weight = pre_averaged_total/pre_average_matched_tags_percent
+      if weight.nan?
+	weight = 0.0001
+      end
+	
 
       return weight
   end
