@@ -53,17 +53,21 @@
 					score = w.rating
 					class_array = []
 					(1..5).each do |a|	 
-						if !current_rating.nil? && current_rating == a
-							if score >= a
-								class_array << "rating_on_h"
-							else
-								class_array << "rating_off_h"
-							end
+						if score.nil?
+							class_array << "rating_off"
 						else
-							if score >= a
-								class_array << "rating_on"
+							if !current_rating.nil? && current_rating == a
+								if score >= a
+									class_array << "rating_on_h"
+								else
+									class_array << "rating_off_h"
+								end
 							else
-								class_array << "rating_off"
+								if score >= a
+									class_array << "rating_on"
+								else
+									class_array << "rating_off"
+								end
 							end
 						end
 					end

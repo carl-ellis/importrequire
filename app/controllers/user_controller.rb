@@ -200,6 +200,7 @@ class UserController < ApplicationController
           w.name 					= params[:name]
           w.description 	= params[:description]
           w.url 					= params[:url]
+	  w.score = 0
           w.save
           if params[:tags] != ""
             tags = []
