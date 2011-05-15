@@ -8,7 +8,7 @@ Importrequire::Application.routes.draw do
 	match "help" => "help#help", :as => "help"
   match "inbox" => "message#inbox", :as =>"inbox"
   match "inbox/compose" => "message#compose", :as =>"compose"
-  match "inbox/compose/:handle" => "message#compose", :as =>"compose"
+  match "inbox/compose/:handle" => "message#compose", :as =>"compose_to"
   match "inbox/create_mail" => "message#create_mail", :as =>"create_mail"
   match "inbox/:mid" => "message#view", :as =>"view_mail"
   match "inbox/:mid/reply" => "message#reply", :as =>"reply_mail"
