@@ -32,6 +32,7 @@ GEM
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    fcgi (0.8.8)
     i18n (0.5.0)
     jquery-rails (0.2.6)
       rails (~> 3.0)
@@ -42,6 +43,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mysql2 (0.2.7)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -72,6 +74,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fcgi
   jquery-rails (>= 0.2.6)
+  mysql2 (= 0.2.7)
   rails (= 3.0.3)
   sqlite3-ruby

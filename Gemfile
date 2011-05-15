@@ -31,3 +31,5 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem 'jquery-rails', '>= 0.2.6'
+gem 'fcgi'
+gem 'mysql2', '0.2.7'
