@@ -26,6 +26,7 @@
 				</ul>
 			</div>
 			<div id="menubox">
+        <% if session[:user] %>
 				<h3>Menu</h3>
 				<ul>
 					<% if @vuser[:handle] == session[:user] %>
@@ -33,9 +34,10 @@
 					<li><%= link_to 'Edit tags?', user_tags_path %></li>
 					<li><%= link_to 'Edit works?', user_works_path %></li>
 					<% else %>
-					<li>Message</li>
+					<li><%= link_to "Message", compose_path(@vuser[:handle]), :class => "white"%></li>
 					<% end %>
 				</ul>
+        <% end %>
 			</div>
 		</div>
 		<div id="workinfo">

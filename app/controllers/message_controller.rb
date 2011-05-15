@@ -30,6 +30,9 @@ class MessageController < ApplicationController
   def compose
     if session[:user]
       @user = User.where(:handle => session[:user])[0]
+      if params[:handle]
+        @to = params[:handle]
+      end
     else
       @user = nil
     end
