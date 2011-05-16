@@ -22,7 +22,7 @@
             w.tags.each { |t| tagstr << "#{t.name}, "}
             tagstr = tagstr.slice(0, tagstr.size-2)
           %>
-          <span class="tags">Tags:<%= tagstr  %></span>
+          <span class="tags">Tags: <%= tagstr  %></span>
           <% end %>
 				<% if edit %>
 				<hr/>
