@@ -1,7 +1,11 @@
 div#infobox {
 	display: inline-block;
-	width: 250px;
+	width: 34%;
 }                       
+div#userav img {
+
+	width: auto;
+	}
 
 div#menubox a{
 	color: #ccc;
@@ -10,7 +14,7 @@ div#menubox a{
 div#workinfo {
 	display: inline-block;
 	vertical-align: top;
-	width: 70%;
+	width: 64%;
 	text-align: right;
 	margin: 0 auto 0 auto;
 }
