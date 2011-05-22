@@ -13,7 +13,7 @@
     <div id="taglist">
       <%= render :partial => "taglist", :locals => {:tags => @user.tags} %>
     </div>
-    <%= form_tag(  url_for( :action => :create_tag), :remote => true) %>
+    <%= form_tag(  url_for( :action => :create_tag), :method => "post", :remote => true) %>
     <table><tr>
     <td>Add new tag [commas for multiple tags]</td><td><%= text_field_tag :tag %> </td>
     </tr></table>
@@ -21,7 +21,8 @@
     <%= link_to "remove all tags", 
             user_remove_all_tags_path(:handle => session[:user]),
             :remote => true,
-            :confirm => "Are you sure?"%>
+            :confirm => "Are you sure?",
+						:class => "white" %>
     </form>
   </div>
 </div>

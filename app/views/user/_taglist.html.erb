@@ -1,13 +1,14 @@
+<% require 'uri' %>
 <% if tags.length < 1 %>
   <em>No tags listed</em>
 <% else %>
   <table>
     <% tags.each do |t| %>
     <tr>
-      <td><%= t[:name] %></td>
+      <td><%= URI::unescape(t[:name]) %></td>
       <td><%= link_to "remove", 
               user_remove_tag_path(:handle => session[:user],
-                                     :name => t[:name]),
+                                     :id => t[:id]),
               :remote => true%></td>
     </tr>
     <% end %>

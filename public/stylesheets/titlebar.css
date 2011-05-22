@@ -3,6 +3,11 @@ body {
 	font-family: monospace;
 }
 
+em {
+	color: #ccc;
+
+}
+
 h1 {
 	display: none;
 }
@@ -23,7 +28,7 @@ div#banner div#logwelcome {
   text-align: right;
 }
 
-div#banner div#logwelcome p#top_reg {
+div#banner div#logwelcome p.top_reg {
   display: block;
   margin-top: 5px;
 }
@@ -50,7 +55,7 @@ div#banner form{
 div#banner div#search_box{
   position: absolute;
   top: 15px;
-  left: 40%;
+  left: 38%;
   margin: 0;
 }
 

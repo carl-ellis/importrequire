@@ -1,6 +1,7 @@
 require_dependency 'password'
 require_dependency 'search'
 require_dependency 'rate'
+require 'uri'
 
 class UserController < ApplicationController
 
@@ -314,12 +315,12 @@ class UserController < ApplicationController
     if params[:tag] != ""
       tags = []
       params[:tag].split(",").each do |tt|
-        if tt != ""
+        if tt.strip != ""
           # See if already exists, if so, use it
           t = Tag.where(:name => tt)
           if t.length == 0
             t = Tag.new
-            t.name = tt
+            t.name = URI.escape(tt)
             t.save
           else
             t = t[0]
@@ -343,8 +344,8 @@ class UserController < ApplicationController
 
   def remove_tag
     @user = User.where(:handle => session[:user])[0]
-    if params[:name] != ""
-      t = Tag.where(:name => params[:name])
+    if params[:id] != ""
+      t = Tag.where(:id => params[:id])
       if t.length > 0
         t = t[0]
         @user.tags.delete(t) if @user.tags.include?(t)
