@@ -1,65 +1,67 @@
-div#edit {
-  text-align: center;
-  margin: auto;
-	color: #ccc;
-}
-
-a.white {
-	color: #ccc;
-}
-
-div#edit div * {
-  text-align: left;
-}
-
-div#userav {
-
-  width: 220px;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 30px;
-}
-
-div#userav p a{
-	color: #ccc;
-}
-
-div#usereditform {
-  width: 30%;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 30px;
-}
-
-div#usereditform table {
-  width: 100%;
-}
-
-div#usereditform table input {
-  width: 100%;
-}
-
-div#affileditform {
-  width: 30%;
-  display: inline-block;
-  vertical-align: top;
-}
-
-div#affileditform form {
-  margin-top: 3em;
-}
-
-div#affileditform table {
-  width: 100%;
-}
-
-div#affileditform table input {
-  width: 100%;
-}
-
-div#affillist * {
-	text-align: center;
-  width: 100%;
-	color: #ccc;
-}
-
+/*
+ *div#edit {
+ *  text-align: center;
+ *  margin: auto;
+ *        color: #ccc;
+ *}
+ *
+ *a.white {
+ *        color: #ccc;
+ *}
+ *
+ *div#edit div * {
+ *  text-align: left;
+ *}
+ *
+ *div#userav {
+ *
+ *  width: 220px;
+ *  display: inline-block;
+ *  vertical-align: top;
+ *  margin-right: 30px;
+ *}
+ *
+ *div#userav p a{
+ *        color: #ccc;
+ *}
+ *
+ *div#usereditform {
+ *  width: 30%;
+ *  display: inline-block;
+ *  vertical-align: top;
+ *  margin-right: 30px;
+ *}
+ *
+ *div#usereditform table {
+ *  width: 100%;
+ *}
+ *
+ *div#usereditform table input {
+ *  width: 100%;
+ *}
+ *
+ *div#affileditform {
+ *  width: 30%;
+ *  display: inline-block;
+ *  vertical-align: top;
+ *}
+ *
+ *div#affileditform form {
+ *  margin-top: 3em;
+ *}
+ *
+ *div#affileditform table {
+ *  width: 100%;
+ *}
+ *
+ *div#affileditform table input {
+ *  width: 100%;
+ *}
+ *
+ *div#affillist * {
+ *        text-align: center;
+ *  width: 100%;
+ *        color: #ccc;
+ *}
+ *
+ */

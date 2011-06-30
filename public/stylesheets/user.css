@@ -1,33 +1,65 @@
+
+
 div#infobox {
-	display: inline-block;
-	width: 34%;
+        display: inline-block;
+        width: 34%;
+        float: left;
+        margin: 2%;
+        background: #ccc;
+        padding: 1em;
 }                       
-div#userav img {
-
-	width: auto;
-	}
-
-div#menubox a{
-	color: #ccc;
-}
 
 div#workinfo {
-	display: inline-block;
-	vertical-align: top;
-	width: 64%;
-	text-align: right;
-	margin: 0 auto 0 auto;
+        float: right;
+        display: inline-block;
+        vertical-align: top;
+        width: 64%;
+        text-align: right;
+        margin: 0 auto 0 auto;
 }
 
-div#workinfo * {
-	text-align: left;
+
+div#userav{
+  width: 100%;
 }
 
-div#userworklist_repop {
-	color: #000;
+div#userav img{
+  /*margin: 0 auto;*/
+  display: block;
 }
 
-div#userworklist_repop a {
-	color: #000;
-}
-
+/*
+ *div#infobox {
+ *        display: inline-block;
+ *        width: 34%;
+ *}                       
+ *div#userav img {
+ *
+ *        width: auto;
+ *        }
+ *
+ *div#menubox a{
+ *        color: #ccc;
+ *}
+ *
+ *div#workinfo {
+ *        display: inline-block;
+ *        vertical-align: top;
+ *        width: 64%;
+ *        text-align: right;
+ *        margin: 0 auto 0 auto;
+ *}
+ *
+ *div#workinfo * {
+ *        text-align: left;
+ *}
+ *
+ *div#userworklist_repop {
+ *        color: #000;
+ *}
+ *
+ *div#userworklist_repop a {
+ *        color: #000;
+ *}
+ *
+ */

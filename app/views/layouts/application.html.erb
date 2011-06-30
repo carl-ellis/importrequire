@@ -16,29 +16,29 @@
   <a href="/" class=logo_link><img src="/images/blank.png"/></a>
   <div id="search_box">
     <%= form_tag(search_path, :method => "post") %>
-    Search: <%= text_field_tag :search_query, nil, :size => 15 %> 
-    <%= submit_tag '?' %>
+    <%= text_field_tag :search_query, nil, :size => 15, :value => "Search", :onfocus => "this.value='';"%> 
+    <%= submit_tag '?', :class => "headerbutton" %>
     </form>
   </div>
   <div id="logwelcome">
   <% if session[:user] %>                                          
-    <p> Welcome, <%=link_to session[:user], user_name_path(session[:user]), :class => "top" %>.</p>
-    <p id="sec"> <%=link_to "Inbox#{unread_mail(session[:user])}", inbox_path(), :class => "top" %> | <%=link_to "Logout?", logout_path, :class => "top" %></p>
+    <p> Welcome, <%=link_to session[:user], user_name_path(session[:user]), :class => "unametop" %> 
+    (<%=link_to "Inbox#{unread_mail(session[:user])}", inbox_path(), :class => "top" %>|<%=link_to "Logout?", logout_path, :class => "top" %>)</p>
   <% else %>
     <%= form_tag(login_path, :method => "post") %>
-    Handle: <%= text_field_tag :handle, nil, :size => 5 %> 
-    Pass: <%= password_field :pass, nil, :size => 5 %> 
+    <%= text_field_tag :handle, nil, :size => 5, :value => "Handle", :onclick => "this.value='';" %> 
+    <%= password_field :pass, nil, :size => 5, :value => "Password", :onclick => "this.value='';"  %> 
     <%= hidden_field_tag :ocontroller, params[:controller] %> 
     <%= hidden_field_tag :oaction, params[:action] %> 
-    <%= submit_tag 'Login' %>
+    <%= submit_tag 'Login', :class => "headerbutton" %>
     </form>
-    <p class="top_reg">New User? <%= link_to "Register", register_path, :class =>"white" %></p>
+    <!--<p class="top_reg">New User? <%= link_to "Register", register_path, :class =>"white" %></p>-->
   <% end %>
   </div>
 </div>
 
 <% if flash[:notice] %>
-<div id="notice">
+<div id="notice" onclick="this.style.display='none';">
 	<p><%=flash[:notice]%></p>
 	<% flash[:notice] = nil %>
 </div>
@@ -51,7 +51,7 @@
 <br/>
 <hr/>
 <div id="footer" class="rounded5">
-<p>import::require &copy; 2011<p>
+<p>import::require &copy; 2011
 | 
 <a href="http://importrequire.wordpress.com" target="_blank">blog</a>
 |

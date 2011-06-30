@@ -1,15 +1,15 @@
 development:
-  adapter: mysql2
-  reconnect: false
-  database: importrequire
-  pool: 5
-  username: importrequire
-  password: importrequ1re
-  host: localhost
-#  adapter: sqlite3
-#  database: db/development.sqlite3
+#  adapter: mysql2
+#  reconnect: false
+#  database: importrequire
 #  pool: 5
-#  timeout: 5000
+#  username: importrequire
+#  password: importrequ1re
+#  host: localhost
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 test:
   adapter: sqlite3

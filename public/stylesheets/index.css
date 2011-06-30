@@ -1,81 +1,129 @@
-div#frontmatterimage {
-	text-align: left;
-	width: 47%;
-	margin: 0;
-	padding 0;
-	display: inline-block;
-	vertical-align: center;
+
+
+
+
+
+div#frontmatterimage{
+float: left;
 }
 
-div#frontmatterimage img {
-	width: 99%;
-}
+div#frontmattertext{
+    width: 40%;
+    float: right;
 
-div#frontmattertext {
-	text-align: right;
-	width: 48%;
-	margin: 3% 0 0 0;
-	padding: 1%;
-	display: inline-block;
-	vertical-align: top;
-	border: 1px #726280 solid;
-	/*background: #9dabbe;*/
-	background: #726280;
-  color: #000;
-}
+    display: inline-block;
+    background: #ccc;
+    padding: 1em;
 
-div#frontmattertext * {
-	text-align: left;
-}
-
-div#frontmattertext p {
-	font-size: large;
-}
-
-a#register {
-	display: block;
-	width: 80%;
-	margin: 0 auto 0 auto;
-	height: 2em;
-	text-align: center;
-	background: #a5a2c2;
-	border: 1px #ffffff solid;
-}
-
-a.top {
-  color: #808000;
-}
-
-a {
-  color: #000000;
-}
-
-div#footer {
-  width: 100%;
-	height: 25px;
-}
-
-div#footer * {
-	vertical-align: bottom;
-}
-
-div#footer p {
-  display: inline;
-}
-
-div#footer a *{
-  border: 0;
-}
-
-a.logo_link{
-	border: 0;
-	background: 0;
-}
-
-a.logo_link img{
-  position: absolute;
-  height: 64px;
-  width: 80px;
-	border: 0px solid;
+    margin: 2em;
 
 }
+
+
+div#frontmattertext a#register{
+    display: block;
+    border: 1px solid #333;
+    background: #f60;
+    padding: 0.5em;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    text-decoration: none;
+    color: black;
+
+
+    border-bottom: 2px solid #333;
+    border-right: 2px solid #333;
+}
+
+
+div#frontmattertext a#register:hover{
+background: #f71;
+    border: 1px solid #333;
+    border-top: 2px solid #333;
+    border-left: 2px solid #333;
+}
+
+/*
+ *div#frontmatterimage {
+ *        text-align: left;
+ *        width: 47%;
+ *        margin: 0;
+ *        padding 0;
+ *        display: inline-block;
+ *        vertical-align: center;
+ *}
+ *
+ *div#frontmatterimage img {
+ *        width: 99%;
+ *}
+ *
+ *div#frontmattertext {
+ *        text-align: right;
+ *        width: 48%;
+ *        margin: 3% 0 0 0;
+ *        padding: 1%;
+ *        display: inline-block;
+ *        vertical-align: top;
+ *        border: 1px #726280 solid;
+ *        [>background: #9dabbe;<]
+ *        background: #726280;
+ *  color: #000;
+ *}
+ *
+ *div#frontmattertext * {
+ *        text-align: left;
+ *}
+ *
+ *div#frontmattertext p {
+ *        font-size: large;
+ *}
+ *
+ *a#register {
+ *        display: block;
+ *        width: 80%;
+ *        margin: 0 auto 0 auto;
+ *        height: 2em;
+ *        text-align: center;
+ *        background: #a5a2c2;
+ *        border: 1px #ffffff solid;
+ *}
+ *
+ *a.top {
+ *  color: #808000;
+ *}
+ *
+ *a {
+ *  color: #000000;
+ *}
+ *
+ *div#footer {
+ *  width: 100%;
+ *        height: 25px;
+ *}
+ *
+ *div#footer * {
+ *        vertical-align: bottom;
+ *}
+ *
+ *div#footer p {
+ *  display: inline;
+ *}
+ *
+ *div#footer a *{
+ *  border: 0;
+ *}
+ *
+ *a.logo_link{
+ *        border: 0;
+ *        background: 0;
+ *}
+ *
+ *a.logo_link img{
+ *  position: absolute;
+ *  height: 64px;
+ *  width: 80px;
+ *        border: 0px solid;
+ *
+ *}
+ */
