@@ -26842,3 +26842,162 @@ Rendered user/_workslist.html (3.8ms)
   [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "messages" WHERE ("messages"."to_id" = 7) AND ("messages"."read" = 'f')
 Rendered user/view.html.erb within layouts/application (135.1ms)
 Completed 200 OK in 164ms (Views: 139.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:20:51 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 78ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:23:09 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 60ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:24:29 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 114ms (Views: 112.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:24:49 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 83ms (Views: 80.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:25:58 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 65ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:26:01 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2011-07-21 20:28:55 +0100
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (50.6ms)
+Completed 200 OK in 79ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:29:45 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:29:58 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 79ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:30:10 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (88.2ms)
+Completed 200 OK in 111ms (Views: 109.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:32:59 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:33:22 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:33:30 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:33:39 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (54.1ms)
+Completed 200 OK in 88ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:34:12 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:34:36 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 115ms (Views: 113.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:34:46 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 57ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:35:14 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:36:39 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 61ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-21 20:38:40 +0100
+  Processing by WelcomeController#index as HTML
+Rendered welcome/index.html.erb within layouts/application (34.7ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-07-21 20:42:18 +0100
+  Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S0BRc3WD/7AuCX7QygcBlK6rbMiCPq535Gg3Jbtf6Lk=", "search_query"=>"Search", "commit"=>"?"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mWork Load (1.0ms)[0m  SELECT "works".* FROM "works"
+  [1m[36mUser Load (4.7ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 5[0m
+  [1m[35mWork Load (1.7ms)[0m  SELECT "works".* FROM "works" ORDER BY updated_at DESC LIMIT 5
+Rendered search/_userslist.html.erb (3.9ms)
+Rendered user/_workslist.html (7.7ms)
+  [1m[36mAffiliation Load (0.5ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 7 )[0m
+  [1m[35mWork Load (0.6ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 7 )
+  [1m[36mAffiliation Load (0.8ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 1 )[0m
+  [1m[35mWork Load (0.9ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 1 )
+  [1m[36mAffiliation Load (0.5ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 2 )[0m
+  [1m[35mWork Load (0.7ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 2 )
+  [1m[36mAffiliation Load (0.5ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 6 )[0m
+  [1m[35mWork Load (0.6ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 6 )
+  [1m[36mAffiliation Load (0.8ms)[0m  [1mSELECT * FROM "affiliations" INNER JOIN "affiliations_users" ON "affiliations".id = "affiliations_users".affiliation_id WHERE ("affiliations_users".user_id = 5 )[0m
+  [1m[35mWork Load (0.8ms)[0m  SELECT * FROM "works" INNER JOIN "users_works" ON "works".id = "users_works".work_id WHERE ("users_works".user_id = 5 )
+Rendered search/_userslist.html.erb (234.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 4 )[0m
+  [1m[35mTag Load (1.1ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 4 )
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 13 )[0m
+  [1m[35mTag Load (0.8ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 13 )
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 7 )[0m
+  [1m[35mTag Load (0.9ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 7 )
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "users_works" ON "users".id = "users_works".user_id WHERE ("users_works".work_id = 8 )[0m
+  [1m[35mTag Load (1.0ms)[0m  SELECT * FROM "tags" INNER JOIN "tags_works" ON "tags".id = "tags_works".tag_id WHERE ("tags_works".work_id = 8 )
+Rendered user/_workslist.html (237.5ms)
+Rendered search/search.html.erb within layouts/application (565.2ms)
+Completed 200 OK in 1515ms (Views: 605.5ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/register" for 127.0.0.1 at 2011-07-21 20:42:30 +0100
+  Processing by UserController#create as HTML
+Rendered user/create.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.0ms)

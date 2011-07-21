@@ -1,47 +1,47 @@
-
-
-
-
-
 div#frontmatterimage{
-float: left;
+	float: left;
+	width: 44%;
+}
+
+div#frontmatterimage img{
+	width: 100%;
 }
 
 div#frontmattertext{
-    width: 40%;
-    float: right;
+	width: 44%;
+	float: right;
 
-    display: inline-block;
-    background: #ccc;
-    padding: 1em;
+	display: inline-block;
+	background: #ccc;
+	padding: 1em;
 
-    margin: 2em;
+	margin: 2em;
 
 }
 
 
 div#frontmattertext a#register{
-    display: block;
-    border: 1px solid #333;
-    background: #f60;
-    padding: 0.5em;
-    text-align: center;
-    font-weight: bold;
-    font-size: larger;
-    text-decoration: none;
-    color: black;
+	display: block;
+	border: 1px solid #333;
+	background: #f60;
+	padding: 0.5em;
+	text-align: center;
+	font-weight: bold;
+	font-size: larger;
+	text-decoration: none;
+	color: black;
 
 
-    border-bottom: 2px solid #333;
-    border-right: 2px solid #333;
+	border-bottom: 2px solid #333;
+	border-right: 2px solid #333;
 }
 
 
-div#frontmattertext a#register:hover{
-background: #f71;
-    border: 1px solid #333;
-    border-top: 2px solid #333;
-    border-left: 2px solid #333;
+div#frontmattertext a#register:hover {
+	background: #f71;
+	border: 1px solid #333;
+	border-top: 2px solid #333;
+	border-left: 2px solid #333;
 }
 
 /*
@@ -113,17 +113,18 @@ background: #f71;
  *div#footer a *{
  *  border: 0;
  *}
- *
- *a.logo_link{
- *        border: 0;
- *        background: 0;
- *}
- *
- *a.logo_link img{
- *  position: absolute;
- *  height: 64px;
- *  width: 80px;
- *        border: 0px solid;
- *
- *}
  */
+ 
+ a.logo_link{
+         border: 0;
+         background: 0;
+}
+
+ a.logo_link img{
+   position: absolute;
+   height: 64px;
+   width: 80px;
+         border: 0px solid;
+ 
+ }
+ 
