@@ -3,6 +3,11 @@ div#edit_tags {
   margin: auto;
 }
 
+div#edit_tags h2 {
+	text-align: left;
+	padding-left: 1em;
+}
+
 div#edit_tags div * {
   text-align: left;
 }
@@ -29,6 +34,5 @@ div#tageditform table input {
 div#taglist * {
 	text-align: center;
   width: 100%;
-	color: #ccc;
 }
 

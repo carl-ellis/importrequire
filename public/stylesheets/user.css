@@ -2,22 +2,25 @@
 
 div#infobox {
         display: inline-block;
-        width: 34%;
-        float: left;
+        width: 210px;
         margin: 2%;
-        background: #ccc;
         padding: 1em;
+				border-right: 1px solid #000;
 }                       
 
 div#workinfo {
-        float: right;
         display: inline-block;
         vertical-align: top;
-        width: 64%;
-        text-align: right;
+				max-width: 53%;
+				width: 1300px;
+        text-align: left;
         margin: 0 auto 0 auto;
 }
 
+
+div#workinfo h2 {
+	padding: 0;
+}
 
 div#userav{
   width: 100%;

@@ -11,7 +11,7 @@ table#innermessagelist {
 table#innermessagelist th {
   border: 1px solid #ccc;
   color: #000;
-	background: #726280;
+	background: #555;
   text-align: left;
   padding-left: 1em;
 }
@@ -27,8 +27,13 @@ table#innermessagelist td.read {
   font-weight: bold;
 }
 
+span#message_view_body {
+  padding-left: 1em;
+}
 span#message_view_body pre {
-  padding: 2%;
+	margin-left: 1em;
+	margin-right: 1em;
+  padding: 1em;
   border: 1px solid #ccc;
 }
 
@@ -43,32 +48,29 @@ table#innermessagelist td.message_controls {
 span#compose_to {
   display: block;
   margin-bottom: 1em;
+	padding-left: 1em;
 }
 
-span#compose_to input{
-  background: #ccc;
-}
 
 span#compose_subject {
   display: block;
   margin-bottom: 1em;
+	padding-left: 1em;
 }
 
 span#compose_subject input{
-  background: #ccc;
   width: 50%;
 }
 
 span#compose_body {
   display: block;
   margin-bottom: 1em;
+	padding-left: 1em;
 }
 
 span#compose_body_padding {
   margin-top: 1em;
-  padding: 1%;
-  border: 1px solid #ccc;
-  background: #ccc;
+  padding-right: 1em;
   display: block;
 }
 
@@ -76,6 +78,13 @@ span#compose_body textarea{
   width: 100%;
   height: 10em;
   border: 1px solid #000;
-  background: #ccc;
   resize: none
+}
+
+div#message_details p {
+	padding-left: 1em;
+}
+
+div#inbox_controls {
+	padding-left: 10%;
 }

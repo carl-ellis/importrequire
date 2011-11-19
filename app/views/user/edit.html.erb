@@ -1,7 +1,7 @@
 <% require_dependency 'gravatar' %>
 
 <% if @user %>
-<%= link_to "<-- Back to Profile", user_name_path(@user[:handle]), :class =>"white"  %>
+<%= link_to "<-- Back to Profile", user_name_path(@user[:handle]), :class =>"back"  %>
 <div id="edit">
   <h2> Edit Information </h2>
 

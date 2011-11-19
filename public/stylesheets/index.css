@@ -44,6 +44,12 @@ div#frontmattertext a#register:hover {
 	border-left: 2px solid #333;
 }
 
+a.back {
+	display:block;
+	padding-left:1em;
+	margin-top:1em;
+}
+
 /*
  *div#frontmatterimage {
  *        text-align: left;

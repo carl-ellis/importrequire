@@ -8,11 +8,11 @@ div#editworks div * {
 }
 
 div#worklist {
-	width: 50%;
+	width: 49%;
 	display: inline-block;
 	vertical-align: top;
 	margin: 0;
-	margin-right: 30px;
+	margin-right: 1%;
 	vertical-align: top;
 	color: #000;
 }
@@ -32,7 +32,7 @@ ul#innerworklist li{
 	margin: 0;
 	margin-bottom: 10px;
 	list-style-type: none;
-	background: #726280;
+	background: #ccc;
 	text-align: right;
 	
 }
@@ -40,9 +40,9 @@ ul#innerworklist li{
 div.work {
 	text-align:left;
 	display: inline-block;
-	background: #726280;
+	background: #ccc;
 	padding: 2px;
-  width: 96%;
+  width: 100%;
 	/*border: #000000 1px solid;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -81,23 +81,46 @@ ul#innerworklist span.tags{
 }
 
 div#workeditform {
-	width: 40%;
+	width: 28%;
 	display: inline-block;
 	vertical-align: top;
 }
 
+div#workeditform table {
+	width: 100%;
+}
+
+div#workeditform table input {
+	width: 100%;
+}
+
+div#workeditform textarea {
+	width: 100%;
+	resize: none;
+	height: 20em;
+}
+
+/*
 div.rating_holder{
 	width: 1%;
 	display: inline-block;
 	vertical-align: top;
 	text-align: right;
 }
+*/
+
+div.rating_holder{
+	width: 100%;
+	display: block;
+	vertical-align: center;
+	text-align: right;
+  font-size: small;
+}
 
 div.rating_holder a{
-	display: block;
-	height: 15px;
-	width: 100%;
-	margin-top:2px;
+	display: inline-block;
+	height: 11px;
+	width: 18px;
 	border:0;
 }
 
@@ -110,15 +133,15 @@ div.rating_holder a.rating_off{
 }
 
 div.rating_holder a.rating_on_h{
-	position:relative;
 	background: #00c800;
+	height: 9px;
+	width: 16px;
 	border: 1px solid #000;
-	right: 1px;
 }
 
 div.rating_holder a.rating_off_h{
-	position:relative;
 	background: #a5a2c2;
+	height: 9px;
+	width: 16px;
 	border: 1px solid #000;
-	right: 1px;
 }
