@@ -1,6 +1,5 @@
 Importrequire::Application.routes.draw do
 
-	resources :User 
 	match "register" => "User#create", :as => "register"
 	match "logout" => "welcome#logout", :as => "logout"
 	match "login" => "welcome#login", :as => "login"
