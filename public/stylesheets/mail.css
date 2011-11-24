@@ -88,3 +88,7 @@ div#message_details p {
 div#inbox_controls {
 	padding-left: 10%;
 }
+
+div#view_controls {
+	padding-left: 1em;
+}
