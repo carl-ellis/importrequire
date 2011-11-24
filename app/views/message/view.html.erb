@@ -5,9 +5,11 @@
     <span id="message_view_subject"><p>Subject: <%=@message.subject%></p></span>
     <span id="message_view_body">Message: <pre><%=@message.body%></pre></span>
   </div>
-  <%= link_to "Reply", reply_mail_path(@message.id), :class => "white" %>
-  |
-  <%= link_to "Delete", delete_mail_path(@message.id), :class => "white", :confirm => "Are you sure?" %>
+	<div id="view_controls">
+		<%= link_to "Reply", reply_mail_path(@message.id), :class => "white" %>
+		|
+		<%= link_to "Delete", delete_mail_path(@message.id), :class => "white", :confirm => "Are you sure?" %>
+	</div>
 <% else %>
   <em>You have come here in error</em>
 <% end %>
